@@ -1,3 +1,2 @@
-body {
-    background-color: skyblue;
-}
+@import './fragment/root.css';
+@import './home/home_page.css';
