@@ -6,292 +6,59 @@
     <div class="row g-0 reg-shell">
         <section class="col-lg-6">
             <div class="reg-form-area px-4 px-sm-5 ps-xl-6 pe-xl-5">
-                <div class="mx-auto" style="max-width: 720px;">
+                <div class="mx-auto reg-copy">
+                    {% for flash_error in app.flashes('verify_email_error') %}
+                        <div class="alert alert-danger reg-alert" role="alert">{{ flash_error }}</div>
+                    {% endfor %}
+
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success reg-alert" role="alert">{{ message }}</div>
+                    {% endfor %}
+
                     <p class="reg-eyebrow fw-bold text-uppercase mb-3">Join our community</p>
-                    <h1 class="reg-serif reg-title fw-bold mb-4">Create your<br>professional account</h1>
-                    <p class="reg-lead mb-5">Join Luxéa Beauty and grow your beauty business.<br>Create your professional account in a few simple steps.</p>
+                    <h1 class="reg-serif reg-title fw-bold mb-4">Create your<br>account</h1>
+                    <p class="reg-lead mb-5">Create your Luxéa Beauty account to book services, save your favorite professionals and manage your appointments.</p>
 
-                    <ul class="nav nav-tabs reg-tabs row gx-2 gx-sm-4 align-items-start mb-5" id="proRegisterTabs" role="tablist">
-                        <li class="nav-item col" role="presentation">
-                            <button class="nav-link active" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-pane" type="button" role="tab" aria-controls="account-pane" aria-selected="true" data-reg-bg="account">
-                  <span class="d-flex align-items-start gap-3">
-                    <span class="reg-step-number rounded-circle d-inline-flex align-items-center justify-content-center fw-semibold">1</span>
-                    <span class="d-none d-sm-block">
-                      <span class="reg-step-title d-block">Account</span>
-                      <span class="reg-step-subtitle d-block">Create your account</span>
-                    </span>
-                  </span>
-                            </button>
-                        </li>
-                        <li class="col-auto d-none d-md-block"><div class="reg-step-line"></div></li>
-                        <li class="nav-item col" role="presentation">
-                            <button class="nav-link" id="business-tab" data-bs-toggle="tab" data-bs-target="#business-pane" type="button" role="tab" aria-controls="business-pane" aria-selected="false" data-reg-bg="business">
-                  <span class="d-flex align-items-start gap-3">
-                    <span class="reg-step-number rounded-circle d-inline-flex align-items-center justify-content-center fw-semibold">2</span>
-                    <span class="d-none d-sm-block">
-                      <span class="reg-step-title d-block">Business</span>
-                      <span class="reg-step-subtitle d-block">Add your business details</span>
-                    </span>
-                  </span>
-                            </button>
-                        </li>
-                        <li class="col-auto d-none d-md-block"><div class="reg-step-line"></div></li>
-                        <li class="nav-item col" role="presentation">
-                            <button class="nav-link" id="verification-tab" data-bs-toggle="tab" data-bs-target="#verification-pane" type="button" role="tab" aria-controls="verification-pane" aria-selected="false" data-reg-bg="verification">
-                  <span class="d-flex align-items-start gap-3">
-                    <span class="reg-step-number rounded-circle d-inline-flex align-items-center justify-content-center fw-semibold">3</span>
-                    <span class="d-none d-sm-block">
-                      <span class="reg-step-title d-block">Verification</span>
-                      <span class="reg-step-subtitle d-block">Verify your identity</span>
-                    </span>
-                  </span>
-                            </button>
-                        </li>
-                    </ul>
+                    {{ form_start(registrationForm, { attr: { class: 'reg-form' } }) }}
+                        {{ form_errors(registrationForm) }}
 
-                    <form class="reg-form" action="#" method="post">
-                        <div class="tab-content" id="proRegisterTabsContent">
-
-                            <div class="tab-pane fade show active" id="account-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
-                                <div class="row g-4">
-                                    <div class="col-md-6">
-                                        <label for="firstName" class="form-label">First name</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-person"></i></span>
-                                            <input type="text" class="form-control reg-control" id="firstName" placeholder="Enter your first name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="lastName" class="form-label">Last name</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-person"></i></span>
-                                            <input type="text" class="form-control reg-control" id="lastName" placeholder="Enter your last name">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="email" class="form-label">Email address</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-envelope"></i></span>
-                                            <input type="email" class="form-control reg-control" id="email" placeholder="Enter your email address">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="password" class="form-label">Password</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-lock"></i></span>
-                                            <input type="password" class="form-control reg-control" id="password" placeholder="Create a strong password">
-                                            <button class="btn btn-outline-secondary border-start-0" type="button" data-toggle-password="#password" aria-label="Show password"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="confirmPassword" class="form-label">Confirm password</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-lock"></i></span>
-                                            <input type="password" class="form-control reg-control" id="confirmPassword" placeholder="Confirm your password">
-                                            <button class="btn btn-outline-secondary border-start-0" type="button" data-toggle-password="#confirmPassword" aria-label="Show password"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="phoneNumber" class="form-label">Phone number</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-telephone"></i></span>
-                                            <button class="btn btn-outline-secondary dropdown-toggle px-3" type="button" data-bs-toggle="dropdown">
-                                                🇫🇷 <span class="ms-2">+33</span>
-                                            </button>
-                                            <ul class="dropdown-menu shadow-sm border-0 rounded-4">
-                                                <li><button class="dropdown-item py-2" type="button">🇫🇷 +33</button></li>
-                                                <li><button class="dropdown-item py-2" type="button">🇮🇹 +39</button></li>
-                                                <li><button class="dropdown-item py-2" type="button">🇩🇪 +49</button></li>
-                                                <li><button class="dropdown-item py-2" type="button">🇪🇸 +34</button></li>
-                                            </ul>
-                                            <input type="tel" class="form-control reg-control" id="phoneNumber" placeholder="Enter your phone number">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check reg-terms">
-                                            <input class="form-check-input rounded-1" type="checkbox" id="termsAccount">
-                                            <label class="form-check-label fw-semibold" for="termsAccount">
-                                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 pt-2">
-                                        <button class="btn reg-btn-pink w-100 rounded-3 fw-bold py-3" type="button" data-next-tab="#business-tab">Continue</button>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="mb-0 text-secondary fs-5">Already have an account? <a class="text-decoration-none fw-bold" style="color: var(--reg-pink);" href="#">Log in</a></p>
-                                    </div>
+                        <div class="row g-4">
+                            <div class="col-12">
+                                {{ form_label(registrationForm.email, null, { label_attr: { class: 'form-label' } }) }}
+                                <div class="input-group">
+                                    <span class="input-group-text reg-input-icon"><i class="bi bi-envelope"></i></span>
+                                    {{ form_widget(registrationForm.email, { attr: { class: 'form-control reg-control', placeholder: 'Enter your email address', autocomplete: 'email' } }) }}
                                 </div>
+                                {{ form_errors(registrationForm.email) }}
                             </div>
 
-                            <div class="tab-pane fade" id="business-pane" role="tabpanel" aria-labelledby="business-tab" tabindex="0">
-                                <div class="row g-4">
-                                    <div class="col-md-6">
-                                        <label for="businessName" class="form-label">Business name</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-shop"></i></span>
-                                            <input type="text" class="form-control reg-control" id="businessName" placeholder="Enter your business name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="businessType" class="form-label">Business type</label>
-                                        <select class="form-select reg-control" id="businessType">
-                                            <option selected>Select your business type</option>
-                                            <option>Beauty salon</option>
-                                            <option>Hairdresser</option>
-                                            <option>Barber</option>
-                                            <option>Nail artist</option>
-                                            <option>Spa & wellness</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="businessDescription" class="form-label">Description</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon align-items-start pt-3"><i class="bi bi-card-text"></i></span>
-                                            <textarea class="form-control reg-control" id="businessDescription" maxlength="500" placeholder="Tell clients about your business, services and expertise..."></textarea>
-                                        </div>
-                                        <div class="text-end small text-secondary mt-1"><span id="descriptionCount">0</span>/500</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="address" class="form-label">Address</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-geo-alt"></i></span>
-                                            <input type="text" class="form-control reg-control" id="address" placeholder="Enter your business address">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="city" class="form-label">City</label>
-                                        <input type="text" class="form-control reg-control" id="city" placeholder="Enter your city">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="postalCode" class="form-label">Postal code</label>
-                                        <input type="text" class="form-control reg-control" id="postalCode" placeholder="Enter postal code">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="country" class="form-label">Country</label>
-                                        <select class="form-select reg-control" id="country">
-                                            <option selected>Select your country</option>
-                                            <option>France</option>
-                                            <option>Italy</option>
-                                            <option>Germany</option>
-                                            <option>Spain</option>
-                                            <option>Belgium</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="businessPhone" class="form-label">Business phone number</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-telephone"></i></span>
-                                            <button class="btn btn-outline-secondary dropdown-toggle px-3" type="button" data-bs-toggle="dropdown">
-                                                🇫🇷 <span class="ms-2">+33</span>
-                                            </button>
-                                            <ul class="dropdown-menu shadow-sm border-0 rounded-4">
-                                                <li><button class="dropdown-item py-2" type="button">🇫🇷 +33</button></li>
-                                                <li><button class="dropdown-item py-2" type="button">🇮🇹 +39</button></li>
-                                                <li><button class="dropdown-item py-2" type="button">🇩🇪 +49</button></li>
-                                                <li><button class="dropdown-item py-2" type="button">🇪🇸 +34</button></li>
-                                            </ul>
-                                            <input type="tel" class="form-control reg-control" id="businessPhone" placeholder="Enter your business phone number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pt-2">
-                                        <button class="btn btn-outline-dark w-100 rounded-3 fw-bold py-3" type="button" data-next-tab="#account-tab">Back</button>
-                                    </div>
-                                    <div class="col-md-8 pt-2">
-                                        <button class="btn reg-btn-pink w-100 rounded-3 fw-bold py-3" type="button" data-next-tab="#verification-tab">Continue</button>
-                                    </div>
+                            <div class="col-12">
+                                {{ form_label(registrationForm.plainPassword, null, { label_attr: { class: 'form-label' } }) }}
+                                <div class="input-group">
+                                    <span class="input-group-text reg-input-icon"><i class="bi bi-lock"></i></span>
+                                    {{ form_widget(registrationForm.plainPassword, { attr: { class: 'form-control reg-control', placeholder: 'Create a secure password', autocomplete: 'new-password' } }) }}
                                 </div>
+                                <p class="reg-secure-note mt-2 mb-0">Use at least 6 characters. You can complete your profile after sign up.</p>
+                                {{ form_errors(registrationForm.plainPassword) }}
                             </div>
 
-                            <div class="tab-pane fade" id="verification-pane" role="tabpanel" aria-labelledby="verification-tab" tabindex="0">
-                                <div class="row g-4">
-                                    <div class="col-12">
-                                        <h2 class="h5 fw-bold mb-2">Identity verification</h2>
-                                        <p class="text-secondary mb-3">Upload a valid government-issued ID to verify your identity.</p>
-                                    </div>
-                                    <div class="col-lg-7">
-                                        <div class="reg-upload rounded-3 d-flex flex-column align-items-center justify-content-center text-center p-4">
-                                            <i class="bi bi-cloud-arrow-up mb-3"></i>
-                                            <p class="fw-bold fs-5 mb-1">Upload your ID</p>
-                                            <p class="small text-secondary mb-3">JPG, PNG or PDF (max. 5MB)</p>
-                                            <label class="btn btn-outline-dark rounded-3 px-4 py-2 mb-0">
-                                                Choose file
-                                                <input type="file" class="visually-hidden" id="identityFile" accept=".jpg,.jpeg,.png,.pdf">
-                                            </label>
-                                            <p class="small text-secondary mb-0 mt-2" id="fileName"></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="card reg-document-card border-0 shadow-sm rounded-3 h-100">
-                                            <div class="card-body p-4">
-                                                <p class="fw-bold mb-3">Accepted documents</p>
-                                                <div class="d-flex align-items-center gap-3 mb-3"><i class="bi bi-passport"></i><span>Passport</span></div>
-                                                <div class="d-flex align-items-center gap-3 mb-3"><i class="bi bi-person-vcard"></i><span>National ID card</span></div>
-                                                <div class="d-flex align-items-center gap-3 mb-4"><i class="bi bi-car-front"></i><span>Driver’s license</span></div>
-                                                <p class="small text-secondary mb-0"><i class="bi bi-info-circle me-2"></i>The document must be valid and clearly visible.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <h3 class="h6 fw-bold mb-0">Additional information</h3>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="birthDate" class="form-label">Date of birth</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-calendar2"></i></span>
-                                            <input type="text" class="form-control reg-control" id="birthDate" placeholder="Select your date of birth">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="nationality" class="form-label">Nationality</label>
-                                        <select class="form-select reg-control" id="nationality">
-                                            <option selected>Select your nationality</option>
-                                            <option>French</option>
-                                            <option>Italian</option>
-                                            <option>German</option>
-                                            <option>Spanish</option>
-                                            <option>Belgian</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="qualification" class="form-label">Professional qualification <span class="fw-normal text-secondary">(optional)</span></label>
-                                        <div class="input-group">
-                                            <span class="input-group-text reg-input-icon"><i class="bi bi-patch-check"></i></span>
-                                            <input type="text" class="form-control reg-control" id="qualification" placeholder="Enter your qualification or certification">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="experience" class="form-label">Years of experience</label>
-                                        <select class="form-select reg-control" id="experience">
-                                            <option selected>Select your experience</option>
-                                            <option>Less than 1 year</option>
-                                            <option>1–3 years</option>
-                                            <option>3–5 years</option>
-                                            <option>5+ years</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check reg-terms">
-                                            <input class="form-check-input rounded-1" type="checkbox" id="termsVerification">
-                                            <label class="form-check-label fw-semibold" for="termsVerification">
-                                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pt-2">
-                                        <button class="btn btn-outline-dark w-100 rounded-3 fw-bold py-3" type="button" data-next-tab="#business-tab">Back</button>
-                                    </div>
-                                    <div class="col-md-8 pt-2">
-                                        <button class="btn reg-btn-pink w-100 rounded-3 fw-bold py-3" type="submit">Submit for review</button>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="reg-secure-note mb-0"><i class="bi bi-lock me-2"></i>Your information is secure and encrypted.</p>
-                                    </div>
+                            <div class="col-12">
+                                <div class="form-check reg-terms">
+                                    {{ form_widget(registrationForm.agreeTerms, { attr: { class: 'form-check-input rounded-1' } }) }}
+                                    {{ form_label(registrationForm.agreeTerms, null, { label_attr: { class: 'form-check-label fw-semibold' } }) }}
                                 </div>
+                                {{ form_errors(registrationForm.agreeTerms) }}
                             </div>
 
+                            <div class="col-12 pt-2">
+                                <button class="btn reg-btn-pink w-100 rounded-3 fw-bold py-3" type="submit">Create account</button>
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <p class="mb-0 text-secondary fs-5">Already have an account? <a class="reg-link" href="{{ path('app_login') }}">Log in</a></p>
+                            </div>
                         </div>
-                    </form>
+                    {{ form_end(registrationForm) }}
                 </div>
             </div>
         </section>

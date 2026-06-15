@@ -20,9 +20,12 @@
     --bs-btn-hover-color: var(--lux-navy);
 }
 
-.navbar { min-height: 72px; }
-.navbar-brand img { width: 34px; height: 31px; object-fit: contain; }
-.navbar .nav-link { font-size: .92rem; color: var(--lux-navy); }
+.navbar { min-height: var(--size-nav); }
+.navbar .nav-link { font-size: var(--text-sm); color: var(--lux-navy); }
+.navbar .btn,
+footer .btn {
+    min-height: var(--size-touch);
+}
 
 .hero-section {
     background-image:
@@ -41,18 +44,19 @@
     overflow: hidden;
 }
 
-.hero-img-wrap { min-height: 360px; }
+.hero-img-wrap { min-height: var(--size-hero-media); }
 .hero-img {
     width: 100%;
-    min-height: 360px;
+    min-height: var(--size-hero-media);
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .search-panel {
-    max-width: 980px;
+    max-width: var(--content-search);
     backdrop-filter: blur(12px);
+    border-radius: var(--radius-4);
 }
 
 .search-panel .form-control,
@@ -60,12 +64,12 @@
     border: 0;
     box-shadow: none;
     padding-left: 0;
-    font-size: .92rem;
+    font-size: var(--text-sm);
 }
 
 .icon-mini {
-    width: 34px;
-    height: 34px;
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
     color: var(--lux-gold);
     border: 1px solid rgba(199,154,99,.35);
     background: #fff;
@@ -73,7 +77,7 @@
 
 .service-img {
     width: 100%;
-    height: 118px;
+    height: var(--size-service-media);
     object-fit: cover;
 }
 
@@ -85,7 +89,7 @@
 .soft-card:hover { transform: translateY(-3px); }
 
 .pro-img {
-    height: 190px;
+    height: var(--size-pro-media);
     object-fit: cover;
 }
 
@@ -93,14 +97,18 @@
     background: linear-gradient(145deg, #fff 0%, #fff8f2 100%);
 }
 
+.home-metric strong {
+    font-size: var(--text-lg);
+}
+
 .calendar-day {
-    width: 28px;
-    height: 28px;
+    width: var(--size-calendar-day);
+    height: var(--size-calendar-day);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: .78rem;
+    font-size: var(--text-xs);
 }
 
 .calendar-day.active {
@@ -117,13 +125,13 @@
 .press-logo {
     font-family: Georgia, "Times New Roman", serif;
     letter-spacing: .2em;
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     color: #1a2538;
 }
 
 .icon-box {
-    width: 54px;
-    height: 54px;
+    width: var(--size-icon-lg);
+    height: var(--size-icon-lg);
     color: var(--lux-gold);
     background: #fff7ef;
     border: 1px solid rgba(199,154,99,.3);
@@ -131,29 +139,29 @@
 }
 
 .benefit-icon {
-    width: 48px;
-    height: 48px;
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
     color: var(--lux-gold);
     font-size: 1.4rem;
 }
 
 .dashboard-img {
     height: 100%;
-    max-height: 360px;
+    max-height: var(--size-hero-media);
     object-fit: cover;
     object-position: center;
 }
 
-.city-card img { height: 92px; object-fit: cover; }
+.city-card img { height: var(--size-city-media); object-fit: cover; }
 .city-gradient { background: linear-gradient(0deg, rgba(11,27,51,.85), rgba(11,27,51,0)); }
-.trend-img { height: 118px; object-fit: cover; }
+.trend-img { height: var(--size-service-media); object-fit: cover; }
 
 .cta-banner {
     background: radial-gradient(circle at 80% 50%, rgba(222,113,137,.22), transparent 30%), linear-gradient(90deg, #07162b, #0b1b33);
 }
 
 .cta-img {
-    max-height: 185px;
+    max-height: var(--size-cta-media);
     object-fit: cover;
     object-position: center;
 }
@@ -162,13 +170,14 @@ footer a { color: rgba(255,255,255,.72); text-decoration: none; }
 footer a:hover { color: #fff; }
 
 @media (max-width: 991.98px) {
-    .hero-img-wrap { min-height: 300px; }
-    .hero-img { min-height: 300px; }
-    .display-2 { font-size: 3.2rem; }
+    .hero-img-wrap { min-height: var(--size-hero-media-sm); }
+    .hero-img { min-height: var(--size-hero-media-sm); }
+    .display-2 { font-size: var(--text-display-sm); }
 }
 
 @media (max-width: 575.98px) {
-    .service-img { height: 100px; }
-    .pro-img { height: 150px; }
+    .service-img,
+    .trend-img { height: var(--size-service-media-sm); }
+    .pro-img { height: var(--size-pro-media-sm); }
     .press-logo { font-size: .9rem; letter-spacing: .12em; }
 }
