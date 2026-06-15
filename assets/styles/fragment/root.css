@@ -4,6 +4,15 @@
     --lux-rose: #de7189;
     --lux-ivory: #fbf7f2;
     --lux-line: #efe6dd;
+    --reg-navy: #071936;
+    --reg-muted: #6f7480;
+    --reg-pink: #cf476f;
+    --reg-pink-dark: #bd3f65;
+    --reg-gold: #c58b4a;
+    --reg-border: #dfe1e6;
+    --reg-cream: #fffbf7;
+    --reg-soft: #fff8f3;
+    --reg-shadow: 0 24px 70px rgba(7, 25, 54, .10);
 }
 
 body {

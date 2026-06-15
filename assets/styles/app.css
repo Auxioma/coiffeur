@@ -1,2 +1,4 @@
 @import './fragment/root.css';
 @import './home/home_page.css';
+
+@import "./authentification/pro/register.css";

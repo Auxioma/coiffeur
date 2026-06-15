@@ -1,0 +1,275 @@
+.reg-page {
+min-height: 100vh;
+background:
+radial-gradient(circle at 0 20%, rgba(197, 139, 74, .08), transparent 34%),
+linear-gradient(90deg, #fff 0%, var(--reg-cream) 100%);
+}
+
+.reg-serif {
+font-family: 'Cormorant Garamond', Georgia, serif;
+letter-spacing: -.035em;
+}
+
+.reg-logo-mark {
+width: 48px;
+height: 48px;
+color: var(--reg-gold);
+}
+
+.reg-logo-title {
+font-family: 'Cormorant Garamond', Georgia, serif;
+font-size: 2.15rem;
+line-height: .85;
+letter-spacing: .18em;
+font-weight: 700;
+}
+
+.reg-logo-subtitle {
+font-size: .62rem;
+letter-spacing: .55em;
+margin-left: .25rem;
+}
+
+.reg-topbar {
+min-height: 88px;
+border-bottom: 1px solid rgba(7,25,54,.09);
+background: rgba(255, 255, 255, .92);
+backdrop-filter: blur(14px);
+z-index: 20;
+}
+
+.reg-nav-link {
+color: var(--reg-navy);
+font-weight: 600;
+font-size: .98rem;
+}
+
+.reg-btn-pink {
+--bs-btn-color: #fff;
+--bs-btn-bg: var(--reg-pink);
+--bs-btn-border-color: var(--reg-pink);
+--bs-btn-hover-color: #fff;
+--bs-btn-hover-bg: var(--reg-pink-dark);
+--bs-btn-hover-border-color: var(--reg-pink-dark);
+--bs-btn-active-bg: var(--reg-pink-dark);
+--bs-btn-active-border-color: var(--reg-pink-dark);
+min-height: 48px;
+}
+
+.reg-shell {
+min-height: calc(100vh - 88px);
+}
+
+.reg-form-area {
+padding-top: 4.4rem;
+padding-bottom: 3rem;
+}
+
+.reg-eyebrow {
+color: var(--reg-gold);
+font-size: .88rem;
+letter-spacing: .22em;
+}
+
+.reg-title {
+font-size: clamp(3.1rem, 5.2vw, 5.55rem);
+line-height: .92;
+max-width: 690px;
+}
+
+.reg-lead {
+font-size: 1.08rem;
+line-height: 1.75;
+max-width: 550px;
+color: #13233f;
+}
+
+.reg-tabs.nav-tabs {
+border-bottom: 0;
+}
+
+.reg-tabs .nav-link {
+border: 0;
+background: transparent;
+color: var(--reg-navy);
+text-align: left;
+padding: 0;
+width: 100%;
+}
+
+.reg-step-number {
+width: 42px;
+height: 42px;
+border: 1px solid #cfd3da;
+background: #fff;
+color: #596171;
+transition: all .2s ease;
+}
+
+.reg-tabs .nav-link.active .reg-step-number {
+border-color: var(--reg-pink);
+background: var(--reg-pink);
+color: #fff;
+box-shadow: 0 10px 24px rgba(207, 71, 111, .25);
+}
+
+.reg-step-title {
+font-size: .93rem;
+font-weight: 700;
+}
+
+.reg-step-subtitle {
+font-size: .82rem;
+color: var(--reg-muted);
+}
+
+.reg-step-line {
+height: 1px;
+background: #d9dce2;
+min-width: 48px;
+margin-top: 21px;
+}
+
+.reg-form label {
+font-size: .92rem;
+font-weight: 700;
+margin-bottom: .65rem;
+}
+
+.reg-control {
+border-color: #d7dbe1;
+border-radius: .55rem;
+min-height: 56px;
+font-size: .95rem;
+box-shadow: none !important;
+background-color: rgba(255,255,255,.82);
+}
+
+.reg-control:focus {
+border-color: rgba(207, 71, 111, .6);
+box-shadow: 0 0 0 .25rem rgba(207, 71, 111, .08) !important;
+}
+
+textarea.reg-control {
+min-height: 112px;
+resize: none;
+}
+
+.reg-input-icon {
+color: #8f96a3;
+min-width: 48px;
+border-color: #d7dbe1;
+background-color: rgba(255,255,255,.82);
+}
+
+.reg-terms a {
+color: var(--reg-pink);
+font-weight: 700;
+text-decoration: none;
+}
+
+.reg-media {
+min-height: calc(100vh - 88px);
+background-image: var(--reg-bg);
+background-size: cover;
+background-position: center;
+transition: background-image .25s ease;
+}
+
+.reg-media::before {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(90deg, rgba(255,255,255,.10), rgba(255,255,255,0));
+pointer-events: none;
+}
+
+.reg-benefits {
+width: calc(100% - 84px);
+left: 42px;
+bottom: 42px;
+background: rgba(255,255,255,.94);
+backdrop-filter: blur(18px);
+border: 1px solid rgba(255,255,255,.85);
+box-shadow: var(--reg-shadow);
+}
+
+.reg-benefit-icon {
+width: 58px;
+height: 58px;
+color: var(--reg-pink);
+background: rgba(207,71,111,.10);
+}
+
+.reg-benefits .col:not(:last-child) {
+border-right: 1px solid #dadde3;
+}
+
+.reg-upload {
+min-height: 178px;
+border: 1.5px dashed #bfc4ce;
+background: rgba(255,255,255,.48);
+}
+
+.reg-upload i {
+font-size: 2.5rem;
+color: var(--reg-pink);
+}
+
+.reg-document-card {
+min-height: 178px;
+background: rgba(255,255,255,.72);
+}
+
+.reg-secure-note {
+color: var(--reg-muted);
+font-size: .94rem;
+}
+
+@media (max-width: 991.98px) {
+.reg-form-area {
+padding: 2.6rem 1.2rem;
+}
+
+.reg-media {
+min-height: 680px;
+}
+
+.reg-benefits {
+position: static !important;
+width: auto;
+margin: -4rem 1rem 2rem;
+}
+
+.reg-benefits .col {
+border-right: 0 !important;
+border-bottom: 1px solid #edf0f4;
+}
+
+.reg-title {
+font-size: 3.7rem;
+}
+}
+
+@media (max-width: 575.98px) {
+.reg-topbar {
+min-height: 74px;
+}
+
+.reg-logo-title {
+font-size: 1.55rem;
+}
+
+.reg-logo-mark {
+width: 38px;
+height: 38px;
+}
+
+.reg-title {
+font-size: 3.05rem;
+}
+
+.reg-step-line {
+display: none;
+}
+}
