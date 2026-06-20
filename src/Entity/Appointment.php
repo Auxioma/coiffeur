@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AppointmentRepository::class)]
 #[ORM\Table(name: 'appointment')]
+#[ORM\Index(name: 'IDX_APPOINTMENT_STATUS', fields: ['status'])]
+#[ORM\Index(name: 'IDX_APPOINTMENT_STARTS_AT', fields: ['startsAt'])]
 #[ORM\HasLifecycleCallbacks]
 class Appointment
 {

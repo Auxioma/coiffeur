@@ -124,7 +124,7 @@ class ServicePackage
         return $this;
     }
 
-    public function isIsBookableOnline(): bool
+    public function isBookableOnline(): bool
     {
         return $this->isBookableOnline;
     }
@@ -136,7 +136,7 @@ class ServicePackage
         return $this;
     }
 
-    public function isIsActive(): bool
+    public function isActive(): bool
     {
         return $this->isActive;
     }

@@ -61,7 +61,7 @@ class EstablishmentRole
         return $this;
     }
 
-    public function isIsSystem(): bool
+    public function isSystem(): bool
     {
         return $this->isSystem;
     }

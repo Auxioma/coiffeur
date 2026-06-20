@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BookingRuleRepository::class)]
 #[ORM\Table(name: 'booking_rule')]
+#[ORM\UniqueConstraint(name: 'UNIQ_BOOKING_RULE_ESTABLISHMENT', fields: ['establishment'])]
 #[ORM\HasLifecycleCallbacks]
 class BookingRule
 {

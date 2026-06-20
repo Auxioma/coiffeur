@@ -9,6 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SeoPageRepository::class)]
 #[ORM\Table(name: 'seo_page')]
+#[ORM\UniqueConstraint(name: 'UNIQ_SEO_PAGE_LOCALE_TYPE_SLUG', fields: ['locale', 'pageType', 'countryCode', 'slug'])]
+#[ORM\Index(name: 'IDX_SEO_PAGE_LOCALE_TYPE', fields: ['locale', 'pageType'])]
 #[ORM\HasLifecycleCallbacks]
 class SeoPage
 {
@@ -28,7 +30,7 @@ class SeoPage
     #[ORM\Column(length: 2, nullable: true)]
     private ?string $countryCode = null;
 
-    #[ORM\Column(length: 190, unique: true)]
+    #[ORM\Column(length: 190)]
     private ?string $slug = null;
 
     #[ORM\Column(length: 190)]
@@ -150,7 +152,7 @@ class SeoPage
         return $this;
     }
 
-    public function isIsIndexable(): bool
+    public function isIndexable(): bool
     {
         return $this->isIndexable;
     }

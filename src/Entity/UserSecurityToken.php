@@ -19,13 +19,13 @@ class UserSecurityToken
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 64, unique: true)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $tokenHash = null;
 
-    #[ORM\Column(length: 40)]
+    #[ORM\Column(length: 255)]
     private ?string $tokenType = null;
 
-    #[ORM\Column(length: 190, nullable: true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $destination = null;
 
     #[ORM\Column(nullable: true)]

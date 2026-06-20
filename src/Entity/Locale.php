@@ -93,7 +93,7 @@ class Locale
         return $this;
     }
 
-    public function isIsDefault(): bool
+    public function isDefault(): bool
     {
         return $this->isDefault;
     }
@@ -105,7 +105,7 @@ class Locale
         return $this;
     }
 
-    public function isIsEnabled(): bool
+    public function isEnabled(): bool
     {
         return $this->isEnabled;
     }

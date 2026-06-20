@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EstablishmentRepository::class)]
 #[ORM\Table(name: 'establishment')]
+#[ORM\Index(name: 'IDX_ESTABLISHMENT_STATUS', fields: ['status'])]
+#[ORM\Index(name: 'IDX_ESTABLISHMENT_COUNTRY_ACTIVITY', fields: ['countryCode', 'activityType'])]
 #[ORM\HasLifecycleCallbacks]
 class Establishment
 {
@@ -84,7 +86,7 @@ class Establishment
     private int $reviewsCount = 0;
 
     #[ORM\Column(length: 64)]
-    private string $timezone = 'Europe/Paris';
+    private string $timezone = 'UTC';
 
     #[ORM\ManyToOne(targetEntity: ProfessionalAccount::class, inversedBy: 'establishments')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
@@ -278,7 +280,7 @@ class Establishment
 
     public function setCountryCode(string $countryCode): static
     {
-        $this->countryCode = $countryCode;
+        $this->countryCode = strtoupper($countryCode);
 
         return $this;
     }

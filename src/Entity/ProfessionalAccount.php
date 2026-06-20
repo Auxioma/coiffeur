@@ -29,8 +29,8 @@ class ProfessionalAccount
     #[ORM\Column(length: 80, nullable: true)]
     private ?string $legalForm = null;
 
-    #[ORM\Column(length: 32, nullable: true)]
-    private ?string $siret = null;
+    #[ORM\Column(length: 64, nullable: true)]
+    private ?string $registrationNumber = null;
 
     #[ORM\Column(length: 64, nullable: true)]
     private ?string $vatNumber = null;
@@ -101,14 +101,14 @@ class ProfessionalAccount
         return $this;
     }
 
-    public function getSiret(): ?string
+    public function getRegistrationNumber(): ?string
     {
-        return $this->siret;
+        return $this->registrationNumber;
     }
 
-    public function setSiret(?string $siret): static
+    public function setRegistrationNumber(?string $registrationNumber): static
     {
-        $this->siret = $siret;
+        $this->registrationNumber = $registrationNumber;
 
         return $this;
     }

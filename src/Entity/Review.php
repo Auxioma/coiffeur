@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ReviewRepository::class)]
 #[ORM\Table(name: 'review')]
+#[ORM\Index(name: 'IDX_REVIEW_STATUS', fields: ['status'])]
 #[ORM\HasLifecycleCallbacks]
 class Review
 {

@@ -10,7 +10,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[ORM\Table(name: 'category')]
 #[ORM\UniqueConstraint(name: 'UNIQ_CATEGORY_LANG_SLUG_TYPE', fields: ['lang', 'slug', 'type'])]
+#[ORM\Index(name: 'IDX_CATEGORY_LANG_TYPE', fields: ['lang', 'type'])]
+#[ORM\Index(name: 'IDX_CATEGORY_ACTIVE', fields: ['isActive'])]
 #[ORM\HasLifecycleCallbacks]
 class Category
 {

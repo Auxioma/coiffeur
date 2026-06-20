@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LoyaltyAccountRepository::class)]
 #[ORM\Table(name: 'loyalty_account')]
+#[ORM\UniqueConstraint(name: 'UNIQ_LOYALTY_ACCOUNT_CLIENT_PROGRAM', fields: ['client', 'loyaltyProgram'])]
 #[ORM\HasLifecycleCallbacks]
 class LoyaltyAccount
 {

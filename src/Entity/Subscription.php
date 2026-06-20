@@ -4,9 +4,9 @@ namespace App\Entity;
 
 use App\Entity\Traits\CreatedAtTraits;
 use App\Entity\Traits\UpdatedAtTraits;
+use App\Repository\SubscriptionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use App\Repository\SubscriptionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SubscriptionRepository::class)]
@@ -16,6 +16,7 @@ class Subscription
 {
     use CreatedAtTraits;
     use UpdatedAtTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -53,7 +54,12 @@ class Subscription
     /**
      * @var Collection<int, SubscriptionInvoice>
      */
-    #[ORM\OneToMany(targetEntity: SubscriptionInvoice::class, mappedBy: 'subscription')]
+    #[ORM\OneToMany(
+        targetEntity: SubscriptionInvoice::class,
+        mappedBy: 'subscription',
+        cascade: ['persist', 'remove'],
+        orphanRemoval: true
+    )]
     private Collection $invoices;
 
     public function __construct()
@@ -182,4 +188,24 @@ class Subscription
         return $this->invoices;
     }
 
+    public function addInvoice(SubscriptionInvoice $invoice): static
+    {
+        if (!$this->invoices->contains($invoice)) {
+            $this->invoices->add($invoice);
+            $invoice->setSubscription($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInvoice(SubscriptionInvoice $invoice): static
+    {
+        if ($this->invoices->removeElement($invoice)) {
+            if ($invoice->getSubscription() === $this) {
+                $invoice->setSubscription(null);
+            }
+        }
+
+        return $this;
+    }
 }

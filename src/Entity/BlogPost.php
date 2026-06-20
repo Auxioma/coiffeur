@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BlogPostRepository::class)]
 #[ORM\Table(name: 'blog_post')]
+#[ORM\UniqueConstraint(name: 'UNIQ_BLOG_POST_LOCALE_SLUG', fields: ['locale', 'slug'])]
+#[ORM\Index(name: 'IDX_BLOG_POST_LOCALE_STATUS', fields: ['locale', 'status'])]
+#[ORM\Index(name: 'IDX_BLOG_POST_PUBLISHED_AT', fields: ['publishedAt'])]
 #[ORM\HasLifecycleCallbacks]
 class BlogPost
 {
@@ -25,7 +28,7 @@ class BlogPost
     #[ORM\Column(length: 2, nullable: true)]
     private ?string $countryCode = null;
 
-    #[ORM\Column(length: 190, unique: true)]
+    #[ORM\Column(length: 190)]
     private ?string $slug = null;
 
     #[ORM\Column(length: 190)]

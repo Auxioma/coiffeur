@@ -16,6 +16,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
+#[ORM\Index(name: 'IDX_USER_TYPE', fields: ['type'])]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 #[ORM\HasLifecycleCallbacks]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -59,7 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $countryCode = null;
 
     #[ORM\Column(length: 64)]
-    private string $timezone = 'Europe/Paris';
+    private string $timezone = 'UTC';
 
     /**
      * @var list<string> The user roles

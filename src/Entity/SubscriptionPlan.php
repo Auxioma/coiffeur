@@ -142,7 +142,7 @@ class SubscriptionPlan
         return $this;
     }
 
-    public function isHasSms(): bool
+    public function hasSms(): bool
     {
         return $this->hasSms;
     }
@@ -154,7 +154,7 @@ class SubscriptionPlan
         return $this;
     }
 
-    public function isHasMarketing(): bool
+    public function hasMarketing(): bool
     {
         return $this->hasMarketing;
     }
@@ -166,7 +166,7 @@ class SubscriptionPlan
         return $this;
     }
 
-    public function isHasMultiEstablishment(): bool
+    public function hasMultiEstablishment(): bool
     {
         return $this->hasMultiEstablishment;
     }
@@ -178,7 +178,7 @@ class SubscriptionPlan
         return $this;
     }
 
-    public function isHasAdvancedReports(): bool
+    public function hasAdvancedReports(): bool
     {
         return $this->hasAdvancedReports;
     }
@@ -190,7 +190,7 @@ class SubscriptionPlan
         return $this;
     }
 
-    public function isIsActive(): bool
+    public function isActive(): bool
     {
         return $this->isActive;
     }

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ServiceTranslationRepository::class)]
 #[ORM\Table(name: 'service_translation')]
+#[ORM\UniqueConstraint(name: 'UNIQ_SRV_TRANS_LOCALE', fields: ['service', 'locale'])]
 #[ORM\HasLifecycleCallbacks]
 class ServiceTranslation
 {

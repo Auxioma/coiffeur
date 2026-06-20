@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ServiceCategoryRepository::class)]
 #[ORM\Table(name: 'service_category')]
+#[ORM\UniqueConstraint(name: 'UNIQ_SRV_CATEGORY_EST_SLUG', fields: ['establishment', 'slug'])]
 #[ORM\HasLifecycleCallbacks]
 class ServiceCategory
 {
@@ -108,7 +109,7 @@ class ServiceCategory
         return $this;
     }
 
-    public function isIsActive(): bool
+    public function isActive(): bool
     {
         return $this->isActive;
     }

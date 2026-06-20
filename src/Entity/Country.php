@@ -52,7 +52,7 @@ class Country
 
     public function setCode(?string $code): static
     {
-        $this->code = $code;
+        $this->code = $code !== null ? strtoupper($code) : null;
 
         return $this;
     }
@@ -117,7 +117,7 @@ class Country
         return $this;
     }
 
-    public function isIsEnabled(): bool
+    public function isEnabled(): bool
     {
         return $this->isEnabled;
     }
