@@ -1,22 +1,12 @@
 <?php
 
-/**
- * Copyright(c) 2026 Boolts (https://boolts.com)
- *
- * Ce fichier fait partie d’un projet développé par Auxioma Web Agency pour l’entreprise Pastelit Co.
- * Tous droits réservés.
- *
- * Ce code source est la propriété exclusive de Auxioma Web Agency et Pastelit Co.
- * Toute reproduction, modification, distribution ou utilisation sans autorisation préalable est interdite.
- */
-
 namespace App\Entity\Traits;
 
 use Doctrine\ORM\Mapping as ORM;
 
 trait DeletedAtTraits
 {
-    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $deletedAt = null;
 
     public function getDeletedAt(): ?\DateTimeImmutable
@@ -24,18 +14,22 @@ trait DeletedAtTraits
         return $this->deletedAt;
     }
 
-    public function softDelete(): void
+    public function setDeletedAt(?\DateTimeImmutable $deletedAt): static
     {
-        $this->deletedAt = new \DateTimeImmutable();
+        $this->deletedAt = $deletedAt;
+
+        return $this;
     }
 
-    public function restore(): void
+    public function softDelete(): static
     {
-        $this->deletedAt = null;
+        $this->deletedAt = new \DateTimeImmutable();
+
+        return $this;
     }
 
     public function isDeleted(): bool
     {
-        return null !== $this->deletedAt;
+        return $this->deletedAt !== null;
     }
 }

@@ -2,52 +2,164 @@
 
 {% block title %}Sign in{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/authentification/pro/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/authentification/security/login-page.css') }}">
+{% endblock %}
+
 {% block body %}
-    <section class="auth-shell">
-        <div class="container-xl">
-            <div class="auth-card">
-                {% for message in app.flashes('success') %}
-                    <div class="alert alert-success auth-alert" role="alert">{{ message }}</div>
-                {% endfor %}
+    <div class="row g-0 reg-shell login-shell">
+        <section class="col-lg-6">
+            <div class="login-form-area px-4 px-sm-5 ps-xl-6 pe-xl-5">
+                <div class="mx-auto reg-copy login-copy">
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success reg-alert" role="alert">{{ message }}</div>
+                    {% endfor %}
 
-                {% if error %}
-                    <div class="alert alert-danger auth-alert" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
+                    {% if error %}
+                        <div class="alert alert-danger reg-alert" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
 
-                {% if app.user %}
-                    <div class="alert alert-light auth-alert">
-                        You are logged in as {{ app.user.userIdentifier }}, <a class="fw-semibold text-decoration-none" href="{{ logout_path() }}">Log out</a>
+                    {% if app.user %}
+                        <div class="alert alert-light reg-alert" role="alert">
+                            You are logged in as {{ app.user.userIdentifier }}.
+                            <a class="login-link" href="{{ path('app_logout') }}">Log out</a>
+                        </div>
+                    {% endif %}
+
+                    <p class="reg-eyebrow fw-bold text-uppercase mb-3">Member access</p>
+                    <h1 class="reg-serif login-title fw-bold mb-4">Sign in to your<br>account</h1>
+                    <p class="reg-lead login-lead mb-5">Access your bookings, saved professionals and account settings with the same Luxéa experience as the rest of the platform.</p>
+
+                    <div class="login-card">
+                        <form method="post" action="{{ path('app_login') }}" class="reg-form login-form">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <label class="form-label" for="inputEmail">Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text reg-input-icon"><i class="bi bi-envelope"></i></span>
+                                        <input
+                                            type="email"
+                                            value="{{ last_username }}"
+                                            name="email"
+                                            id="inputEmail"
+                                            class="form-control reg-control"
+                                            placeholder="Enter your email address"
+                                            autocomplete="email"
+                                            required
+                                            autofocus
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label" for="inputPassword">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text reg-input-icon"><i class="bi bi-lock"></i></span>
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            id="inputPassword"
+                                            class="form-control reg-control border-end-0"
+                                            placeholder="Enter your password"
+                                            autocomplete="current-password"
+                                            required
+                                        >
+                                        <button class="login-password-toggle" type="button" data-login-toggle-password="#inputPassword" aria-label="Show password">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                    <p class="reg-secure-note mt-2 mb-0">Your session is protected and can be remembered securely on this device.</p>
+                                </div>
+
+                                <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
+                                <div class="col-12">
+                                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 login-meta">
+                                        <div class="form-check reg-terms mb-0">
+                                            <input class="form-check-input rounded-1" type="checkbox" name="_remember_me" id="rememberMe">
+                                            <label class="form-check-label fw-semibold" for="rememberMe">Keep me signed in</label>
+                                        </div>
+                                        <a href="{{ path('app_forgot_password_request') }}">Forgot your password?</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 pt-2">
+                                    <button class="btn reg-btn-pink w-100 rounded-3 fw-bold py-3" type="submit">Sign in</button>
+                                </div>
+
+                                <div class="col-12">
+                                    <p class="login-note mb-0">Need an account? <a class="login-link" href="{{ path('app_register') }}">Create one here</a>.</p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                {% endif %}
-
-                <p class="section-kicker text-gold mb-3">Account access</p>
-                <h1 class="font-display auth-title fw-semibold mb-3">Sign in to your account</h1>
-                <p class="auth-text mb-4">Access your bookings, saved professionals and account settings.</p>
-
-                <form method="post" class="auth-form">
-                    <div class="mb-3">
-                        <label class="form-label" for="inputEmail">Email</label>
-                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="inputPassword">Password</label>
-                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-                    </div>
-                    <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
-
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" name="_remember_me" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                    </div>
-
-                    <button class="btn btn-primary" type="submit">Sign in</button>
-
-                    <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-4 auth-links">
-                        <a class="fw-semibold text-decoration-none" href="{{ path('app_forgot_password_request') }}">Forgot your password?</a>
-                        <a class="fw-semibold text-decoration-none" href="{{ path('app_register') }}">Create an account</a>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <aside class="col-lg-6 position-relative reg-media login-media d-flex align-items-end" style="background-image: linear-gradient(180deg, rgba(7, 25, 54, .18), rgba(7, 25, 54, .52)), url('{{ asset('images/background/bg-home.png') }}');">
+            <div class="login-media-copy">
+                <p class="reg-eyebrow fw-bold text-uppercase mb-3">Luxéa member space</p>
+                <h2 class="reg-serif login-media-title text-white fw-bold mb-3">Book again, faster.</h2>
+                <p class="login-media-text mb-0">Find your upcoming appointments, revisit your last services and reconnect with your trusted professionals in one place.</p>
+            </div>
+
+            <div class="reg-benefits rounded-4 p-4 position-absolute login-benefits">
+                <h3 class="reg-serif login-benefits-title fw-bold mb-4">What you get after sign in</h3>
+
+                <div class="d-flex gap-3 login-benefit-row">
+                    <span class="login-benefit-icon rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                        <i class="bi bi-calendar-check"></i>
+                    </span>
+                    <div>
+                        <strong>Manage your bookings</strong>
+                        <span>See confirmations, dates and service details without searching through emails.</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 login-benefit-row">
+                    <span class="login-benefit-icon rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                        <i class="bi bi-heart"></i>
+                    </span>
+                    <div>
+                        <strong>Keep your favorites close</strong>
+                        <span>Save professionals you trust and rebook them much faster on your next visit.</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 login-benefit-row">
+                    <span class="login-benefit-icon rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                        <i class="bi bi-shield-check"></i>
+                    </span>
+                    <div>
+                        <strong>Secure member access</strong>
+                        <span>Use protected account recovery and persistent sessions on approved devices.</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.querySelectorAll('[data-login-toggle-password]').forEach((button) => {
+            button.addEventListener('click', () => {
+                const input = document.querySelector(button.getAttribute('data-login-toggle-password'));
+                const icon = button.querySelector('i');
+
+                if (!input || !icon) {
+                    return;
+                }
+
+                const isPassword = input.type === 'password';
+                input.type = isPassword ? 'text' : 'password';
+                icon.classList.toggle('bi-eye', !isPassword);
+                icon.classList.toggle('bi-eye-slash', isPassword);
+                button.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+            });
+        });
+    </script>
 {% endblock %}
