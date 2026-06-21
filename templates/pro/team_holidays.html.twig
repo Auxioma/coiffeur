@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Calendrier d’équipe — Belle Maison Pro' %}
+{% set meta_description = 'Vue consolidée des congés, absences et exceptions horaires.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Équipe</p><h1>Calendrier d’équipe</h1><span>Vue consolidée des congés, absences et exceptions horaires.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Calendrier consolidé</h2><div class="bm-calendar-mini"><span>Clara : congé 8-12 juillet</span><span>Alex : formation 17 juin</span><span>Emma : absence matinée 20 juin</span></div></section>
+{% endblock %}

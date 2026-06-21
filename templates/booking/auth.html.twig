@@ -1,0 +1,33 @@
+{% extends 'layouts/booking.html.twig' %}
+{% set page_title = 'Connexion ou inscription — Belle Maison' %}
+{% set meta_description = 'Tunnel de réservation sans paiement en ligne' %}
+{% set main_class = 'bm-booking-main' %}
+
+{% block body %}
+<section class="bm-booking-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Réservation sans paiement en ligne</p>
+<h1>Connexion ou inscription</h1>
+<p>Choisissez une prestation, un collaborateur et un créneau. La création de compte est demandée uniquement avant la validation finale.</p>
+<div class="bm-booking-stepper"><a class="bm-booking-step is-done" href="{{ path('app_booking_service') }}"><span>1</span><em>Prestations</em></a><a class="bm-booking-step is-done" href="{{ path('app_booking_staff') }}"><span>2</span><em>Collaborateur</em></a><a class="bm-booking-step is-done" href="{{ path('app_booking_slot') }}"><span>3</span><em>Créneau</em></a><a class="bm-booking-step is-active" href="{{ path('app_booking_auth') }}"><span>4</span><em>Compte</em></a><a class="bm-booking-step" href="{{ path('app_booking_summary') }}"><span>5</span><em>Validation</em></a></div>
+</div>
+</section>
+<section class="bm-booking-section">
+<div class="container bm-container">
+<div class="bm-booking-grid">
+<div>
+<div class="bm-booking-panel"><h2>Connectez-vous ou créez votre compte</h2><p>Le compte est obligatoire pour limiter les réservations anonymes et réduire les no-show. Aucun paiement n’est demandé.</p><ul class="nav nav-pills bm-auth-tabs" role="tablist"><li class="nav-item"><button class="nav-link active" data-bs-target="#loginPane" data-bs-toggle="pill" type="button">Déjà client</button></li><li class="nav-item"><button class="nav-link" data-bs-target="#registerPane" data-bs-toggle="pill" type="button">Créer un compte</button></li></ul><div class="tab-content mt-4"><div class="tab-pane fade show active" id="loginPane"><div class="row g-3"><div class="col-12"><label>Email</label><input class="form-control bm-form-control" value="marine@example.com"/></div><div class="col-12"><label>Mot de passe</label><input class="form-control bm-form-control" type="password" value="password"/></div><div class="col-12 d-flex justify-content-between"><label class="bm-check"><input checked="" type="checkbox"/> Rester connecté</label><a class="bm-link" href="{{ path('app_forgot_password_user') }}">Mot de passe oublié ?</a></div></div></div><div class="tab-pane fade" id="registerPane"><div class="row g-3"><div class="col-md-6"><label>Prénom</label><input class="form-control bm-form-control" placeholder="Marine"/></div><div class="col-md-6"><label>Nom</label><input class="form-control bm-form-control" placeholder="Laurent"/></div><div class="col-md-6"><label>Téléphone</label><input class="form-control bm-form-control" placeholder="06 00 00 00 00"/></div><div class="col-md-6"><label>Email</label><input class="form-control bm-form-control" placeholder="marine@example.com"/></div><div class="col-12"><label>Mot de passe</label><input class="form-control bm-form-control" placeholder="8 caractères minimum" type="password"/></div></div></div></div><div class="bm-booking-verify"><i class="bi bi-shield-check"></i><div><strong>Vérification obligatoire avant le premier RDV</strong><span>Un code email ou SMS permet de sécuriser votre compte et de confirmer votre présence.</span></div></div><div class="bm-booking-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_booking_slot') }}">Retour</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_summary') }}">Continuer vers le récapitulatif</a></div></div></div>
+<aside class="bm-booking-summary-card">
+<p class="bm-admin-kicker">Votre sélection</p>
+<h2>Maison Élégance</h2>
+<div class="bm-booking-summary-line"><span>Prestations</span><strong>Coupe femme + brushing</strong></div>
+<div class="bm-booking-summary-line"><span>Collaborateur</span><strong>Clara Martin</strong></div>
+<div class="bm-booking-summary-line"><span>Date</span><strong>Jeudi 25 juin · 14:30</strong></div>
+<div class="bm-booking-summary-line"><span>Durée</span><strong>1h15</strong></div>
+<div class="bm-booking-summary-price"><span>Total estimé</span><strong>58 €</strong><small>Paiement sur place le jour du rendez-vous.</small></div>
+<a class="bm-link mt-3 d-inline-flex" href="{{ path('app_salon_detail') }}">Retour à la fiche salon</a>
+</aside>
+</div>
+</div>
+</section>
+{% endblock %}

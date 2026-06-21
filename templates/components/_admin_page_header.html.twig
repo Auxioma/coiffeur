@@ -1,0 +1,24 @@
+{# Usage:
+   {% include 'components/_admin_page_header.html.twig' with {
+       kicker: 'Espace professionnel',
+       title: 'Tableau de bord',
+       description: 'Vue globale de votre activité',
+       cta_label: 'Nouveau RDV',
+       cta_route: 'app_appointment_create_pro'
+   } only %}
+#}
+<header class="bm-admin-topbar">
+    <button class="bm-admin-menu-btn" type="button" aria-label="Ouvrir la navigation"><i class="bi bi-list"></i></button>
+    <div>
+        <p class="bm-admin-kicker">{{ kicker|default('Espace professionnel') }}</p>
+        <h1>{{ title }}</h1>
+        {% if description|default(null) %}
+            <span>{{ description }}</span>
+        {% endif %}
+    </div>
+    <div class="bm-admin-topbar-actions">
+        {% if cta_label|default(null) and cta_route|default(null) %}
+            <a class="btn bm-btn bm-btn-primary" href="{{ path(cta_route) }}"><i class="bi bi-plus-lg me-2"></i>{{ cta_label }}</a>
+        {% endif %}
+    </div>
+</header>

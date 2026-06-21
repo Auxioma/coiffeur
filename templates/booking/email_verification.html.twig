@@ -1,0 +1,24 @@
+{% extends 'layouts/booking.html.twig' %}
+{% set page_title = 'Vérification de l’email — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Réservation sans paiement en ligne</p>
+<h1>Vérification de l’email</h1>
+<p>Un email de vérification vient d’être envoyé. Cette étape confirme votre identité avant la validation du premier rendez-vous.</p>
+</div>
+</section>
+<section class="bm-booking-section">
+<div class="container bm-container bm-narrow">
+<article class="bm-state-card bm-state-info">
+<div class="bm-state-icon"><i class="bi bi-envelope-check"></i></div>
+<p class="bm-eyebrow">Tunnel de réservation</p>
+<h1>Vérification de l’email</h1>
+<p>Un email de vérification vient d’être envoyé. Cette étape confirme votre identité avant la validation du premier rendez-vous.</p>
+<div class="bm-state-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_summary') }}">J’ai vérifié mon email</a><a class="btn bm-btn bm-btn-outline" href="{{ path('app_booking_email_verification') }}">Renvoyer l’email</a></div>
+</article>
+</div>
+</section>
+{% endblock %}

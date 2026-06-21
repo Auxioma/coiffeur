@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Contact — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Assistance</p>
+<h1>Contact</h1>
+<p>Contactez Belle Maison pour une question client, professionnelle ou presse.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container bm-narrow"><article class="bm-public-panel"><h2>Envoyer un message</h2><div class="row g-3"><div class="col-md-6"><input class="form-control bm-form-control" placeholder="Nom"/></div><div class="col-md-6"><input class="form-control bm-form-control" placeholder="Email"/></div><div class="col-12"><select class="form-select bm-form-control"><option>Demande client</option><option>Demande professionnelle</option></select></div><div class="col-12"><textarea class="form-control bm-form-control" placeholder="Votre message" rows="5"></textarea></div></div><button class="btn bm-btn bm-btn-primary mt-4">Envoyer</button></article></div></section>
+{% endblock %}

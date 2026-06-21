@@ -1,0 +1,14 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Abonnement activé — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Paiement abonnement</p>
+<h1>Abonnement activé</h1>
+<p>Votre espace professionnel est prêt.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container bm-narrow"><article class="bm-state-card bm-state-success"><div class="bm-state-icon"><i class="bi bi-check2"></i></div><h1>Bienvenue sur Belle Maison Pro</h1><p>Votre abonnement est actif. Vous pouvez terminer la configuration de votre salon.</p><a class="btn bm-btn bm-btn-primary" href="{{ path('app_dashboard_pro') }}">Accéder au dashboard</a></article></div></section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Tableau de bord — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Tableau de bord</h1>
+<span>Vue d’accueil du salon, rendez-vous du jour, indicateurs et alertes actionnables.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+<a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-4">
+<article class="bm-admin-metric"><span>CA aujourd’hui</span><strong>1 284 €</strong><small><i class="bi bi-arrow-up-right"></i> +12% vs mardi dernier</small></article>
+<article class="bm-admin-metric"><span>Taux de remplissage</span><strong>86%</strong><small>28 créneaux réservés / 33</small></article>
+<article class="bm-admin-metric"><span>Nouveaux clients</span><strong>14</strong><small>Cette semaine</small></article>
+<article class="bm-admin-metric"><span>No-show</span><strong>2</strong><small>À relancer aujourd’hui</small></article>
+</section>
+<section class="bm-admin-grid bm-admin-grid-main mt-4">
+<article class="bm-admin-panel">
+<div class="bm-admin-panel-head"><div><h2>Rendez-vous du jour</h2><p>Planning chronologique avec statuts.</p></div><a class="bm-link" href="{{ path('app_agenda_pro') }}">Voir l’agenda</a></div>
+<div class="bm-admin-timeline">
+<div class="bm-admin-timeline-row"><time>09:00</time><div><strong>Marine L.</strong><span>Coupe femme + brushing · Clara · Confirmé</span></div><em class="bm-status bm-status-success">Confirmé</em></div>
+<div class="bm-admin-timeline-row"><time>10:30</time><div><strong>Julien M.</strong><span>Barbe premium · Alex · Acompte payé</span></div><em class="bm-status bm-status-info">En attente</em></div>
+<div class="bm-admin-timeline-row"><time>13:45</time><div><strong>Camille B.</strong><span>Balayage + soin profond · Clara · 2h30</span></div><em class="bm-status bm-status-warning">À confirmer</em></div>
+<div class="bm-admin-timeline-row"><time>16:00</time><div><strong>Sofia D.</strong><span>Manucure semi-permanent · Emma</span></div><em class="bm-status bm-status-success">Confirmé</em></div>
+</div>
+</article>
+<aside class="bm-admin-panel bm-admin-alerts">
+<div class="bm-admin-panel-head"><div><h2>Alertes</h2><p>Actions prioritaires.</p></div></div>
+<a href="{{ path('app_appointment_detail_pro') }}"><i class="bi bi-exclamation-circle"></i><span>3 rendez-vous non confirmés</span></a>
+<a href="{{ path('app_payments_pro') }}"><i class="bi bi-credit-card"></i><span>2 paiements en attente</span></a>
+<a href="{{ path('app_reviews_pro') }}"><i class="bi bi-star"></i><span>5 avis à traiter</span></a>
+<a href="{{ path('app_services_pro') }}"><i class="bi bi-box-seam"></i><span>Stock kératine bas</span></a>
+</aside>
+</section>
+<section class="bm-admin-grid bm-admin-grid-3 mt-4">
+<a class="bm-admin-shortcut" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-circle"></i><strong>Nouveau RDV</strong><span>Créer une réservation en boutique ou par téléphone.</span></a>
+<a class="bm-admin-shortcut" href="{{ path('app_clients_pro') }}"><i class="bi bi-person-plus"></i><strong>Nouveau client</strong><span>Ajouter une fiche client avec consentements RGPD.</span></a>
+<a class="bm-admin-shortcut" href="{{ path('app_availability_pro') }}"><i class="bi bi-slash-circle"></i><strong>Bloquer un créneau</strong><span>Pause, congé, formation ou fermeture exceptionnelle.</span></a>
+</section>
+{% endblock %}

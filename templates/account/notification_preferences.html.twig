@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Préférences de notification — Belle Maison' %}
+{% set meta_description = 'Choisissez les canaux de rappel et de confirmation.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Notifications</p><h1>Préférences de notification</h1><span>Choisissez les canaux de rappel et de confirmation.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Canaux de communication</h2><div class="bm-toggle-list"><label><span>Email</span><input checked="" type="checkbox"/></label><label><span>SMS de rappel J-1</span><input checked="" type="checkbox"/></label><label><span>SMS H-2</span><input type="checkbox"/></label><label><span>Demande d’avis après visite</span><input checked="" type="checkbox"/></label></div><button class="btn bm-btn bm-btn-primary mt-4">Enregistrer</button></section>
+{% endblock %}

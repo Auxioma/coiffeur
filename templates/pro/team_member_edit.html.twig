@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Modifier un collaborateur — Belle Maison Pro' %}
+{% set meta_description = 'Mettre à jour horaires, prestations autorisées et rôle.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace professionnel</p><h1>Modifier un collaborateur</h1><span>Mettre à jour horaires, prestations autorisées et rôle.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Modifier un collaborateur</h2><p>Mettre à jour horaires, prestations autorisées et rôle.</p><div class="row g-3"><div class="col-md-6"><label>Prénom</label><input class="form-control bm-form-control" value="Clara"/></div><div class="col-md-6"><label>Nom</label><input class="form-control bm-form-control" value="Martin"/></div><div class="col-md-6"><label>Spécialité</label><input class="form-control bm-form-control" value="Coloriste senior"/></div><div class="col-md-6"><label>Rôle</label><input class="form-control bm-form-control" value="Collaborateur"/></div><div class="col-12"><label>Prestations autorisées</label><textarea class="form-control bm-form-control" rows="3">Coupe femme, balayage, soin profond</textarea></div><div class="bm-booking-actions"><button class="btn bm-btn bm-btn-outline">Annuler</button><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></div></section>
+{% endblock %}

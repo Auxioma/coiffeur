@@ -5,7 +5,10 @@ namespace App\DataFixtures;
 use App\Entity\Appointment;
 use App\Entity\AppointmentItem;
 use App\Entity\AppointmentStatusHistory;
+use App\Entity\Establishment;
+use App\Entity\EstablishmentMember;
 use App\Entity\Review;
+use App\Entity\Service;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -25,10 +28,10 @@ final class BookingDemoFixtures extends Fixture implements DependentFixtureInter
             $establishmentNumber = (($i - 1) % 5) + 1;
             $clientNumber = (($i - 1) % 60) + 1;
 
-            $establishment = $this->getReference(ProfessionalDemoFixtures::ESTABLISHMENT_REFERENCE_PREFIX.$establishmentNumber);
-            $member = $this->getReference(ProfessionalDemoFixtures::MEMBER_REFERENCE_PREFIX.$establishmentNumber.'_1');
+            $establishment = $this->getReference(ProfessionalDemoFixtures::ESTABLISHMENT_REFERENCE_PREFIX.$establishmentNumber, Establishment::class);
+            $member = $this->getReference(ProfessionalDemoFixtures::MEMBER_REFERENCE_PREFIX.$establishmentNumber.'_1', EstablishmentMember::class);
             $client = $this->getReference(UserFixtures::CLIENT_REFERENCE_PREFIX.$clientNumber, User::class);
-            $service = $this->getReference(ProfessionalDemoFixtures::SERVICE_REFERENCE_PREFIX.$establishmentNumber.'_coupe-femme');
+            $service = $this->getReference(ProfessionalDemoFixtures::SERVICE_REFERENCE_PREFIX.$establishmentNumber.'_coupe-femme', Service::class);
 
             $startsAt = (new \DateTimeImmutable('today 09:00'))->modify('+'.($i % 18).' days')->modify('+'.(($i % 8) * 60).' minutes');
             $endsAt = $startsAt->modify('+60 minutes');

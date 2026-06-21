@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Langues — Belle Maison Pro' %}
+{% set meta_description = 'Langues visibles côté client pour un marché international.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Paramètres avancés</p><h1>Langues</h1><span>Langues visibles côté client pour un marché international.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Langues</h2><p>Langues visibles côté client pour un marché international.</p><div class="row g-3"><div class="col-md-6"><label>Paramètre principal</label><input class="form-control bm-form-control" value="Activé"/></div><div class="col-md-6"><label>Valeur</label><input class="form-control bm-form-control" value="Standard"/></div><div class="col-12"><label>Message client</label><textarea class="form-control bm-form-control" rows="4">Votre rendez-vous est réservé sans paiement en ligne. Merci de prévenir en cas d’empêchement.</textarea></div><div class="bm-booking-actions"><button class="btn bm-btn bm-btn-outline">Annuler</button><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></div></section>
+{% endblock %}

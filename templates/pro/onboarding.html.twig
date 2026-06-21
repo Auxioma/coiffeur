@@ -1,0 +1,20 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Onboarding guidé — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Onboarding guidé</h1>
+<span>Créer le premier service, ajouter les horaires, l’équipe et le moyen d’encaissement.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-onboarding-hero"><div><p class="bm-eyebrow">Démarrage professionnel</p><h2>Configurez votre salon en moins de 20 minutes.</h2><p>Chaque étape correspond à un prérequis de mise en ligne : profil, prestations, horaires, équipe et paiement.</p></div><a class="btn bm-btn bm-btn-primary" href="{{ path('app_services_pro') }}">Continuer la configuration</a></section>
+<section class="bm-admin-grid bm-admin-grid-4 mt-4"><article class="bm-step-card is-done"><span>1</span><h3>Profil établissement</h3><p>Nom, adresse, photos, description.</p></article><article class="bm-step-card is-active"><span>2</span><h3>Premier service</h3><p>Créer une prestation réservable.</p></article><article class="bm-step-card"><span>3</span><h3>Horaires</h3><p>Définir les disponibilités.</p></article><article class="bm-step-card"><span>4</span><h3>Encaissement</h3><p>Connecter Stripe ou paiement sur place.</p></article></section>
+{% endblock %}

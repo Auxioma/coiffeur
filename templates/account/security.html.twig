@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Sécurité — Belle Maison' %}
+{% set meta_description = 'Gérez les accès, le mot de passe et les informations vérifiées.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Compte client</p><h1>Sécurité</h1><span>Gérez les accès, le mot de passe et les informations vérifiées.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main"><article class="bm-admin-panel"><div class="bm-admin-panel-head"><div><h2>Sécurité du compte</h2><p>Mot de passe, téléphone vérifié et sessions actives.</p></div></div><div class="bm-form-stack"><label>Email de connexion<input class="form-control bm-form-control" value="marine@example.com"/></label><label>Téléphone vérifié<input class="form-control bm-form-control" value="06 12 34 56 78"/></label><label>Nouveau mot de passe<input class="form-control bm-form-control" placeholder="Minimum 8 caractères" type="password"/></label><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></article><aside class="bm-admin-panel"><h2>Protection anti no-show</h2><p>La vérification email/téléphone permet de confirmer vos réservations et de recevoir les rappels J-1 et H-2.</p><a class="btn bm-btn bm-btn-outline w-100" href="{{ path('app_user_delete_account') }}">Supprimer mon compte</a></aside></section>
+{% endblock %}

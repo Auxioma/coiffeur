@@ -1,0 +1,27 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Catalogue de prestations — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Catalogue de prestations</h1>
+<span>Catégories, forfaits, options, durées variables, ressources et collaborateurs habilités.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+<a class="btn bm-btn bm-btn-primary" href="{{ path('app_service_detail_pro') }}"><i class="bi bi-plus-lg me-2"></i>Créer une prestation</a>
+</div>
+</header>
+<section class="bm-admin-panel">
+<div class="bm-admin-panel-head"><div><h2>Prestations</h2><p>Structure : catégorie, fiche prestation, variantes, packages, options et abonnements.</p></div><a class="btn bm-btn bm-btn-primary" href="{{ path('app_service_detail_pro') }}">Créer une prestation</a></div>
+<div class="bm-admin-filterbar"><input class="form-control bm-form-control" placeholder="Rechercher une prestation"/><select class="form-select bm-form-control"><option>Toutes catégories</option><option>Coiffure</option><option>Coloration</option><option>Soins</option></select><select class="form-select bm-form-control"><option>Tous statuts</option></select></div>
+<div class="table-responsive"><table class="table bm-admin-table"><thead><tr><th>Prestation</th><th>Durée</th><th>Prix</th><th>Équipe habilitée</th><th>Statut</th><th></th></tr></thead><tbody>
+<tr><td><strong>Coupe femme + brushing</strong><span>Coiffure · Coupe</span></td><td>45 min</td><td>À partir de 48 €</td><td>Clara, Nina</td><td><em class="bm-status bm-status-success">En ligne</em></td><td><a class="bm-link" href="{{ path('app_service_detail_pro') }}">Modifier</a></td></tr>
+<tr><td><strong>Balayage lumineux</strong><span>Coloration · Cheveux longs</span></td><td>2h30 estimées</td><td>À partir de 125 €</td><td>Clara</td><td><em class="bm-status bm-status-success">En ligne</em></td><td><a class="bm-link" href="{{ path('app_service_detail_pro') }}">Modifier</a></td></tr>
+<tr><td><strong>Soin kératine</strong><span>Soin · supplément possible</span></td><td>1h15</td><td>75 €</td><td>Nina</td><td><em class="bm-status bm-status-warning">Saisonnier</em></td><td><a class="bm-link" href="{{ path('app_service_detail_pro') }}">Modifier</a></td></tr></tbody></table></div>
+</section>
+{% endblock %}

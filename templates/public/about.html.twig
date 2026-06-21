@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'À propos — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Belle Maison</p>
+<h1>À propos</h1>
+<p>Une plateforme premium pour rapprocher clients et professionnels de la beauté.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Notre mission</h2><p>Simplifier la réservation beauté sans paiement en ligne.</p><a class="bm-link" href="{{ path('app_search_results') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Notre approche</h2><p>Design clair, avis clients et parcours mobile-first.</p><a class="bm-link" href="{{ path('app_blog') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Pour les pros</h2><p>Un outil de visibilité, agenda et fidélisation.</p><a class="bm-link" href="{{ path('app_register_pro') }}">Découvrir</a></article></div></div></section>
+{% endblock %}

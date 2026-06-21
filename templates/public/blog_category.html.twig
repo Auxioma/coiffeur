@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Conseils coiffure — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Magazine</p>
+<h1>Conseils coiffure</h1>
+<p>Tous les articles coiffure, coupe, coloration, soin et entretien.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Coupe femme</h2><p>Choisir une coupe adaptée à la forme du visage.</p><a class="bm-link" href="{{ path('app_blog_detail') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Coupe homme</h2><p>Styles courts, dégradés et entretien.</p><a class="bm-link" href="{{ path('app_blog_detail') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Coloration</h2><p>Comprendre balayage, patine et ombré.</p><a class="bm-link" href="{{ path('app_blog_detail') }}">Découvrir</a></article></div></div></section>
+{% endblock %}

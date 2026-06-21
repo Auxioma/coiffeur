@@ -1,0 +1,33 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Fiche prestation — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Fiche prestation</h1>
+<span>Prix, durée, variantes, ressources nécessaires et règles de réservation.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main">
+<article class="bm-admin-panel">
+<h2>Balayage lumineux</h2><p class="bm-admin-muted">Configurer les informations visibles par les clients et les règles internes.</p>
+<form class="bm-admin-form-grid">
+<label>Nom de la prestation<input class="form-control bm-form-control" value="Balayage lumineux"/></label>
+<label>Catégorie<select class="form-select bm-form-control"><option>Coiffure &gt; Coloration</option></select></label>
+<label>Durée estimée<input class="form-control bm-form-control" value="2h30"/></label>
+<label>Prix à partir de<input class="form-control bm-form-control" value="125 €"/></label>
+<label class="bm-span-2">Description<textarea class="form-control bm-form-control" rows="5">Reflets subtils, naturels et personnalisés selon votre base.</textarea></label>
+</form>
+<h3 class="bm-admin-subtitle">Variantes</h3>
+<div class="bm-variant-list"><div><strong>Cheveux courts</strong><span>1h45 · 95 €</span></div><div><strong>Cheveux mi-longs</strong><span>2h15 · 125 €</span></div><div><strong>Cheveux longs</strong><span>3h · 160 €</span></div></div>
+</article>
+<aside class="bm-admin-panel"><h2>Règles internes</h2><div class="bm-check-list"><label><input checked="" type="checkbox"/> Clara peut réaliser cette prestation</label><label><input type="checkbox"/> Emma peut réaliser cette prestation</label><label><input checked="" type="checkbox"/> Nécessite bac coloration</label><label><input type="checkbox"/> Acompte obligatoire</label></div><button class="btn bm-btn bm-btn-primary w-100 mt-3">Enregistrer</button></aside>
+</section>
+{% endblock %}

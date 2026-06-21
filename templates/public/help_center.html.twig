@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Centre d’aide — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Support</p>
+<h1>Centre d’aide</h1>
+<p>Trouvez rapidement une réponse sur le compte client, la réservation et l’espace pro.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Réserver un RDV</h2><p>Choisir une prestation, un créneau et confirmer.</p><a class="bm-link" href="{{ path('app_help_detail') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Gérer mon compte</h2><p>Profil, notifications, sécurité et suppression.</p><a class="bm-link" href="{{ path('app_user_profile') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Aide professionnelle</h2><p>Agenda, clients, prestations et facturation SaaS.</p><a class="bm-link" href="{{ path('app_dashboard_pro') }}">Découvrir</a></article></div></div></section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Équipe & collaborateurs — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Équipe &amp; collaborateurs</h1>
+<span>Planning individuel, spécialités, permissions, statistiques et congés.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+<a class="btn bm-btn bm-btn-primary" href="{{ path('app_team_member_pro') }}"><i class="bi bi-plus-lg me-2"></i>Ajouter un collaborateur</a>
+</div>
+</header>
+<section class="row g-4"><div class="col-md-6 col-xl-3"><article class="bm-team-card"><div class="bm-avatar">CM</div><h3>Clara Martin</h3><p>Manager coiffure</p><span>Coloration · Balayage</span><a class="bm-link" href="{{ path('app_team_member_pro') }}">Voir la fiche</a></article></div><div class="col-md-6 col-xl-3"><article class="bm-team-card"><div class="bm-avatar">AD</div><h3>Alex Dupont</h3><p>Barbier senior</p><span>Coupe homme · Barbe</span><a class="bm-link" href="{{ path('app_team_member_pro') }}">Voir la fiche</a></article></div><div class="col-md-6 col-xl-3"><article class="bm-team-card"><div class="bm-avatar">EL</div><h3>Emma Laurent</h3><p>Prothésiste ongulaire</p><span>Semi-permanent · Nail art</span><a class="bm-link" href="{{ path('app_team_member_pro') }}">Voir la fiche</a></article></div><div class="col-md-6 col-xl-3"><article class="bm-team-card"><div class="bm-avatar">ND</div><h3>Nina Diallo</h3><p>Esthéticienne</p><span>Soin visage · Massage</span><a class="bm-link" href="{{ path('app_team_member_pro') }}">Voir la fiche</a></article></div></section>
+<section class="bm-admin-panel mt-4"><div class="bm-admin-panel-head"><div><h2>Congés et absences</h2><p>Validation manager et calendrier consolidé.</p></div><button class="btn bm-btn bm-btn-soft">Nouvelle absence</button></div><div class="bm-admin-feed"><li><strong>Emma</strong> demande un congé le 28 juin · en attente.</li><li><strong>Alex</strong> formation barber shop le 4 juillet · validée.</li></div></section>
+{% endblock %}

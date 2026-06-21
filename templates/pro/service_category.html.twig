@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Catégories de prestations — Belle Maison Pro' %}
+{% set meta_description = 'Organiser les prestations par familles visibles côté client.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Prestations</p><h1>Catégories de prestations</h1><span>Organiser les prestations par familles visibles côté client.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Catégories</h2><div class="bm-action-list"><a><strong>Coiffure</strong><span>12 prestations</span></a><a><strong>Coloration</strong><span>8 prestations</span></a><a><strong>Soin</strong><span>6 prestations</span></a></div><button class="btn bm-btn bm-btn-primary mt-4">Ajouter une catégorie</button></section>
+{% endblock %}

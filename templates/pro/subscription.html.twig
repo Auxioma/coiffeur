@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Mon abonnement — Belle Maison Pro' %}
+{% set meta_description = 'Gérez le plan, le renouvellement et les options.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Abonnement professionnel</p><h1>Mon abonnement</h1><span>Gérez le plan, le renouvellement et les options.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><div class="bm-admin-panel-head"><div><h2>Plan Premium</h2><p>89 € / mois · renouvellement le 05/07/2026</p></div><span class="bm-status bm-status-success">Actif</span></div><div class="bm-action-list"><a href="{{ path('app_billing_invoices_pro') }}"><strong>Factures</strong><span>Voir et télécharger</span></a><a href="{{ path('app_billing_payment_method_pro') }}"><strong>Moyen de paiement</strong><span>Carte terminant par 4242</span></a><a href="{{ path('app_pricing_pro') }}"><strong>Changer d’offre</strong><span>Comparer les plans</span></a></div></section>
+{% endblock %}

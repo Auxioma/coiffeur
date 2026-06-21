@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Comment choisir le bon salon de coiffure ? — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Guide beauté</p>
+<h1>Comment choisir le bon salon de coiffure ?</h1>
+<p>Un article complet pour comparer les avis, les prix, les prestations et les disponibilités avant de réserver.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container bm-article-layout"><article class="bm-article-body"><p class="bm-eyebrow">Guide coiffure</p><h2>Les critères à regarder avant de réserver</h2><p>Un bon salon doit afficher clairement ses prestations, ses durées, ses prix indicatifs, ses avis clients et ses horaires. La fiche établissement permet de vérifier la qualité du lieu avant de choisir un créneau.</p><h2>Pourquoi réserver après avoir choisi son créneau ?</h2><p>L’utilisateur est plus engagé lorsqu’il a déjà sélectionné la prestation et l’horaire. Le compte client obligatoire intervient donc juste avant la validation finale.</p><h2>À retenir</h2><p>Comparez la note, le nombre d’avis, la spécialité du collaborateur et la politique d’annulation. Sur Belle Maison, le paiement se fait directement au salon.</p></article><aside class="bm-public-panel"><h2>À lire aussi</h2><a class="bm-list-link" href="{{ path('app_blog_category') }}"><strong>Tendances coiffure</strong><span>Voir les articles</span></a></aside></div></section>
+{% endblock %}

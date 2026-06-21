@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Guide beauté du Havre — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Guide local</p>
+<h1>Guide beauté du Havre</h1>
+<p>Quartiers, prestations populaires et conseils pour réserver un rendez-vous beauté au Havre.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Où réserver ?</h2><p>Centre-ville, plage, Sainte-Adresse et quartiers proches.</p><a class="bm-link" href="{{ path('app_city_page') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Prestations demandées</h2><p>Coupe femme, balayage, barbe, ongles et massage.</p><a class="bm-link" href="{{ path('app_category_city_page') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Conseils pratiques</h2><p>Choisir un créneau, vérifier les avis, anticiper les délais.</p><a class="bm-link" href="{{ path('app_blog') }}">Découvrir</a></article></div></div></section>
+{% endblock %}

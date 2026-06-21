@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Détail support — Belle Maison' %}
+{% set meta_description = 'Suivez la conversation avec l’assistance.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Aide</p><h1>Détail support</h1><span>Suivez la conversation avec l’assistance.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Demande #4281</h2><div class="bm-chat-thread"><div><strong>Vous</strong><p>Je souhaite modifier mon rendez-vous.</p></div><div class="is-agent"><strong>Support Belle Maison</strong><p>Bonjour Marine, vous pouvez choisir un autre créneau depuis votre espace client.</p></div></div><textarea class="form-control bm-form-control mt-3" placeholder="Votre réponse" rows="4"></textarea><button class="btn bm-btn bm-btn-primary mt-3">Répondre</button></section>
+{% endblock %}

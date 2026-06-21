@@ -1,0 +1,30 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Recherche salons — Belle Maison' %}
+{% set meta_description = 'Résultats de recherche beauté' %}
+
+{% block body %}
+<section class="bm-discovery-hero">
+<div class="container bm-container">
+<div class="bm-discovery-search">
+<div><label>Que recherchez-vous ?</label><input class="form-control" value="Coiffure femme"/></div>
+<div><label>Où ?</label><input class="form-control" value="Le Havre, 76600"/></div>
+<div><label>Quand ?</label><input class="form-control" value="Aujourd’hui ou demain"/></div>
+<a class="btn bm-btn bm-btn-primary" href="{{ path('app_search_results') }}">Rechercher</a>
+</div>
+<div class="bm-discovery-head"><div><p class="bm-eyebrow">Résultats locaux</p><h1>Coiffeurs disponibles au Havre</h1><p>Comparez les notes, les prix, les disponibilités et réservez sans paiement en ligne.</p></div><a class="btn bm-btn bm-btn-outline" href="{{ path('app_salon_detail') }}"><i class="bi bi-map me-2"></i>Voir la carte</a></div>
+<div class="bm-filter-row"><button>Dispo aujourd’hui</button><button>Note 4,5+</button><button>Prix</button><button>Coupe femme</button><button>Quartier centre-ville</button></div>
+</div>
+</section>
+<section class="bm-discovery-results">
+<div class="container bm-container">
+<div class="row g-4">
+<div class="col-lg-8">
+<article class="bm-result-card"><img alt="Maison Élégance" src="{{ asset('assets/images/salon-1.jpg') }}"/><div><div class="bm-result-card-head"><h2>Maison Élégance</h2><span>4,9 ★ · 512 avis</span></div><p>Salon premium au centre du Havre, expert coupe femme, brushing, coloration et soins profonds.</p><div class="bm-result-tags"><span>Dispo 14:30</span><span>Coupe dès 35 €</span><span>Paiement sur place</span></div><div class="bm-result-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_salon_detail') }}">Voir la fiche</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}">Réserver</a></div></div></article>
+<article class="bm-result-card"><img alt="Atelier du Quai" src="{{ asset('assets/images/salon-2.jpg') }}"/><div><div class="bm-result-card-head"><h2>L’Atelier du Quai</h2><span>4,8 ★ · 387 avis</span></div><p>Coiffure, barbe et soins capillaires dans une atmosphère chaleureuse proche du bassin du Commerce.</p><div class="bm-result-tags"><span>Demain 10:00</span><span>Barbier dès 21 €</span><span>Confirmation immédiate</span></div><div class="bm-result-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_salon_detail') }}">Voir la fiche</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}">Réserver</a></div></div></article>
+<article class="bm-result-card"><img alt="Studio Color" src="{{ asset('assets/images/salon-3.jpg') }}"/><div><div class="bm-result-card-head"><h2>Studio Color</h2><span>4,9 ★ · 611 avis</span></div><p>Balayage, gloss, patine et transformation couleur avec diagnostic personnalisé avant prestation.</p><div class="bm-result-tags"><span>Ce week-end</span><span>Balayage dès 72 €</span><span>Très demandé</span></div><div class="bm-result-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_salon_detail') }}">Voir la fiche</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}">Réserver</a></div></div></article>
+</div>
+<aside class="col-lg-4"><div class="bm-map-placeholder"><i class="bi bi-geo-alt"></i><strong>Carte des salons</strong><span>Centre-ville, Sainte-Adresse, Sanvic, Graville</span></div><div class="bm-discovery-tip"><h3>Astuce anti no-show</h3><p>La réservation nécessite un compte vérifié. Aucun paiement n’est demandé en ligne, mais la politique d’annulation est acceptée avant confirmation.</p></div></aside>
+</div>
+</div>
+</section>
+{% endblock %}

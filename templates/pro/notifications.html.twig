@@ -1,0 +1,19 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Notifications & communications — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Notifications &amp; communications</h1>
+<span>Templates email/SMS, rappels configurables, logs d’envoi et messagerie.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main"><article class="bm-admin-panel"><div class="bm-admin-panel-head"><div><h2>Templates actifs</h2><p>Confirmation, rappel, annulation, remerciement, demande d’avis.</p></div><button class="btn bm-btn bm-btn-primary">Nouveau template</button></div><div class="bm-template-list"><div><strong>Confirmation de RDV</strong><span>Email + SMS · envoyé immédiatement</span><em class="bm-status bm-status-success">Actif</em></div><div><strong>Rappel J-1</strong><span>SMS payant · 18:00 la veille</span><em class="bm-status bm-status-success">Actif</em></div><div><strong>Demande d’avis</strong><span>Email · 3h après le RDV terminé</span><em class="bm-status bm-status-info">Automatisé</em></div></div></article><aside class="bm-admin-panel"><h2>Logs récents</h2><ul class="bm-admin-feed"><li><strong>13:02</strong> SMS rappel envoyé à Marine.</li><li><strong>12:50</strong> Email confirmation échoué pour Sofia.</li><li><strong>11:12</strong> Demande d’avis envoyée à Julien.</li></ul></aside></section>
+{% endblock %}

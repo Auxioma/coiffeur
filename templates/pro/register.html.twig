@@ -1,0 +1,351 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Inscription professionnelle — Belle Maison' %}
+{% set meta_description = 'Inscrivez votre salon, institut ou activité beauté sur Belle Maison. Gagnez en visibilité, centralisez vos demandes de rendez-vous et présentez vos prestations avec une page professionnelle premium.' %}
+
+{% block body %}
+<section aria-labelledby="proHeroTitle" class="bm-pro-hero">
+<div class="container bm-container">
+<div class="bm-pro-hero-panel">
+<div class="row g-0 align-items-stretch">
+<div class="col-xl-7">
+<div class="bm-pro-hero-content">
+<p class="bm-eyebrow">Espace professionnels</p>
+<h1 class="bm-pro-hero-title" id="proHeroTitle">Faites entrer votre salon dans une expérience de réservation premium.</h1>
+<p class="bm-pro-hero-lead">
+                Présentez vos prestations, recevez des demandes qualifiées, organisez votre agenda et donnez à vos clients une expérience simple, élégante et rassurante.
+              </p>
+<div class="bm-pro-hero-actions d-flex flex-wrap gap-3">
+<a class="btn bm-btn bm-btn-primary" href="#pro-registration-form">Inscrire mon établissement</a>
+<a class="btn bm-btn bm-btn-outline" href="#pro-features">Voir les fonctionnalités</a>
+</div>
+<div aria-label="Bénéfices principaux" class="bm-pro-kpi row g-3">
+<div class="col-md-4">
+<div class="bm-pro-kpi-item">
+<strong>24h/24</strong>
+<span>Vos clients peuvent demander un rendez-vous même quand vous êtes fermé.</span>
+</div>
+</div>
+<div class="col-md-4">
+<div class="bm-pro-kpi-item">
+<strong>1 fiche</strong>
+<span>Une vitrine claire pour vos photos, prestations, horaires et avis.</span>
+</div>
+</div>
+<div class="col-md-4">
+<div class="bm-pro-kpi-item">
+<strong>0 friction</strong>
+<span>Un formulaire court pour être rappelé et préparer votre mise en ligne.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-5">
+<aside aria-labelledby="formTitle" class="bm-pro-form-card" id="pro-registration-form">
+<div class="bm-pro-form-head">
+<span class="bm-form-badge"><i class="bi bi-gem"></i> Démo personnalisée</span>
+<h2 id="formTitle">Créer votre espace professionnel</h2>
+<p>Remplissez ces informations. Un conseiller vous recontacte pour valider votre activité, vos prestations et vos besoins.</p>
+</div>
+<form action="#" class="bm-pro-form" method="post" novalidate="">
+<div class="row g-3">
+<div class="col-12">
+<label class="form-label bm-label" for="businessName">Nom de l’établissement</label>
+<input class="form-control bm-input-simple" id="businessName" name="businessName" placeholder="Ex. Maison Louise Coiffure" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="businessType">Activité principale</label>
+<select class="form-select bm-input-simple" id="businessType" name="businessType" required="">
+<option value="">Sélectionner</option>
+<option>Salon de coiffure</option>
+<option>Barbier</option>
+<option>Institut de beauté</option>
+<option>Onglerie</option>
+<option>Spa &amp; massage</option>
+<option>Maquillage / mariage</option>
+<option>Indépendant beauté</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="city">Ville</label>
+<input class="form-control bm-input-simple" id="city" name="city" placeholder="Ex. Le Havre" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="firstName">Prénom</label>
+<input class="form-control bm-input-simple" id="firstName" name="firstName" placeholder="Votre prénom" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="lastName">Nom</label>
+<input class="form-control bm-input-simple" id="lastName" name="lastName" placeholder="Votre nom" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="email">Email professionnel</label>
+<input class="form-control bm-input-simple" id="email" name="email" placeholder="contact@salon.fr" required="" type="email"/>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="phone">Téléphone</label>
+<input class="form-control bm-input-simple" id="phone" name="phone" placeholder="06 00 00 00 00" required="" type="tel"/>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="teamSize">Taille de l’équipe</label>
+<select class="form-select bm-input-simple" id="teamSize" name="teamSize">
+<option>Je travaille seul(e)</option>
+<option>2 à 5 collaborateurs</option>
+<option>6 à 10 collaborateurs</option>
+<option>Plus de 10 collaborateurs</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="callTime">Meilleur moment pour vous appeler</label>
+<select class="form-select bm-input-simple" id="callTime" name="callTime">
+<option>Matin</option>
+<option>Après-midi</option>
+<option>Fin de journée</option>
+</select>
+</div>
+<div class="col-12">
+<label class="form-label bm-label" for="message">Votre besoin principal</label>
+<textarea class="form-control bm-input-simple" id="message" name="message" placeholder="Ex. Je veux améliorer ma visibilité, réduire les appels, gérer mes réservations en ligne..." rows="4"></textarea>
+</div>
+<div class="col-12">
+<div class="form-check bm-check">
+<input class="form-check-input" id="consent" required="" type="checkbox" value="1"/>
+<label class="form-check-label" for="consent">
+                        J’accepte d’être recontacté au sujet de ma demande d’inscription professionnelle.
+                      </label>
+</div>
+</div>
+<div class="col-12">
+<button class="btn bm-btn bm-btn-primary w-100 bm-btn-register" type="submit">Demander ma démonstration</button>
+</div>
+</div>
+</form>
+<p class="bm-form-note">Aucune mise en ligne automatique : votre fiche est préparée avec vous avant publication.</p>
+</aside>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Promesses professionnelles" class="bm-section bm-pro-strip">
+<div class="container bm-container">
+<div class="row g-3">
+<div class="col-md-6 col-xl-3">
+<div class="bm-pro-strip-item"><i class="bi bi-calendar2-week"></i><strong>Agenda plus lisible</strong><span>Visualisez vos demandes, créneaux et prestations en un seul endroit.</span></div>
+</div>
+<div class="col-md-6 col-xl-3">
+<div class="bm-pro-strip-item"><i class="bi bi-graph-up-arrow"></i><strong>Visibilité locale</strong><span>Présentez votre établissement aux clients qui recherchent près de chez eux.</span></div>
+</div>
+<div class="col-md-6 col-xl-3">
+<div class="bm-pro-strip-item"><i class="bi bi-chat-heart"></i><strong>Relation client</strong><span>Valorisez vos avis, vos photos, vos spécialités et votre savoir-faire.</span></div>
+</div>
+<div class="col-md-6 col-xl-3">
+<div class="bm-pro-strip-item"><i class="bi bi-phone"></i><strong>Mobile ready</strong><span>Une expérience claire sur téléphone, tablette et ordinateur.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section" id="pro-features">
+<div class="container bm-container">
+<div class="row align-items-end g-4 mb-4">
+<div class="col-lg-7">
+<p class="bm-eyebrow">Solution métier</p>
+<h2 class="bm-section-title">Tout ce qu’un salon doit présenter avant de recevoir une réservation.</h2>
+<p class="bm-section-text">La page professionnelle doit rassurer vite : prestations, tarifs, durée, photos, horaires, avis et disponibilité.</p>
+</div>
+<div class="col-lg-5 text-lg-end">
+<a class="bm-link" href="#pro-registration-form">Commencer l’inscription</a>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-4">
+<article class="bm-pro-feature-card">
+<i class="bi bi-calendar-check"></i>
+<h3>Réservations organisées</h3>
+<p>Présentez vos créneaux, vos prestations et vos contraintes pour limiter les échanges inutiles.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-pro-feature-card">
+<i class="bi bi-shop-window"></i>
+<h3>Fiche établissement premium</h3>
+<p>Ajoutez vos photos, votre histoire, vos spécialités, vos horaires et votre zone de service.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-pro-feature-card">
+<i class="bi bi-tags"></i>
+<h3>Prestations structurées</h3>
+<p>Affichez clairement le nom de chaque service, la durée estimée, le prix et les informations utiles.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-pro-feature-card">
+<i class="bi bi-star-half"></i>
+<h3>Preuve sociale</h3>
+<p>Mettez en avant les retours clients, les notes et les expériences récentes pour accélérer la décision.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-pro-feature-card">
+<i class="bi bi-envelope-paper"></i>
+<h3>Demandes qualifiées</h3>
+<p>Recevez les informations essentielles avant l’appel : activité, ville, équipe, besoin et contact.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-pro-feature-card">
+<i class="bi bi-bar-chart"></i>
+<h3>Pilotage plus clair</h3>
+<p>Préparez une base saine pour suivre vos demandes, vos prestations fortes et vos opportunités locales.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-pro-split">
+<div class="container bm-container">
+<div class="row g-5 align-items-center">
+<div class="col-lg-6">
+<img alt="Salon de beauté premium avec postes de coiffure et miroirs éclairés" class="bm-pro-split-image" src="{{ asset('assets/images/pro-salon.jpg') }}"/>
+</div>
+<div class="col-lg-6">
+<p class="bm-eyebrow">Expérience premium</p>
+<h2 class="bm-section-title">Une inscription pensée pour les pros qui veulent rester concentrés sur leurs clients.</h2>
+<p class="bm-section-text">La page ne doit pas ressembler à un formulaire administratif. Elle doit donner envie, rassurer, expliquer la valeur et rendre la prise de contact évidente.</p>
+<div class="bm-pro-check-list">
+<div><i class="bi bi-check2-circle"></i><span>Un formulaire court, sans surcharge inutile.</span></div>
+<div><i class="bi bi-check2-circle"></i><span>Des bénéfices concrets : visibilité, agenda, fiche, prestations, avis.</span></div>
+<div><i class="bi bi-check2-circle"></i><span>Des CTA répétés aux bons endroits pour maximiser la conversion.</span></div>
+<div><i class="bi bi-check2-circle"></i><span>Un design cohérent avec la home page : crème, noir, vert profond et touches dorées.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-pro-process">
+<div class="container bm-container">
+<div class="bm-section-heading text-center">
+<p class="bm-eyebrow">Mise en ligne</p>
+<h2 class="bm-section-title">Un parcours simple en trois étapes.</h2>
+</div>
+<div class="row g-4">
+<div class="col-md-4">
+<article class="bm-pro-process-card">
+<span>01</span>
+<h3>Demande d’inscription</h3>
+<p>Vous renseignez votre établissement, votre activité et vos coordonnées professionnelles.</p>
+</article>
+</div>
+<div class="col-md-4">
+<article class="bm-pro-process-card">
+<span>02</span>
+<h3>Échange personnalisé</h3>
+<p>Nous clarifions vos prestations, vos objectifs, votre organisation et les informations à publier.</p>
+</article>
+</div>
+<div class="col-md-4">
+<article class="bm-pro-process-card">
+<span>03</span>
+<h3>Préparation de la fiche</h3>
+<p>Votre vitrine est structurée pour inspirer confiance et faciliter la prise de rendez-vous.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-pro-audience">
+<div class="container bm-container">
+<div class="row align-items-end g-4 mb-4">
+<div class="col-lg-7">
+<p class="bm-eyebrow">Métiers accompagnés</p>
+<h2 class="bm-section-title">Une base adaptable à chaque activité beauté.</h2>
+</div>
+<div class="col-lg-5 text-lg-end">
+<a class="bm-link" href="#pro-registration-form">Présenter mon activité</a>
+</div>
+</div>
+<div class="bm-pro-audience-grid">
+<a href="#pro-registration-form"><i class="bi bi-scissors"></i><span>Salon de coiffure</span></a>
+<a href="#pro-registration-form"><i class="bi bi-brush"></i><span>Barbier</span></a>
+<a href="#pro-registration-form"><i class="bi bi-stars"></i><span>Institut de beauté</span></a>
+<a href="#pro-registration-form"><i class="bi bi-hand-index-thumb"></i><span>Onglerie</span></a>
+<a href="#pro-registration-form"><i class="bi bi-flower1"></i><span>Spa &amp; massage</span></a>
+<a href="#pro-registration-form"><i class="bi bi-palette"></i><span>Maquillage</span></a>
+<a href="#pro-registration-form"><i class="bi bi-gem"></i><span>Mariage</span></a>
+<a href="#pro-registration-form"><i class="bi bi-person-hearts"></i><span>Indépendant beauté</span></a>
+</div>
+</div>
+</section>
+<section class="bm-section bm-pro-testimonials">
+<div class="container bm-container">
+<div class="bm-section-heading text-center">
+<p class="bm-eyebrow">Paroles de professionnels</p>
+<h2 class="bm-section-title">Un discours rassurant pour décider de s’inscrire.</h2>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-4">
+<blockquote class="bm-pro-quote">
+<div class="bm-stars">★★★★★</div>
+<p>“La fiche professionnelle met mieux en valeur nos prestations. Les clientes comprennent plus vite ce que nous proposons.”</p>
+<footer>Élodie R. <span>Salon de coiffure</span></footer>
+</blockquote>
+</div>
+<div class="col-md-6 col-xl-4">
+<blockquote class="bm-pro-quote">
+<div class="bm-stars">★★★★★</div>
+<p>“Le formulaire est clair et l’approche fait beaucoup plus premium qu’une simple inscription froide.”</p>
+<footer>Nassim B. <span>Barbier</span></footer>
+</blockquote>
+</div>
+<div class="col-md-6 col-xl-4">
+<blockquote class="bm-pro-quote">
+<div class="bm-stars">★★★★★</div>
+<p>“La mise en avant des photos, des avis et des prix aide les clients à réserver avec plus de confiance.”</p>
+<footer>Clara M. <span>Institut de beauté</span></footer>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-faq bm-pro-faq" id="pro-faq">
+<div class="container bm-container">
+<div class="row g-4">
+<div class="col-lg-4">
+<p class="bm-eyebrow">Questions fréquentes</p>
+<h2 class="bm-section-title">Avant de rejoindre Belle Maison</h2>
+</div>
+<div class="col-lg-8">
+<div class="accordion" id="proFaqAccordion">
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button" data-bs-target="#proFaq1" data-bs-toggle="collapse" type="button">À qui s’adresse cette page professionnelle ?</button></h3>
+<div class="accordion-collapse collapse show" data-bs-parent="#proFaqAccordion" id="proFaq1"><div class="accordion-body">Elle s’adresse aux salons de coiffure, barbiers, instituts, ongleries, spas, maquilleurs, professionnels mariage et indépendants beauté.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#proFaq2" data-bs-toggle="collapse" type="button">La fiche est-elle publiée immédiatement ?</button></h3>
+<div class="accordion-collapse collapse" data-bs-parent="#proFaqAccordion" id="proFaq2"><div class="accordion-body">Non. Cette page est conçue pour recueillir une demande qualifiée. La fiche peut ensuite être préparée, vérifiée et enrichie avant publication.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#proFaq3" data-bs-toggle="collapse" type="button">Quelles informations faut-il préparer ?</button></h3>
+<div class="accordion-collapse collapse" data-bs-parent="#proFaqAccordion" id="proFaq3"><div class="accordion-body">Préparez le nom de votre établissement, vos prestations, vos prix, vos horaires, quelques photos et vos coordonnées professionnelles.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#proFaq4" data-bs-toggle="collapse" type="button">Puis-je adapter cette page à Symfony plus tard ?</button></h3>
+<div class="accordion-collapse collapse" data-bs-parent="#proFaqAccordion" id="proFaq4"><div class="accordion-body">Oui. La structure HTML est découpée en sections propres et le SCSS est organisé pour être transformé en composants Twig.</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-pro-final-cta">
+<div class="container bm-container">
+<div class="bm-pro-final-panel">
+<p class="bm-eyebrow bm-eyebrow-light">Dernière étape</p>
+<h2>Prêt à présenter votre établissement avec une image plus premium ?</h2>
+<p>Commencez par une demande simple. La page pourra ensuite être connectée à Symfony, à une entité professionnelle et à un workflow de validation.</p>
+<a class="btn bm-btn bm-btn-light" href="#pro-registration-form">Remplir le formulaire</a>
+</div>
+</div>
+</section>
+{% endblock %}

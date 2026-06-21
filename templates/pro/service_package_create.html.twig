@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Créer un forfait — Belle Maison Pro' %}
+{% set meta_description = 'Composer plusieurs prestations à prix groupé.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Prestations</p><h1>Créer un forfait</h1><span>Composer plusieurs prestations à prix groupé.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Forfait beauté</h2><div class="row g-3"><div class="col-md-6"><label>Nom</label><input class="form-control bm-form-control" value="Balayage + soin + brushing"/></div><div class="col-md-6"><label>Prix forfait</label><input class="form-control bm-form-control" value="129 €"/></div></div><div class="bm-action-list mt-4"><a>Balayage + patine <strong>92 €</strong></a><a>Soin profond <strong>49 €</strong></a><a>Brushing <strong>35 €</strong></a></div><button class="btn bm-btn bm-btn-primary mt-4">Créer le forfait</button></section>
+{% endblock %}

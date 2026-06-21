@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Beauté au Havre — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Guide local</p>
+<h1>Beauté au Havre</h1>
+<p>Trouvez les meilleurs établissements beauté du Havre, par quartier et disponibilité.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Centre-ville</h2><p>Salons proches des commerces et transports.</p><a class="bm-link" href="{{ path('app_category_city_page') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Sainte-Adresse</h2><p>Adresses premium autour du bord de mer.</p><a class="bm-link" href="{{ path('app_search_results') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Graville</h2><p>Instituts et salons de quartier.</p><a class="bm-link" href="{{ path('app_search_results') }}">Découvrir</a></article></div></div></section>
+{% endblock %}

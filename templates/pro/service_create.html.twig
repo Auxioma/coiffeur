@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Créer une prestation — Belle Maison Pro' %}
+{% set meta_description = 'Définir nom, durée, prix, catégorie et ressources.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace professionnel</p><h1>Créer une prestation</h1><span>Définir nom, durée, prix, catégorie et ressources.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Créer une prestation</h2><p>Définir nom, durée, prix, catégorie et ressources.</p><div class="row g-3"><div class="col-md-6"><label>Nom de la prestation</label><input class="form-control bm-form-control" value="Coupe femme + brushing"/></div><div class="col-md-6"><label>Catégorie</label><input class="form-control bm-form-control" value="Coiffure"/></div><div class="col-md-4"><label>Durée estimée</label><input class="form-control bm-form-control" value="1h15"/></div><div class="col-md-4"><label>Prix à partir de</label><input class="form-control bm-form-control" value="58 €"/></div><div class="col-md-4"><label>Ressource nécessaire</label><input class="form-control bm-form-control" value="Fauteuil coiffure"/></div><div class="col-12"><label>Description</label><textarea class="form-control bm-form-control" rows="4">Diagnostic, shampoing, coupe et coiffage.</textarea></div><div class="bm-booking-actions"><button class="btn bm-btn bm-btn-outline">Annuler</button><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></div></section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layouts/booking.html.twig' %}
+{% set page_title = 'Annuler un rendez-vous — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Gestion du rendez-vous</p>
+<h1>Annuler un rendez-vous</h1>
+<p>Indiquez le motif d’annulation. La règle standard autorise l’annulation jusqu’à 24h avant.</p>
+</div>
+</section>
+<section class="bm-booking-section"><div class="container bm-container"><div class="bm-booking-grid"><article class="bm-booking-panel"><h2>Annuler un rendez-vous</h2><p>Indiquez le motif d’annulation. La règle standard autorise l’annulation jusqu’à 24h avant.</p><div class="row g-3"><div class="col-md-6"><label>Date</label><input class="form-control bm-form-control" value="2026-06-25"/></div><div class="col-md-6"><label>Heure</label><select class="form-select bm-form-control"><option>14:30</option><option>15:45</option><option>17:00</option></select></div><div class="col-12"><label>Motif d’annulation</label><textarea class="form-control bm-form-control" placeholder="Expliquez votre demande au salon" rows="4"></textarea></div></div><div class="bm-policy-box mt-4"><strong>Important</strong><p>Le salon recevra une notification. Aucun paiement n’étant effectué en ligne, merci de prévenir suffisamment tôt.</p></div><div class="bm-booking-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_user_appointment_detail') }}">Retour</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_user_appointments') }}">Confirmer</a></div></article><aside class="bm-booking-summary-card"><p class="bm-admin-kicker">Rendez-vous actuel</p><h2>Maison Élégance</h2><div class="bm-booking-summary-line"><span>Date</span><strong>Jeudi 25 juin · 14:30</strong></div><div class="bm-booking-summary-line"><span>Prestation</span><strong>Coupe femme + brushing</strong></div><div class="bm-booking-summary-price"><span>À régler sur place</span><strong>58 €</strong></div></aside></div></div></section>
+{% endblock %}

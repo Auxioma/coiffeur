@@ -1,0 +1,24 @@
+{% extends 'layouts/booking.html.twig' %}
+{% set page_title = 'Créneau expiré — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Réservation sans paiement en ligne</p>
+<h1>Créneau expiré</h1>
+<p>Ce créneau vient d’être réservé par un autre client. Choisissez un horaire proche pour continuer sans recommencer le tunnel.</p>
+</div>
+</section>
+<section class="bm-booking-section">
+<div class="container bm-container bm-narrow">
+<article class="bm-state-card bm-state-warning">
+<div class="bm-state-icon"><i class="bi bi-clock-history"></i></div>
+<p class="bm-eyebrow">Tunnel de réservation</p>
+<h1>Créneau expiré</h1>
+<p>Ce créneau vient d’être réservé par un autre client. Choisissez un horaire proche pour continuer sans recommencer le tunnel.</p>
+<div class="bm-state-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_slot') }}">Voir les créneaux proches</a><a class="btn bm-btn bm-btn-outline" href="{{ path('app_salon_detail') }}">Revenir au salon</a></div>
+</article>
+</div>
+</section>
+{% endblock %}

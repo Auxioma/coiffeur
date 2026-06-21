@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ locale|default('en') }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ page_title|default('Belle Maison') }}{% endblock %}</title>
+    <style>
+        {% block email_styles %}
+        body{margin:0;background:#f7f1ea;font-family:Arial,sans-serif;color:#222}
+        .wrap{max-width:620px;margin:0 auto;padding:32px 16px}
+        .card{background:#fff;border-radius:24px;padding:32px;border:1px solid #eadfd4}
+        .brand{font-weight:800;letter-spacing:.28em;margin-bottom:28px}
+        h1{font-family:Georgia,serif;font-size:32px;line-height:1.05;margin:0 0 12px}
+        p{line-height:1.6;color:#625d57}
+        .box{background:#fbf7f2;border:1px solid #eadfd4;border-radius:18px;padding:18px;margin:22px 0}
+        .btn{display:inline-block;background:#0d5c46;color:#fff;text-decoration:none;padding:14px 20px;border-radius:12px;font-weight:700}
+        .muted{font-size:12px;color:#8a8178;margin-top:24px}
+        {% endblock %}
+    </style>
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>

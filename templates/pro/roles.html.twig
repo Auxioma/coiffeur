@@ -1,0 +1,19 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Permissions & rôles — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Permissions &amp; rôles</h1>
+<span>Matrice gérant, manager, collaborateur et droits personnalisables.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-panel"><div class="bm-admin-panel-head"><div><h2>Matrice de permissions</h2><p>Configurer les droits par rôle avant l’intégration finale.</p></div><button class="btn bm-btn bm-btn-primary">Créer un rôle</button></div><div class="table-responsive"><table class="table bm-admin-table bm-permission-table"><thead><tr><th>Action</th><th>Gérant</th><th>Manager</th><th>Collaborateur</th></tr></thead><tbody><tr><td>Voir tous les plannings</td><td>Oui</td><td>Oui</td><td>Son planning uniquement</td></tr><tr><td>Modifier les prix</td><td>Oui</td><td>Selon config</td><td>Non</td></tr><tr><td>Voir le CA global</td><td>Oui</td><td>Selon config</td><td>Non</td></tr><tr><td>Gérer l’équipe</td><td>Oui</td><td>Limité</td><td>Non</td></tr><tr><td>Facturation SaaS</td><td>Oui</td><td>Non</td><td>Non</td></tr></tbody></table></div></section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Agenda & planning — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Agenda &amp; planning</h1>
+<span>Vue jour avec collaborateurs, conflits, buffers, ressources et liste d’attente.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+<a class="btn bm-btn bm-btn-primary" href="#"><i class="bi bi-plus-lg me-2"></i>Bloquer un créneau</a>
+</div>
+</header>
+<section class="bm-admin-panel">
+<div class="bm-admin-panel-head">
+<div><h2>Planning du mardi 23 juin</h2><p>Colonnes collaborateurs, clic sur créneau vide, drag &amp; drop prévu en intégration JS.</p></div>
+<div class="bm-admin-segment"><button class="is-active">Jour</button><button>Semaine</button><button>Mois</button><button>Liste</button></div>
+</div>
+<div class="bm-calendar-toolbar">
+<button class="btn bm-btn bm-btn-soft"><i class="bi bi-chevron-left"></i></button>
+<strong>Aujourd’hui</strong>
+<button class="btn bm-btn bm-btn-soft"><i class="bi bi-chevron-right"></i></button>
+<span class="bm-admin-chip">4 collaborateurs</span><span class="bm-admin-chip">2 cabines disponibles</span><span class="bm-admin-chip is-warning">1 conflit</span>
+</div>
+<div class="bm-calendar">
+<div class="bm-calendar-head"><span></span><strong>Clara</strong><strong>Alex</strong><strong>Emma</strong><strong>Nina</strong></div>
+<div class="bm-calendar-row"><time>09:00</time><div><div class="bm-calendar-event is-confirmed"><strong>Coupe + brushing</strong><span>Marine L. · 45 min</span></div></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>10:00</time><div><button class="bm-calendar-empty">+</button></div><div><div class="bm-calendar-event is-warning"><strong>Barbe premium</strong><span>Julien M. · À confirmer</span></div></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>11:00</time><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>12:00</time><div><div class="bm-calendar-buffer">Pause / nettoyage</div></div><div><div class="bm-calendar-buffer">Pause / nettoyage</div></div><div><div class="bm-calendar-buffer">Pause / nettoyage</div></div><div><div class="bm-calendar-buffer">Pause / nettoyage</div></div></div>
+<div class="bm-calendar-row"><time>13:00</time><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>14:00</time><div><div class="bm-calendar-event is-confirmed"><strong>Coupe + brushing</strong><span>Marine L. · 45 min</span></div></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>15:00</time><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>16:00</time><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><div class="bm-calendar-event is-danger"><strong>Conflit</strong><span>Chevauchement détecté</span></div></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>17:00</time><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+<div class="bm-calendar-row"><time>18:00</time><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div><div><button class="bm-calendar-empty">+</button></div></div>
+</div>
+</section>
+<section class="bm-admin-grid bm-admin-grid-3 mt-4">
+<article class="bm-admin-panel"><h2>Liste d’attente</h2><p class="bm-admin-muted">3 clients attendent un créneau samedi après-midi.</p><a class="bm-link" href="#">Ouvrir la waitlist</a></article>
+<article class="bm-admin-panel"><h2>Ressources</h2><p class="bm-admin-muted">Cabine soin visage occupée 14:00–15:30. Fauteuil 2 indisponible.</p><a class="bm-link" href="{{ path('app_availability_pro') }}">Gérer les ressources</a></article>
+<article class="bm-admin-panel"><h2>Conflits détectés</h2><p class="bm-admin-muted">Un RDV chevauche le congé d’Emma. Une alerte visuelle est affichée.</p><a class="bm-link" href="{{ path('app_appointment_detail_pro') }}">Résoudre</a></article>
+</section>
+{% endblock %}

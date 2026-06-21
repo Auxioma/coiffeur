@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Support client — Belle Maison' %}
+{% set meta_description = 'Retrouvez vos demandes et contactez l’assistance.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Aide</p><h1>Support client</h1><span>Retrouvez vos demandes et contactez l’assistance.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main"><article class="bm-admin-panel"><h2>Créer une demande</h2><div class="row g-3"><div class="col-md-6"><label>Objet</label><select class="form-select bm-form-control"><option>Problème de rendez-vous</option><option>Compte client</option><option>Avis</option></select></div><div class="col-md-6"><label>Rendez-vous lié</label><select class="form-select bm-form-control"><option>Maison Élégance · 25 juin</option></select></div><div class="col-12"><label>Message</label><textarea class="form-control bm-form-control" rows="5"></textarea></div></div><button class="btn bm-btn bm-btn-primary mt-4">Envoyer</button></article><aside class="bm-admin-panel"><h2>Mes demandes</h2><a class="bm-list-link" href="{{ path('app_user_support_detail') }}"><strong>Demande #4281</strong><span>Réponse reçue · voir le détail</span></a></aside></section>
+{% endblock %}

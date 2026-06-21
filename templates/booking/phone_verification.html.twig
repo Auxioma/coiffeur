@@ -1,0 +1,24 @@
+{% extends 'layouts/booking.html.twig' %}
+{% set page_title = 'Vérification du téléphone — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Réservation sans paiement en ligne</p>
+<h1>Vérification du téléphone</h1>
+<p>Saisissez le code reçu par SMS pour sécuriser votre premier rendez-vous et limiter les réservations anonymes.</p>
+</div>
+</section>
+<section class="bm-booking-section">
+<div class="container bm-container bm-narrow">
+<article class="bm-state-card bm-state-info">
+<div class="bm-state-icon"><i class="bi bi-phone"></i></div>
+<p class="bm-eyebrow">Tunnel de réservation</p>
+<h1>Vérification du téléphone</h1>
+<p>Saisissez le code reçu par SMS pour sécuriser votre premier rendez-vous et limiter les réservations anonymes.</p>
+<div class="bm-state-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_summary') }}">Valider le code</a><a class="btn bm-btn bm-btn-outline" href="{{ path('app_booking_phone_verification') }}">Recevoir un nouveau code</a></div>
+</article>
+</div>
+</section>
+{% endblock %}

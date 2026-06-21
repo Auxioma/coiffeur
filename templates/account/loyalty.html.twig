@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Fidélité — Belle Maison' %}
+{% set meta_description = 'Consultez vos compteurs de fidélité par établissement.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Fidélité</h1><span>Consultez vos compteurs de fidélité par établissement.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-grid bm-user-grid-main"><article class="bm-user-panel"><h2>Programme de fidélité</h2><p>Compteur informatif géré par le salon, sans transaction monétaire en ligne.</p><div class="bm-loyalty-card"><span>Maison Élégance</span><strong>7 / 10 visites</strong><div class="bm-loyalty-bar"><i style="width:70%"></i></div><small>Encore 3 visites avant votre récompense.</small></div><div class="bm-loyalty-card"><span>Studio Color</span><strong>3 / 6 soins</strong><div class="bm-loyalty-bar"><i style="width:50%"></i></div><small>Forfait soins capillaires.</small></div></article><aside class="bm-user-panel"><h2>Important</h2><p>Les avantages sont validés par le salon lors de votre passage en caisse. Aucun paiement ni cagnotte ne transite par Belle Maison.</p></aside></section>
+{% endblock %}
