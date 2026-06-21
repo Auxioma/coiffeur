@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Détail du rendez-vous — Belle Maison' %}
+{% set meta_description = 'Retrouvez toutes les informations utiles de votre rendez-vous.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Détail du rendez-vous</h1><span>Retrouvez toutes les informations utiles de votre rendez-vous.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-grid bm-user-grid-main"><article class="bm-user-panel"><p class="bm-admin-kicker">Rendez-vous confirmé</p><h2>Coupe femme + brushing</h2><div class="bm-detail-list"><div><span>Date</span><strong>Jeudi 25 juin · 14:30</strong></div><div><span>Salon</span><strong>Maison Élégance · 12 rue de Paris, Le Havre</strong></div><div><span>Collaboratrice</span><strong>Clara Martin</strong></div><div><span>Durée</span><strong>1h15</strong></div><div><span>Prix estimé</span><strong>58 € · paiement sur place</strong></div><div><span>Politique</span><strong>Annulation possible jusqu’à 24h avant</strong></div></div><div class="bm-booking-actions"><button class="btn bm-btn bm-btn-primary">Modifier le créneau</button><button class="btn bm-btn bm-btn-outline">Annuler le RDV</button></div></article><aside class="bm-user-panel"><h2>Rappels</h2><p>Vous recevrez une confirmation immédiate, puis un rappel J-1 et un rappel H-2 selon les préférences du salon.</p><div class="bm-notification-log"><span>Confirmation envoyée</span><span>Rappel J-1 prévu</span><span>SMS “Répondez OUI” prévu</span></div></aside></section>
+{% endblock %}

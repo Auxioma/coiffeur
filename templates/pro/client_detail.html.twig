@@ -1,0 +1,29 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Fiche client — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Fiche client</h1>
+<span>Historique complet, notes professionnelles, achats, photos et consentements.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main">
+<article class="bm-admin-panel">
+<div class="bm-profile-head"><div class="bm-avatar">CB</div><div><h2>Camille B.</h2><p>camille@example.com · 06 12 34 56 78 · Le Havre</p></div><em class="bm-status bm-status-success">Cliente active</em></div>
+<div class="bm-admin-grid bm-admin-grid-3 mt-4"><div class="bm-mini-card"><span>Panier moyen</span><strong>140 €</strong></div><div class="bm-mini-card"><span>Dernière visite</span><strong>12 juin</strong></div><div class="bm-mini-card"><span>Tag</span><strong>Coloration</strong></div></div>
+<h3 class="bm-admin-subtitle">Notes professionnelles</h3>
+<div class="bm-note-sensitive"><i class="bi bi-shield-lock"></i><div><strong>Données sensibles</strong><p>Allergie légère aux produits oxydants. Prévoir test cutané 48h avant coloration.</p></div></div>
+<h3 class="bm-admin-subtitle">Historique rendez-vous</h3>
+<ul class="bm-admin-feed"><li><strong>23 juin</strong> Balayage lumineux + soin — à venir.</li><li><strong>12 juin</strong> Brushing signature — payé 45 €.</li><li><strong>18 mai</strong> Coloration racines — payé 95 €.</li></ul>
+</article>
+<aside class="bm-admin-panel"><h2>Consentements RGPD</h2><div class="bm-check-list"><label><input checked="" type="checkbox"/> Emails marketing</label><label><input checked="" type="checkbox"/> SMS rappel</label><label><input type="checkbox"/> Utilisation photos avant/après</label></div><button class="btn bm-btn bm-btn-primary w-100 mt-3">Mettre à jour</button></aside>
+</section>
+{% endblock %}

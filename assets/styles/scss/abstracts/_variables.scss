@@ -1,0 +1,57 @@
+/* =========================================================
+   ABSTRACTS / VARIABLES
+   Fichier central du design system.
+   On ajoute ici les couleurs, typographies, espacements,
+   rayons et ombres avant d'écrire les composants.
+   ========================================================= */
+
+$bm-font-body: "Inter", sans-serif;
+$bm-font-title: "Cormorant Garamond", serif;
+
+$bm-ink: #171511;
+$bm-muted: #746d63;
+$bm-muted-soft: #938a7f;
+$bm-bg: #fbf7f1;
+$bm-surface: #fffdf9;
+$bm-surface-strong: #ffffff;
+$bm-cream: #f1e7da;
+$bm-cream-soft: #f8efe5;
+$bm-border: #e8dccd;
+$bm-border-strong: #d9c7b6;
+$bm-primary: #074f3d;
+$bm-primary-dark: #043729;
+$bm-primary-soft: #e8f1ed;
+$bm-gold: #c89c54;
+$bm-star: #d9a441;
+$bm-danger: #a45f4f;
+
+$bm-radius-xs: .65rem;
+$bm-radius-sm: .85rem;
+$bm-radius-md: 1.1rem;
+$bm-radius-lg: 1.5rem;
+$bm-radius-xl: 2.1rem;
+$bm-radius-pill: 999px;
+
+$bm-shadow-xs: 0 6px 18px rgba(23, 21, 17, .045);
+$bm-shadow-sm: 0 12px 28px rgba(23, 21, 17, .06);
+$bm-shadow-md: 0 18px 44px rgba(23, 21, 17, .085);
+$bm-shadow-lg: 0 28px 70px rgba(23, 21, 17, .13);
+
+$bm-container: 1650px;
+
+/* Variables Bootstrap à garder si Bootstrap est compilé en local.
+   Dans cette maquette, Bootstrap est chargé en CDN puis overridé par app.css.
+*/
+$primary: $bm-primary;
+$secondary: $bm-cream;
+$success: $bm-primary;
+$light: $bm-bg;
+$dark: $bm-ink;
+$body-bg: $bm-bg;
+$body-color: $bm-ink;
+$font-family-sans-serif: $bm-font-body;
+$border-radius: $bm-radius-md;
+$border-radius-lg: $bm-radius-lg;
+$btn-border-radius: $bm-radius-sm;
+$input-border-radius: $bm-radius-sm;
+$card-border-radius: $bm-radius-md;

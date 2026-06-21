@@ -27,7 +27,7 @@ final class BookingExtendedFixtures extends Fixture implements DependentFixtureI
 
             $client = $this->getReference(UserFixtures::CLIENT_REFERENCE_PREFIX.$clientNumber, User::class);
             $service = $this->getReference(
-                ProfessionalDemoFixtures::SERVICE_REFERENCE_PREFIX.$establishmentNumber.'_massage',
+                ProfessionalDemoFixtures::SERVICE_REFERENCE_PREFIX.$establishmentNumber.'_soin-cheveux',
                 Service::class
             );
 
@@ -36,7 +36,7 @@ final class BookingExtendedFixtures extends Fixture implements DependentFixtureI
                 ->setClient($client)
                 ->setService($service)
                 ->setPreferredMember(null)
-                ->setPreferredDate(new \DateTimeImmutable('+'.($i + 2).' days'))
+                ->setPreferredDate(new \DateTime('+'.($i + 2).' days'))
                 ->setPreferredPeriod($i % 3 === 0 ? 'morning' : 'afternoon')
                 ->setStatus($i % 5 === 0 ? 'contacted' : 'open')
                 ->setNote('Recherche un créneau plus proche si une place se libère.');

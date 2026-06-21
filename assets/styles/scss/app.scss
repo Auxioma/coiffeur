@@ -1,0 +1,31 @@
+/* =========================================================
+   APP.SCSS
+   Point d’entrée SCSS du projet.
+
+   Compilation :
+   npx sass assets/scss/app.scss assets/css/app.css --style=expanded
+
+   Bootstrap est chargé en CDN dans le HTML pour cette maquette.
+   En projet réel, tu peux compiler Bootstrap localement en ajoutant
+   @use "../../../node_modules/bootstrap/scss/bootstrap";
+   après les variables.
+   ========================================================= */
+
+@use "abstracts/variables" as *; 
+@use "abstracts/mixins" as *;
+
+@use "base/base";
+@use "components/buttons";
+@use "components/forms";
+@use "components/cards";
+@use "components/faq";
+@use "layout/header";
+@use "layout/footer";
+@use "pages/home";
+@use "pages/register-pro";
+@use "pages/auth";
+@use "pages/admin";
+@use "pages/client";
+@use "pages/public";
+@use "pages/actions";
+@use "pages/responsive";

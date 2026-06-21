@@ -1,0 +1,16 @@
+{% set supported_locales = supported_locales|default(['en','fr','de','es','it','pt','nl','pl','ro','bg','hr','cs','da','et','fi','el','hu','ga','lv','lt','mt','sk','sl','sv']) %}
+<div class="dropdown bm-locale-switcher">
+    <button class="btn bm-btn bm-btn-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ app.request.locale|default('en')|upper }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        {% for locale in supported_locales %}
+            <li>
+                <a class="dropdown-item {{ app.request.locale == locale ? 'active' : '' }}"
+                   href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': locale})) }}">
+                    {{ locale|upper }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

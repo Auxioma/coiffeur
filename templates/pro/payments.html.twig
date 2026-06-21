@@ -1,0 +1,20 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Paiements & facturation — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Paiements &amp; facturation</h1>
+<span>Caisse journalière, acomptes, remboursements, exports comptables et litiges.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-4"><article class="bm-admin-metric"><span>Caisse du jour</span><strong>1 284 €</strong><small>Carte 74% · espèces 18% · chèque 8%</small></article><article class="bm-admin-metric"><span>Acomptes encaissés</span><strong>390 €</strong><small>13 réservations en ligne</small></article><article class="bm-admin-metric"><span>Remboursements</span><strong>45 €</strong><small>1 remboursement partiel</small></article><article class="bm-admin-metric"><span>Litiges</span><strong>0</strong><small>Aucune contestation active</small></article></section>
+<section class="bm-admin-panel mt-4"><div class="bm-admin-panel-head"><div><h2>Transactions</h2><p>Suivi des états : en attente, échoué, remboursé partiellement.</p></div><button class="btn bm-btn bm-btn-soft">Exporter CSV</button></div><div class="table-responsive"><table class="table bm-admin-table"><thead><tr><th>Client</th><th>Prestation</th><th>Moyen</th><th>Montant</th><th>État</th></tr></thead><tbody><tr><td>Marine L.</td><td>Coupe + brushing</td><td>Carte</td><td>48 €</td><td><em class="bm-status bm-status-success">Payé</em></td></tr><tr><td>Camille B.</td><td>Balayage</td><td>Acompte en ligne</td><td>30 €</td><td><em class="bm-status bm-status-success">Payé</em></td></tr><tr><td>Sofia D.</td><td>Manucure</td><td>Carte</td><td>45 €</td><td><em class="bm-status bm-status-warning">En attente</em></td></tr></tbody></table></div></section>
+{% endblock %}

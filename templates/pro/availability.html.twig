@@ -1,0 +1,23 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Disponibilités & règles — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Disponibilités &amp; règles</h1>
+<span>Horaires, politiques, délais de réservation, acomptes, jours fériés et ressources.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main">
+<article class="bm-admin-panel"><h2>Horaires d’ouverture</h2><div class="bm-schedule-list"><div><strong>Lundi</strong><span>09:00–12:30 · 14:00–19:00</span></div><div><strong>Mardi</strong><span>09:00–12:30 · 14:00–19:00</span></div><div><strong>Mercredi</strong><span>Fermé</span></div><div><strong>Jeudi</strong><span>09:00–20:00</span></div><div><strong>Vendredi</strong><span>09:00–20:00</span></div><div><strong>Samedi</strong><span>09:00–18:00</span></div></div></article>
+<aside class="bm-admin-panel"><h2>Règles de réservation</h2><form class="bm-admin-form-stack"><label>Délai minimum avant RDV<input class="form-control bm-form-control" value="2 heures"/></label><label>Réservation maximum à l’avance<input class="form-control bm-form-control" value="3 mois"/></label><label>Annulation gratuite jusqu’à<input class="form-control bm-form-control" value="24 heures avant"/></label><label>Acompte par défaut<select class="form-select bm-form-control"><option>Selon prestation</option></select></label></form></aside>
+</section>
+<section class="bm-admin-grid bm-admin-grid-3 mt-4"><article class="bm-admin-panel"><h2>Ressources physiques</h2><p class="bm-admin-muted">2 cabines, 4 fauteuils, 1 lampe UV.</p></article><article class="bm-admin-panel"><h2>Fermetures exceptionnelles</h2><p class="bm-admin-muted">14 juillet · fermé toute la journée.</p></article><article class="bm-admin-panel"><h2>RDV simultanés</h2><p class="bm-admin-muted">Maximum 4 rendez-vous selon ressources.</p></article></section>
+{% endblock %}

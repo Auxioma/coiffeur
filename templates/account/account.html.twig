@@ -1,0 +1,15 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Accueil client — Belle Maison' %}
+{% set meta_description = 'Suivez vos rendez-vous, favoris, avis et préférences de notification.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Accueil client</h1><span>Suivez vos rendez-vous, favoris, avis et préférences de notification.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-grid bm-user-grid-4"><article class="bm-user-metric"><span>RDV à venir</span><strong>2</strong><small>Prochain : jeudi 25 juin</small></article><article class="bm-user-metric"><span>Favoris</span><strong>5</strong><small>Salons enregistrés</small></article><article class="bm-user-metric"><span>Avis laissés</span><strong>8</strong><small>Dernier avis il y a 12 jours</small></article><article class="bm-user-metric"><span>Fidélité</span><strong>7/10</strong><small>3 visites avant récompense</small></article></section>
+<section class="bm-user-grid bm-user-grid-main mt-4"><article class="bm-user-panel"><div class="bm-admin-panel-head"><div><h2>Prochains rendez-vous</h2><p>Vos réservations confirmées ou en attente.</p></div><a class="bm-link" href="{{ path('app_user_appointments') }}">Tout voir</a></div><div class="bm-user-appointment-list"><a href="{{ path('app_user_appointment_detail') }}"><time>25 juin · 14:30</time><strong>Coupe femme + brushing</strong><span>Maison Élégance · Clara · Confirmé</span><em class="bm-status bm-status-success">Confirmé</em></a><a href="{{ path('app_user_appointment_detail') }}"><time>02 juillet · 10:00</time><strong>Soin profond kératine</strong><span>Studio Color · En attente validation salon</span><em class="bm-status bm-status-warning">En attente</em></a></div></article><aside class="bm-user-panel"><h2>Sécurité anti no-show</h2><p>Votre compte est vérifié par email et téléphone. Cela permet aux salons de bloquer votre créneau sans paiement en ligne.</p><ul class="bm-check-list"><li>Email vérifié</li><li>Téléphone vérifié</li><li>Politique d’annulation acceptée</li></ul></aside></section>
+{% endblock %}

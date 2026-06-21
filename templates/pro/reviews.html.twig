@@ -1,0 +1,19 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Avis & réputation — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Avis &amp; réputation</h1>
+<span>Liste des avis, note moyenne, réponse professionnelle et modération.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-4"><article class="bm-admin-metric"><span>Note moyenne</span><strong>4,9/5</strong><small>300 avis vérifiés</small></article><article class="bm-admin-metric"><span>Avis ce mois</span><strong>48</strong><small>+18% vs mois dernier</small></article><article class="bm-admin-metric"><span>À répondre</span><strong>5</strong><small>Priorité réputation</small></article><article class="bm-admin-metric"><span>Signalements</span><strong>1</strong><small>En cours d’analyse</small></article></section><section class="bm-admin-panel mt-4"><h2>Derniers avis</h2><div class="bm-review-list"><article><div class="bm-rating-stars">★★★★★</div><strong>Marine L.</strong><p>Accueil parfait, équipe très professionnelle. Résultat exactement comme souhaité.</p><button class="btn bm-btn bm-btn-soft">Répondre</button></article><article><div class="bm-rating-stars">★★★★☆</div><strong>Julien M.</strong><p>Très bon barber, un peu d’attente mais service excellent.</p><button class="btn bm-btn bm-btn-soft">Répondre</button></article></div></section>
+{% endblock %}

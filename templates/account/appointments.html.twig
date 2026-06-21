@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Mes rendez-vous — Belle Maison' %}
+{% set meta_description = 'Liste de vos réservations futures, confirmées ou en attente.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Mes rendez-vous</h1><span>Liste de vos réservations futures, confirmées ou en attente.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-panel"><div class="bm-admin-panel-head"><div><h2>Mes rendez-vous à venir</h2><p>Modification ou annulation selon les règles du salon.</p></div><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}">Nouveau RDV</a></div><div class="bm-user-appointment-list bm-user-appointment-list-large"><a href="{{ path('app_user_appointment_detail') }}"><time>Jeudi 25 juin · 14:30</time><strong>Coupe femme + brushing · 58 €</strong><span>Maison Élégance · Clara Martin · Paiement sur place</span><em class="bm-status bm-status-success">Confirmé</em></a><a href="{{ path('app_user_appointment_detail') }}"><time>Mercredi 02 juillet · 10:00</time><strong>Soin profond kératine · 49 €</strong><span>Studio Color · En attente de validation par le salon</span><em class="bm-status bm-status-warning">En attente</em></a><a href="{{ path('app_booking_pending') }}"><time>État spécial</time><strong>Demande en attente de confirmation</strong><span>Exemple d’interface à prévoir si le pro choisit la validation manuelle.</span><em class="bm-status bm-status-warning">À valider</em></a></div></section>
+{% endblock %}

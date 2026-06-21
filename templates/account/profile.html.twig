@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Mes informations — Belle Maison' %}
+{% set meta_description = 'Gérez vos coordonnées, votre téléphone et votre mot de passe.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Mes informations</h1><span>Gérez vos coordonnées, votre téléphone et votre mot de passe.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-grid bm-user-grid-main"><article class="bm-user-panel"><h2>Informations personnelles</h2><div class="row g-3"><div class="col-md-6"><label>Prénom</label><input class="form-control bm-form-control" value="Marine"/></div><div class="col-md-6"><label>Nom</label><input class="form-control bm-form-control" value="Laurent"/></div><div class="col-md-6"><label>Email</label><input class="form-control bm-form-control" value="marine@example.com"/></div><div class="col-md-6"><label>Téléphone</label><input class="form-control bm-form-control" value="06 12 34 56 78"/></div><div class="col-12"><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></div></article><aside class="bm-user-panel"><h2>Vérifications</h2><ul class="bm-check-list"><li>Email vérifié</li><li>Téléphone vérifié</li><li>Compte autorisé à réserver</li></ul><p class="bm-muted-copy">Le premier rendez-vous nécessite une vérification pour éviter les réservations anonymes.</p></aside></section>
+{% endblock %}

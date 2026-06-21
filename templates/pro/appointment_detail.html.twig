@@ -1,0 +1,35 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Fiche rendez-vous — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Fiche rendez-vous</h1>
+<span>Modifier, reporter, encaisser, annuler ou marquer no-show.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main">
+<article class="bm-admin-panel">
+<div class="bm-admin-panel-head"><div><h2>RDV #BM-2481</h2><p>Coloration gloss + brushing · mardi 23 juin · 13:45–16:15</p></div><em class="bm-status bm-status-warning">À confirmer</em></div>
+<div class="bm-detail-list">
+<div><span>Cliente</span><strong>Camille B.</strong><a href="{{ path('app_client_detail_pro') }}">Voir la fiche client</a></div>
+<div><span>Prestations</span><strong>Balayage lumineux · Soin profond · Brushing</strong><small>Prix modifiable au cas par cas · durée estimée 2h30</small></div>
+<div><span>Collaborateur</span><strong>Clara Martin</strong><small>Ressource nécessaire : bac coloration + fauteuil 1</small></div>
+<div><span>Origine</span><strong>Réservation en ligne</strong><small>Acompte demandé : 30 € · payé</small></div>
+<div><span>Notes internes</span><strong>Allergie légère à certains produits oxydants</strong><small class="bm-sensitive"><i class="bi bi-lock"></i> Donnée sensible — visible équipe autorisée</small></div>
+</div>
+<div class="bm-admin-actions-row mt-4"><button class="btn bm-btn bm-btn-primary">Encaisser</button><button class="btn bm-btn bm-btn-soft">Reporter</button><button class="btn bm-btn bm-btn-soft">Envoyer un rappel</button><button class="btn bm-btn bm-btn-danger">Annuler</button></div>
+</article>
+<aside class="bm-admin-panel">
+<h2>Historique</h2>
+<ul class="bm-admin-feed"><li><strong>13:08</strong> Acompte payé par carte.</li><li><strong>12:44</strong> Créneau déplacé par Clara.</li><li><strong>11:20</strong> Demande créée en ligne.</li></ul>
+</aside>
+</section>
+{% endblock %}

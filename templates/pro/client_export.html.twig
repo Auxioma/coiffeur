@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Exporter les clients — Belle Maison Pro' %}
+{% set meta_description = 'Exporter les clients selon vos filtres pour analyse ou sauvegarde.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">CRM</p><h1>Exporter les clients</h1><span>Exporter les clients selon vos filtres pour analyse ou sauvegarde.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Export CSV</h2><div class="row g-3"><div class="col-md-6"><label>Période</label><select class="form-select bm-form-control"><option>Tous les clients</option><option>Visite récente</option></select></div><div class="col-md-6"><label>Segment</label><select class="form-select bm-form-control"><option>Tous</option><option>VIP</option><option>À relancer</option></select></div></div><button class="btn bm-btn bm-btn-primary mt-4">Télécharger le CSV</button></section>
+{% endblock %}

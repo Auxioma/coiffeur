@@ -1,0 +1,7 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Clara Martin — Collaboratrice' %}
+{% set meta_description = 'Fiche collaborateur' %}
+
+{% block body %}
+<section class="bm-salon-content"><div class="container bm-container"><div class="bm-staff-profile"><img alt="Clara Martin" src="{{ asset('assets/images/article-1.jpg') }}"/><div><p class="bm-eyebrow">Collaboratrice · Maison Élégance</p><h1>Clara Martin</h1><p>Coloriste senior spécialisée en balayage naturel, coupe femme et diagnostic cheveux sensibles.</p><div class="bm-salon-proof"><span>4,9 ★ · 214 avis</span><span>8 ans d’expérience</span><span>Dispo jeudi 14:30</span></div><a class="btn bm-btn bm-btn-primary mt-3" href="{{ path('app_booking_slot') }}">Voir ses créneaux</a></div></div><div class="bm-public-panel mt-4"><h2>Prestations réalisées</h2><div class="bm-service-list-public"><a href="{{ path('app_booking_service') }}"><strong>Balayage + patine</strong><span>2h30 · à partir de 92 €</span><em>Choisir</em></a><a href="{{ path('app_booking_service') }}"><strong>Coupe femme + brushing</strong><span>1h15 · 58 €</span><em>Choisir</em></a><a href="{{ path('app_booking_service') }}"><strong>Soin profond</strong><span>45 min · 49 €</span><em>Choisir</em></a></div></div></div></section>
+{% endblock %}

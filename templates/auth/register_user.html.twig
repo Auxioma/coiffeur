@@ -1,0 +1,92 @@
+{% extends 'layouts/auth.html.twig' %}
+{% set page_title = 'Créer un compte client — Belle Maison' %}
+{% set meta_description = 'Créez votre compte Belle Maison pour réserver plus vite vos rendez-vous beauté, enregistrer vos salons favoris, recevoir vos confirmations et gérer vos préférences.' %}
+{% set body_class = 'bm-page-auth-user' %}
+{% set main_class = 'bm-auth-main bm-auth-main-user' %}
+
+{% block body %}
+<section aria-labelledby="registerUserTitle" class="container bm-container">
+<div class="bm-auth-shell bm-auth-shell-user">
+<div class="row g-0 align-items-stretch">
+<div class="col-xl-6">
+<div class="bm-auth-visual bm-auth-visual-user">
+<div class="bm-auth-visual-inner">
+<span class="bm-auth-brand-mark"><i class="bi bi-heart"></i> Compte client</span>
+<div class="bm-auth-visual-copy">
+<h1 id="registerUserTitle">Vos rendez-vous beauté, enfin réunis.</h1>
+<p>Créez votre espace personnel pour retrouver vos salons favoris, suivre vos réservations et recevoir vos confirmations au bon moment.</p>
+<div aria-label="Avantages compte client" class="bm-auth-proof-row bm-auth-proof-row-user">
+<div class="bm-auth-proof"><strong>Réserver plus vite</strong><span>Vos informations restent prêtes pour vos prochains rendez-vous.</span></div>
+<div class="bm-auth-proof"><strong>Salons favoris</strong><span>Gardez une sélection de professionnels à retrouver facilement.</span></div>
+<div class="bm-auth-proof"><strong>Suivi clair</strong><span>Retrouvez les confirmations, horaires et détails de vos prestations.</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-6">
+<div class="bm-auth-panel">
+<div class="bm-auth-card bm-auth-card-user">
+<div class="bm-auth-card-head">
+<span class="bm-auth-badge"><i class="bi bi-person-check"></i> Inscription gratuite</span>
+<h2>Créer votre compte</h2>
+<p>Quelques informations suffisent pour préparer votre espace client et simplifier vos futures réservations.</p>
+</div>
+<form action="#" class="bm-auth-form" method="post" novalidate="">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label bm-label" for="firstName">Prénom</label>
+<div class="bm-auth-field"><i class="bi bi-person"></i><input autocomplete="given-name" class="form-control bm-auth-input" id="firstName" name="firstName" placeholder="Camille" required="" type="text"/></div>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="lastName">Nom</label>
+<div class="bm-auth-field"><i class="bi bi-person"></i><input autocomplete="family-name" class="form-control bm-auth-input" id="lastName" name="lastName" placeholder="Martin" required="" type="text"/></div>
+</div>
+<div class="col-12">
+<label class="form-label bm-label" for="registerEmail">Adresse email</label>
+<div class="bm-auth-field"><i class="bi bi-envelope"></i><input autocomplete="email" class="form-control bm-auth-input" id="registerEmail" name="email" placeholder="camille@email.fr" required="" type="email"/></div>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="registerPassword">Mot de passe</label>
+<div class="bm-auth-field"><i class="bi bi-lock"></i><input autocomplete="new-password" class="form-control bm-auth-input" id="registerPassword" name="password" placeholder="8 caractères minimum" required="" type="password"/></div>
+</div>
+<div class="col-md-6">
+<label class="form-label bm-label" for="registerCity">Ville principale</label>
+<div class="bm-auth-field"><i class="bi bi-geo-alt"></i><input autocomplete="address-level2" class="form-control bm-auth-input" id="registerCity" name="city" placeholder="Le Havre" type="text"/></div>
+</div>
+</div>
+<div aria-label="Préférences beauté" class="bm-user-preferences">
+<p>Vos centres d’intérêt</p>
+<div class="bm-user-preference-grid">
+<label><input name="preferences[]" type="checkbox" value="coiffure"/> <span>Coiffure</span></label>
+<label><input name="preferences[]" type="checkbox" value="barbier"/> <span>Barbier</span></label>
+<label><input name="preferences[]" type="checkbox" value="ongles"/> <span>Ongles</span></label>
+<label><input name="preferences[]" type="checkbox" value="spa"/> <span>Spa</span></label>
+</div>
+</div>
+<label class="bm-auth-check bm-auth-check-large" for="termsAccepted">
+<input class="form-check-input" id="termsAccepted" name="terms" required="" type="checkbox"/>
+<span>J’accepte les conditions d’utilisation et la politique de confidentialité.</span>
+</label>
+<button class="btn bm-btn bm-btn-primary bm-auth-submit" type="submit">Créer mon compte</button>
+</form>
+<div class="bm-auth-divider">ou</div>
+<div class="bm-auth-social-grid">
+<a class="bm-auth-social-btn" href="#"><i class="bi bi-google"></i> Continuer avec Google</a>
+<a class="bm-auth-social-btn" href="#"><i class="bi bi-apple"></i> Continuer avec Apple</a>
+</div>
+<div class="bm-auth-mini-footer">
+<span>Vous avez déjà un compte ?</span>
+<a href="{{ path('app_login_user') }}">Se connecter</a>
+</div>
+<div class="bm-auth-note">
+<i class="bi bi-shield-check"></i>
+<div><strong>Vos données restent protégées.</strong> Elles servent uniquement à faciliter vos réservations et vos notifications de rendez-vous.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

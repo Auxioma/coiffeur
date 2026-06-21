@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Liste d’attente — Belle Maison Pro' %}
+{% set meta_description = 'Demandes clients sans créneau disponible et opportunités de remplissage.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Planning</p><h1>Liste d’attente</h1><span>Demandes clients sans créneau disponible et opportunités de remplissage.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><div class="bm-admin-panel-head"><div><h2>Demandes en attente</h2><p>Clients à prévenir si un créneau se libère.</p></div><a class="btn bm-btn bm-btn-primary" href="{{ path('app_appointment_create_pro') }}">Créer un RDV</a></div><div class="bm-table-wrap"><table class="table bm-table"><thead><tr><th>Client</th><th>Prestation</th><th>Préférence</th><th>Statut</th><th></th></tr></thead><tbody><tr><td>Marine Laurent</td><td>Balayage</td><td>Samedi matin</td><td><span class="bm-status bm-status-warning">À rappeler</span></td><td><a href="{{ path('app_appointment_create_pro') }}">Transformer</a></td></tr><tr><td>Sofia Diallo</td><td>Manucure</td><td>Aujourd’hui</td><td><span class="bm-status bm-status-info">Alerte active</span></td><td><a href="{{ path('app_appointment_create_pro') }}">Créer</a></td></tr></tbody></table></div></section>
+{% endblock %}

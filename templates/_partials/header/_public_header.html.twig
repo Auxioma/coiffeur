@@ -1,0 +1,29 @@
+<header class="bm-header sticky-top">
+    <nav class="navbar navbar-expand-xl bm-navbar" aria-label="Navigation principale">
+        <div class="container bm-container">
+            <a class="navbar-brand bm-brand" href="{{ path('app_home') }}" aria-label="Belle Maison accueil">BELLE MAISON</a>
+
+            <button class="navbar-toggler bm-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Ouvrir le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mx-auto bm-nav-list">
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_search_results') }}">Coiffure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_search_results') }}">Barbier</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_search_results') }}">Beauté</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_search_results') }}">Ongles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_search_results') }}">Bien-être</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_blog') }}">Conseils</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_register_pro') }}">Professionnels</a></li>
+                </ul>
+
+                <div class="bm-header-actions d-flex align-items-center gap-2">
+                    <a href="{{ path('app_login_user') }}" class="btn bm-btn bm-btn-outline">Se connecter</a>
+                    <a href="{{ path('app_register_pro') }}" class="btn bm-btn bm-btn-primary">Inscrire mon salon</a>
+                    {% include '_partials/i18n/_locale_switcher.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Absences et congés — Belle Maison Pro' %}
+{% set meta_description = 'Déclarer une indisponibilité ponctuelle ou valider une demande.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Équipe</p><h1>Absences et congés</h1><span>Déclarer une indisponibilité ponctuelle ou valider une demande.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Nouvelle absence</h2><div class="row g-3"><div class="col-md-6"><label>Collaborateur</label><input class="form-control bm-form-control" value="Clara Martin"/></div><div class="col-md-6"><label>Type</label><input class="form-control bm-form-control" value="Congé"/></div><div class="col-md-6"><label>Début</label><input class="form-control bm-form-control" value="2026-07-08"/></div><div class="col-md-6"><label>Fin</label><input class="form-control bm-form-control" value="2026-07-12"/></div><div class="col-12"><label>Commentaire</label><textarea class="form-control bm-form-control" rows="3"></textarea></div><div class="bm-booking-actions"><button class="btn bm-btn bm-btn-outline">Annuler</button><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></div></section>
+{% endblock %}

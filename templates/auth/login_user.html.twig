@@ -1,0 +1,69 @@
+{% extends 'layouts/auth.html.twig' %}
+{% set page_title = 'Connexion client — Belle Maison' %}
+{% set meta_description = 'Connectez-vous à votre espace client Belle Maison pour retrouver vos rendez-vous beauté, vos salons favoris et vos confirmations.' %}
+{% set body_class = 'bm-page-auth-user' %}
+{% set main_class = 'bm-auth-main bm-auth-main-user' %}
+
+{% block body %}
+<section aria-labelledby="loginUserTitle" class="container bm-container">
+<div class="bm-auth-shell bm-auth-shell-user">
+<div class="row g-0 align-items-stretch">
+<div class="col-xl-6">
+<div class="bm-auth-visual bm-auth-visual-user bm-auth-visual-user-login">
+<div class="bm-auth-visual-inner">
+<span class="bm-auth-brand-mark"><i class="bi bi-stars"></i> Espace client</span>
+<div class="bm-auth-visual-copy">
+<h1 id="loginUserTitle">Reprenez votre routine beauté là où vous l’avez laissée.</h1>
+<p>Connectez-vous pour retrouver vos rendez-vous, vos salons favoris, vos préférences et vos prochaines confirmations.</p>
+<div class="bm-user-mini-benefits">
+<div><i class="bi bi-calendar2-check"></i><span>Vos prochains rendez-vous</span></div>
+<div><i class="bi bi-heart"></i><span>Vos salons favoris</span></div>
+<div><i class="bi bi-bell"></i><span>Vos rappels importants</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-6">
+<div class="bm-auth-panel">
+<div class="bm-auth-card bm-auth-card-user">
+<div class="bm-auth-card-head">
+<span class="bm-auth-badge"><i class="bi bi-shield-lock"></i> Connexion sécurisée</span>
+<h2>Connectez-vous</h2>
+<p>Accédez à votre compte pour gérer vos réservations et retrouver vos informations beauté en un seul endroit.</p>
+</div>
+<form action="#" class="bm-auth-form" method="post" novalidate="">
+<div class="mb-3">
+<label class="form-label bm-label" for="loginEmail">Adresse email</label>
+<div class="bm-auth-field"><i class="bi bi-envelope"></i><input autocomplete="email" class="form-control bm-auth-input" id="loginEmail" name="email" placeholder="camille@email.fr" required="" type="email"/></div>
+</div>
+<div class="mb-2">
+<label class="form-label bm-label" for="loginPassword">Mot de passe</label>
+<div class="bm-auth-field"><i class="bi bi-lock"></i><input autocomplete="current-password" class="form-control bm-auth-input" id="loginPassword" name="password" placeholder="Votre mot de passe" required="" type="password"/></div>
+</div>
+<div class="bm-auth-options">
+<label class="bm-auth-check" for="rememberUser"><input class="form-check-input" id="rememberUser" name="remember_me" type="checkbox"/><span>Rester connecté</span></label>
+<a class="bm-auth-link" href="{{ path('app_forgot_password_user') }}">Mot de passe oublié ?</a>
+</div>
+<button class="btn bm-btn bm-btn-primary bm-auth-submit" type="submit">Se connecter</button>
+</form>
+<div class="bm-auth-divider">ou</div>
+<div class="bm-auth-social-grid">
+<a class="bm-auth-social-btn" href="#"><i class="bi bi-google"></i> Continuer avec Google</a>
+<a class="bm-auth-social-btn" href="#"><i class="bi bi-apple"></i> Continuer avec Apple</a>
+</div>
+<div class="bm-auth-secondary-action bm-auth-secondary-action-user">
+<div><strong>Première réservation sur Belle Maison ?</strong><span>Créez votre compte pour réserver plus vite et garder vos salons favoris.</span></div>
+<a class="btn bm-btn bm-btn-outline" href="{{ path('app_register_user') }}">Créer un compte</a>
+</div>
+<div class="bm-auth-help-grid">
+<div class="bm-auth-help-card"><i class="bi bi-calendar-heart"></i><div><strong>Réserver simplement</strong><span>Choisissez un service, un lieu et un créneau disponible.</span></div></div>
+<div class="bm-auth-help-card"><i class="bi bi-gem"></i><div><strong>Expérience premium</strong><span>Comparez les avis, les prix et les prestations avant de choisir.</span></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

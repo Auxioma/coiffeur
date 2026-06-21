@@ -1,0 +1,19 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Multi-établissement — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Multi-établissement</h1>
+<span>Vue consolidée, catalogue centralisé et permissions différenciées.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-4"><article class="bm-admin-metric"><span>CA réseau</span><strong>42 850 €</strong><small>3 sites actifs</small></article><article class="bm-admin-metric"><span>Meilleur site</span><strong>Le Havre</strong><small>+18% ce mois</small></article><article class="bm-admin-metric"><span>Taux remplissage</span><strong>79%</strong><small>Réseau consolidé</small></article><article class="bm-admin-metric"><span>Clients réseau</span><strong>4 820</strong><small>Base consolidée</small></article></section><section class="bm-admin-panel mt-4"><h2>Sites</h2><div class="table-responsive"><table class="table bm-admin-table"><thead><tr><th>Établissement</th><th>Ville</th><th>CA mois</th><th>Remplissage</th><th>Manager</th></tr></thead><tbody><tr><td>Maison Élégance</td><td>Le Havre</td><td>18 420 €</td><td>86%</td><td>Clara Martin</td></tr><tr><td>Maison Élégance Rive Droite</td><td>Rouen</td><td>14 980 €</td><td>74%</td><td>Nadia Roux</td></tr><tr><td>Maison Élégance Centre</td><td>Caen</td><td>9 450 €</td><td>68%</td><td>Sarah Petit</td></tr></tbody></table></div></section>
+{% endblock %}

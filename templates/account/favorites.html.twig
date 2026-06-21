@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Mes favoris — Belle Maison' %}
+{% set meta_description = 'Vos salons et instituts enregistrés.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Mes favoris</h1><span>Vos salons et instituts enregistrés.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-panel"><div class="bm-admin-panel-head"><div><h2>Mes établissements favoris</h2><p>Retrouvez rapidement vos salons préférés.</p></div><a class="bm-link" href="{{ path('app_search_results') }}">Ajouter un favori</a></div><div class="bm-favorite-grid"><article><img alt="Maison Élégance" src="{{ asset('assets/images/salon-1.jpg') }}"/><h3>Maison Élégance</h3><span>4,9 ★ · Le Havre</span><a class="btn bm-btn bm-btn-primary w-100" href="{{ path('app_salon_detail') }}">Réserver</a></article><article><img alt="Atelier" src="{{ asset('assets/images/salon-2.jpg') }}"/><h3>L’Atelier du Quai</h3><span>4,8 ★ · Le Havre</span><a class="btn bm-btn bm-btn-primary w-100" href="{{ path('app_salon_detail') }}">Réserver</a></article><article><img alt="Studio" src="{{ asset('assets/images/salon-3.jpg') }}"/><h3>Studio Color</h3><span>4,9 ★ · Sainte-Adresse</span><a class="btn bm-btn bm-btn-primary w-100" href="{{ path('app_salon_detail') }}">Réserver</a></article></div></section>
+{% endblock %}

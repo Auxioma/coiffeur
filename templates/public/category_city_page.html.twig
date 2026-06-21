@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Coiffeur au Havre — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">SEO local</p>
+<h1>Coiffeur au Havre</h1>
+<p>Comparez les coiffeurs disponibles au Havre avec avis, prix, horaires et réservation sans paiement en ligne.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-seo-layout"><article class="bm-public-panel"><h2>Réserver un coiffeur au Havre</h2><p>Choisissez votre prestation, comparez les avis clients et réservez un créneau directement en ligne. Le règlement se fait au salon le jour du rendez-vous.</p><div class="bm-filter-row"><button>Dispo aujourd’hui</button><button>Coupe femme</button><button>Balayage</button><button>Note 4,5+</button></div><a class="btn bm-btn bm-btn-primary mt-3" href="{{ path('app_search_results') }}">Voir les salons</a></article><aside class="bm-public-panel"><h2>Recherches populaires</h2><ul class="bm-clean-list"><li>Coupe femme Le Havre</li><li>Balayage Le Havre</li><li>Barbier Le Havre</li><li>Brushing Le Havre</li></ul></aside></div></div></section>
+{% endblock %}

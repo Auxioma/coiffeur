@@ -1,0 +1,744 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/* =========================================================
+   PAGES / AUTH PRO
+   Pages de connexion et mot de passe oublié pour l'espace
+   professionnel. Le style reprend la direction premium de la
+   home et de la page d'inscription pro.
+   ========================================================= */
+
+.bm-page-auth-pro {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 0%, rgba($bm-cream, .78), transparent 34rem),
+    radial-gradient(circle at 100% 16%, rgba($bm-primary-soft, .74), transparent 30rem),
+    linear-gradient(180deg, $bm-bg 0%, #fffaf5 48%, $bm-bg 100%);
+}
+
+.bm-auth-main {
+  padding: clamp(2rem, 4vw, 4rem) 0 clamp(3rem, 5vw, 5rem);
+}
+
+.bm-auth-shell {
+  overflow: hidden;
+  border: 1px solid rgba($bm-border, .92);
+  border-radius: $bm-radius-xl;
+  background:
+    linear-gradient(135deg, rgba(#fff, .98), rgba(#fffaf5, .94) 54%, rgba($bm-cream-soft, .94));
+  box-shadow: $bm-shadow-lg;
+}
+
+.bm-auth-visual {
+  position: relative;
+  display: flex;
+  min-height: 760px;
+  padding: clamp(2rem, 4vw, 4.4rem);
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba($bm-primary-dark, .18), rgba($bm-primary-dark, .72)),
+    url("../images/pro-salon.jpg") center / cover no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1.25rem;
+    border: 1px solid rgba(#fff, .22);
+    border-radius: calc($bm-radius-xl - .4rem);
+    pointer-events: none;
+  }
+}
+
+.bm-auth-visual-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bm-auth-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  width: fit-content;
+  padding: .65rem .9rem;
+  border: 1px solid rgba(#fff, .24);
+  border-radius: $bm-radius-pill;
+  background: rgba(#fff, .12);
+  backdrop-filter: blur(18px);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.bm-auth-visual-copy {
+  max-width: 680px;
+
+  h1,
+  h2 {
+    @include title-font;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(3rem, 5.4vw, 6.5rem);
+    font-weight: 600;
+    line-height: .96;
+  }
+
+  p {
+    max-width: 560px;
+    margin: 1.3rem 0 0;
+    color: rgba(#fff, .86);
+    font-size: 1.05rem;
+  }
+}
+
+.bm-auth-proof-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+  margin-top: 2.2rem;
+}
+
+.bm-auth-proof {
+  min-height: 112px;
+  padding: 1rem;
+  border: 1px solid rgba(#fff, .18);
+  border-radius: $bm-radius-md;
+  background: rgba(#fff, .12);
+  backdrop-filter: blur(18px);
+
+  strong {
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  span {
+    display: block;
+    margin-top: .35rem;
+    color: rgba(#fff, .78);
+    font-size: .88rem;
+    line-height: 1.42;
+  }
+}
+
+.bm-auth-panel {
+  display: flex;
+  align-items: center;
+  min-height: 760px;
+  padding: clamp(1.25rem, 3vw, 3rem);
+}
+
+.bm-auth-card {
+  width: 100%;
+  max-width: 620px;
+  margin-inline: auto;
+  padding: clamp(1.3rem, 3vw, 2.2rem);
+  border: 1px solid rgba($bm-border, .94);
+  border-radius: $bm-radius-xl;
+  background: rgba(#fff, .9);
+  box-shadow: $bm-shadow-sm;
+  backdrop-filter: blur(18px);
+}
+
+.bm-auth-card-head {
+  margin-bottom: 1.5rem;
+
+  h1,
+  h2 {
+    @include title-font;
+    margin: .75rem 0 .55rem;
+    color: $bm-ink;
+    font-size: clamp(2.45rem, 4vw, 4.15rem);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  p {
+    max-width: 520px;
+    margin: 0;
+    color: $bm-muted;
+  }
+}
+
+.bm-auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 36px;
+  padding: .45rem .8rem;
+  border: 1px solid rgba($bm-gold, .34);
+  border-radius: $bm-radius-pill;
+  background: rgba($bm-gold, .1);
+  color: #7d5f2e;
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.bm-auth-form {
+  .bm-label {
+    color: $bm-muted;
+  }
+}
+
+.bm-auth-field {
+  position: relative;
+
+  > i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    color: $bm-primary;
+    font-size: 1.05rem;
+    pointer-events: none;
+  }
+}
+
+.bm-auth-input {
+  min-height: 58px;
+  padding-left: 2.85rem;
+  border: 1px solid $bm-border;
+  border-radius: $bm-radius-sm;
+  background: #fff;
+  color: $bm-ink;
+  font-weight: 800;
+  box-shadow: none !important;
+
+  &:focus {
+    @include focus-ring;
+  }
+
+  &::placeholder {
+    color: rgba($bm-muted, .62);
+    font-weight: 500;
+  }
+}
+
+.bm-auth-password-toggle {
+  position: absolute;
+  right: .7rem;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: $bm-radius-pill;
+  background: transparent;
+  color: $bm-muted;
+
+  &:hover {
+    color: $bm-primary;
+    background: $bm-primary-soft;
+  }
+}
+
+.bm-auth-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.bm-auth-check {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  color: $bm-muted;
+  font-size: .9rem;
+  font-weight: 700;
+
+  .form-check-input {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin: 0;
+    border-color: rgba($bm-primary, .34);
+    box-shadow: none !important;
+
+    &:checked {
+      background-color: $bm-primary;
+      border-color: $bm-primary;
+    }
+  }
+}
+
+.bm-auth-link {
+  color: $bm-primary;
+  font-weight: 900;
+
+  &:hover {
+    color: $bm-primary-dark;
+  }
+}
+
+.bm-auth-submit {
+  width: 100%;
+  min-height: 58px;
+  margin-top: .25rem;
+  font-size: 1rem;
+}
+
+.bm-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.4rem 0;
+  color: $bm-muted-soft;
+  font-size: .86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: $bm-border;
+  }
+}
+
+.bm-auth-secondary-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba($bm-border, .92);
+  border-radius: $bm-radius-md;
+  background: $bm-cream-soft;
+
+  span {
+    color: $bm-muted;
+    font-size: .92rem;
+  }
+
+  strong {
+    display: block;
+    color: $bm-ink;
+    font-weight: 900;
+  }
+}
+
+.bm-auth-note {
+  display: flex;
+  gap: .8rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba($bm-primary, .16);
+  border-radius: $bm-radius-md;
+  background: rgba($bm-primary-soft, .62);
+  color: $bm-muted;
+  font-size: .9rem;
+  line-height: 1.45;
+
+  i {
+    color: $bm-primary;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: .1rem;
+  }
+
+  strong {
+    color: $bm-ink;
+  }
+}
+
+.bm-auth-help-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+  margin-top: 1.2rem;
+}
+
+.bm-auth-help-card {
+  @include card-base;
+  display: flex;
+  gap: .9rem;
+  align-items: flex-start;
+  padding: 1rem;
+
+  i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba($bm-primary, .18);
+    border-radius: 50%;
+    background: $bm-primary-soft;
+    color: $bm-primary;
+    flex-shrink: 0;
+  }
+
+  strong {
+    display: block;
+    color: $bm-ink;
+    font-size: .95rem;
+    font-weight: 900;
+  }
+
+  span {
+    display: block;
+    margin-top: .25rem;
+    color: $bm-muted;
+    font-size: .86rem;
+    line-height: 1.42;
+  }
+}
+
+.bm-auth-steps {
+  display: grid;
+  gap: .75rem;
+  margin: 1.25rem 0;
+}
+
+.bm-auth-step {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: .85rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid rgba($bm-border, .92);
+  border-radius: $bm-radius-md;
+  background: rgba(#fff, .72);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    color: #fff;
+    background: $bm-primary;
+    font-weight: 900;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: .22rem;
+    color: $bm-ink;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 0;
+    color: $bm-muted;
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+}
+
+.bm-auth-mini-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin-top: 1.2rem;
+  color: $bm-muted;
+  font-size: .9rem;
+
+  a {
+    color: $bm-primary;
+    font-weight: 900;
+  }
+}
+
+.bm-auth-compact-shell {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.bm-auth-compact-card {
+  @extend .bm-auth-card;
+  max-width: 760px;
+}
+
+@media (max-width: 1199.98px) {
+  .bm-auth-visual,
+  .bm-auth-panel {
+    min-height: auto;
+  }
+
+  .bm-auth-visual {
+    min-height: 520px;
+  }
+
+  .bm-auth-proof-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .bm-auth-main {
+    padding-top: 1rem;
+  }
+
+  .bm-auth-visual {
+    min-height: 420px;
+    padding: 1.4rem;
+  }
+
+  .bm-auth-visual::before {
+    inset: .75rem;
+  }
+
+  .bm-auth-panel {
+    padding: 1rem;
+  }
+
+  .bm-auth-card {
+    padding: 1.1rem;
+  }
+
+  .bm-auth-options,
+  .bm-auth-secondary-action {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bm-auth-help-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   PAGES / AUTH USER
+   Pages d'inscription, connexion et mot de passe oublié pour
+   les particuliers. On réutilise les composants auth existants
+   en adaptant l'ambiance visuelle au parcours client.
+   ========================================================= */
+
+.bm-page-auth-user {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 4%, rgba($bm-cream-soft, .92), transparent 31rem),
+    radial-gradient(circle at 92% 12%, rgba($bm-gold, .12), transparent 26rem),
+    linear-gradient(180deg, #fffaf5 0%, $bm-bg 46%, #fff 100%);
+}
+
+.bm-auth-main-user {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 17rem;
+    background: linear-gradient(180deg, rgba(#fff, .6), rgba(#fff, 0));
+    pointer-events: none;
+  }
+
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.bm-auth-shell-user {
+  background:
+    linear-gradient(135deg, rgba(#fff, .98), rgba(#fffaf5, .95) 52%, rgba($bm-cream-soft, .88));
+}
+
+.bm-auth-visual-user {
+  background:
+    linear-gradient(180deg, rgba($bm-ink, .08), rgba($bm-ink, .56)),
+    url("../images/hero-woman.jpg") center / cover no-repeat;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 16%, rgba(#fff, .26), transparent 17rem),
+      linear-gradient(90deg, rgba($bm-primary-dark, .48), rgba($bm-primary-dark, .1));
+    pointer-events: none;
+  }
+
+  .bm-auth-visual-inner {
+    z-index: 3;
+  }
+}
+
+.bm-auth-visual-user-login {
+  background-position: center top;
+}
+
+.bm-auth-visual-user-reset {
+  background-position: center center;
+}
+
+.bm-auth-card-user {
+  background: rgba(#fff, .94);
+}
+
+.bm-auth-proof-row-user {
+  .bm-auth-proof {
+    min-height: 128px;
+  }
+}
+
+.bm-auth-check-large {
+  align-items: flex-start;
+  margin: 1rem 0 0;
+  line-height: 1.45;
+
+  .form-check-input {
+    margin-top: .18rem;
+    flex-shrink: 0;
+  }
+}
+
+.bm-auth-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.bm-auth-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  min-height: 50px;
+  padding: .75rem 1rem;
+  border: 1px solid rgba($bm-border, .96);
+  border-radius: $bm-radius-sm;
+  background: #fff;
+  color: $bm-ink;
+  font-weight: 900;
+  box-shadow: $bm-shadow-xs;
+
+  i {
+    color: $bm-primary;
+    font-size: 1.05rem;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba($bm-primary, .3);
+    color: $bm-primary-dark;
+    box-shadow: $bm-shadow-sm;
+  }
+}
+
+.bm-user-preferences {
+  margin-top: 1.1rem;
+  padding: 1rem;
+  border: 1px solid rgba($bm-border, .92);
+  border-radius: $bm-radius-md;
+  background: rgba($bm-cream-soft, .58);
+
+  p {
+    margin: 0 0 .75rem;
+    color: $bm-ink;
+    font-size: .92rem;
+    font-weight: 900;
+  }
+}
+
+.bm-user-preference-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .6rem;
+
+  label {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: .55rem .75rem;
+    border: 1px solid rgba($bm-border, .98);
+    border-radius: $bm-radius-pill;
+    background: #fff;
+    color: $bm-muted;
+    font-size: .86rem;
+    font-weight: 900;
+    transition: .22s ease;
+  }
+
+  input:checked + span {
+    border-color: rgba($bm-primary, .45);
+    background: $bm-primary-soft;
+    color: $bm-primary-dark;
+  }
+
+  input:focus-visible + span {
+    @include focus-ring;
+  }
+}
+
+.bm-user-mini-benefits {
+  display: grid;
+  gap: .75rem;
+  max-width: 520px;
+  margin-top: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    width: fit-content;
+    padding: .75rem 1rem;
+    border: 1px solid rgba(#fff, .2);
+    border-radius: $bm-radius-pill;
+    background: rgba(#fff, .13);
+    backdrop-filter: blur(16px);
+    color: #fff;
+    font-weight: 900;
+  }
+
+  i {
+    color: rgba(#fff, .9);
+  }
+}
+
+.bm-auth-secondary-action-user {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 991.98px) {
+  .bm-auth-social-grid,
+  .bm-user-preference-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bm-auth-social-grid,
+  .bm-user-preference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bm-user-mini-benefits div {
+    width: 100%;
+  }
+}

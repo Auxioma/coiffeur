@@ -1,0 +1,16 @@
+{% set steps = [
+    {route: 'app_booking_service', label: 'Prestations'},
+    {route: 'app_booking_staff', label: 'Collaborateur'},
+    {route: 'app_booking_slot', label: 'Créneau'},
+    {route: 'app_booking_auth', label: 'Compte'},
+    {route: 'app_booking_summary', label: 'Validation'}
+] %}
+
+<div class="bm-booking-stepper">
+    {% for step in steps %}
+        <a href="{{ path(step.route) }}" class="bm-booking-step {{ app.request.attributes.get('_route') == step.route ? 'is-active' : '' }}">
+            <span>{{ loop.index }}</span>
+            <em>{{ step.label }}</em>
+        </a>
+    {% endfor %}
+</div>

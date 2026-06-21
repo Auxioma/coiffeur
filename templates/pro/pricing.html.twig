@@ -1,0 +1,14 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Tarifs professionnels — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">SaaS beauté</p>
+<h1>Tarifs professionnels</h1>
+<p>Choisissez une offre pour gérer agenda, clients, visibilité et notifications.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-pricing-grid"><article class="bm-price-card"><h2>Essentiel</h2><strong>49 € / mois</strong><p>Agenda, fiche salon et réservations.</p><a class="btn bm-btn bm-btn-outline" href="{{ path('app_subscription_checkout_pro') }}">Choisir</a></article><article class="bm-price-card is-featured"><h2>Premium</h2><strong>89 € / mois</strong><p>Marketing, avis, statistiques et support prioritaire.</p><a class="btn bm-btn bm-btn-primary" href="{{ path('app_subscription_checkout_pro') }}">Choisir Premium</a></article><article class="bm-price-card"><h2>Multi-sites</h2><strong>Sur devis</strong><p>Chaînes, franchises et gestion consolidée.</p><a class="btn bm-btn bm-btn-outline" href="{{ path('app_contact') }}">Nous contacter</a></article></div></div></section>
+{% endblock %}

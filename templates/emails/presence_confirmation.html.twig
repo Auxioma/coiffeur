@@ -1,0 +1,10 @@
+{% extends 'layouts/email.html.twig' %}
+{% set page_title = 'Confirmez votre présence' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block email_styles %}
+body{margin:0;background:#f7f1ea;font-family:Arial,sans-serif;color:#222}.wrap{max-width:620px;margin:0 auto;padding:32px 16px}.card{background:#fff;border-radius:24px;padding:32px;border:1px solid #eadfd4}.brand{font-weight:800;letter-spacing:.28em;margin-bottom:28px}h1{font-family:Georgia,serif;font-size:32px;line-height:1.05;margin:0 0 12px}p{line-height:1.6;color:#625d57}.box{background:#fbf7f2;border:1px solid #eadfd4;border-radius:18px;padding:18px;margin:22px 0}.btn{display:inline-block;background:#0d5c46;color:#fff;text-decoration:none;padding:14px 20px;border-radius:12px;font-weight:700}.muted{font-size:12px;color:#8a8178;margin-top:24px}
+{% endblock %}
+{% block body %}
+<div class="wrap"><div class="card"><div class="brand">BELLE MAISON</div><p>Répondez avant votre rendez-vous.</p><h1>Confirmez votre présence</h1><div class="box"><p>Cette confirmation aide le salon à organiser son planning sans acompte en ligne.</p></div><a class="btn" href="{{ path('app_booking_presence_confirmation') }}">Je confirme</a><p class="muted">Cet email est une maquette HTML. Belle Maison · France</p></div></div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Finaliser l’abonnement — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Paiement abonnement</p>
+<h1>Finaliser l’abonnement</h1>
+<p>Page de checkout pour l’abonnement SaaS professionnel.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container bm-narrow"><article class="bm-public-panel"><h2>Plan Premium</h2><p>89 € / mois · sans engagement.</p><div class="row g-3"><div class="col-12"><input class="form-control bm-form-control" value="Maison Élégance"/></div><div class="col-12"><input class="form-control bm-form-control" placeholder="Numéro de carte"/></div></div><a class="btn bm-btn bm-btn-primary w-100 mt-4" href="{{ path('app_subscription_success_pro') }}">Valider l’abonnement</a></article></div></section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class %}bm-admin-body{% endblock %}
+
+{% block layout %}
+    <div class="bm-admin-layout">
+        {% include '_partials/admin/_sidebar.html.twig' %}
+        <main class="bm-admin-main">
+            {% block body %}{% endblock %}
+        </main>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Fusionner des doublons — Belle Maison Pro' %}
+{% set meta_description = 'Réunir deux fiches client en conservant l’historique des rendez-vous.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">CRM</p><h1>Fusionner des doublons</h1><span>Réunir deux fiches client en conservant l’historique des rendez-vous.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Fusion de fiches</h2><div class="bm-compare-grid"><div><h3>Fiche principale</h3><p>Marine Laurent · marine@example.com · 8 RDV</p></div><div><h3>Doublon détecté</h3><p>M. Laurent · marine.l@example.com · 1 RDV</p></div></div><label class="bm-check mt-3"><input type="checkbox"/> Je confirme la fusion des données.</label><button class="btn bm-btn bm-btn-primary mt-4">Fusionner</button></section>
+{% endblock %}

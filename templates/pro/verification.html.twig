@@ -1,0 +1,19 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Vérification du compte — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Vérification du compte</h1>
+<span>OTP email et téléphone, compte en attente et multi-établissements.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-main"><article class="bm-admin-panel"><h2>Vérifiez votre identité professionnelle</h2><p class="bm-admin-muted">Nous envoyons un code à usage unique pour sécuriser l’accès à votre espace.</p><div class="bm-otp-row"><input maxlength="1" value="4"/><input maxlength="1" value="8"/><input maxlength="1"/><input maxlength="1"/><input maxlength="1"/><input maxlength="1"/></div><button class="btn bm-btn bm-btn-primary mt-4">Valider le code</button><button class="btn bm-btn bm-btn-soft mt-4 ms-2">Renvoyer</button></article><aside class="bm-admin-panel"><h2>État du compte</h2><div class="bm-template-list"><div><strong>Email</strong><span>guillaume@salon.fr</span><em class="bm-status bm-status-success">Vérifié</em></div><div><strong>Téléphone</strong><span>06 12 34 56 78</span><em class="bm-status bm-status-warning">En attente</em></div><div><strong>Établissements</strong><span>1 salon configuré</span><em class="bm-status bm-status-info">Simple site</em></div></div></aside></section>
+{% endblock %}

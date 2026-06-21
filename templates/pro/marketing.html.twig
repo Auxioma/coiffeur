@@ -1,0 +1,19 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Marketing & fidélisation — Belle Maison Pro' %}
+{% set meta_description = 'Interface professionnelle Belle Maison' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div>
+<p class="bm-admin-kicker">Espace professionnel</p>
+<h1>Marketing &amp; fidélisation</h1>
+<span>Codes promo, programme fidélité, campagnes ciblées et page de réservation personnalisable.</span>
+</div>
+<div class="bm-admin-topbar-actions">
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-search me-2"></i>Rechercher</button>
+<button class="btn bm-btn bm-btn-soft" type="button"><i class="bi bi-bell me-2"></i>Alertes</button>
+</div>
+</header>
+<section class="bm-admin-grid bm-admin-grid-3"><article class="bm-admin-feature-card"><i class="bi bi-ticket-perforated"></i><h2>Codes promo</h2><p>Pourcentage, montant fixe ou première visite.</p><button class="btn bm-btn bm-btn-primary">Créer une offre</button></article><article class="bm-admin-feature-card"><i class="bi bi-gem"></i><h2>Fidélité</h2><p>Points, visites offertes et cartes de séances.</p><button class="btn bm-btn bm-btn-soft">Configurer</button></article><article class="bm-admin-feature-card"><i class="bi bi-send"></i><h2>Campagnes</h2><p>Email/SMS ciblés par segment client.</p><button class="btn bm-btn bm-btn-soft">Créer une campagne</button></article></section><section class="bm-admin-panel mt-4"><div class="bm-admin-panel-head"><div><h2>Campagnes récentes</h2><p>Performance et segmentation.</p></div></div><div class="table-responsive"><table class="table bm-admin-table"><thead><tr><th>Campagne</th><th>Segment</th><th>Canal</th><th>Ouverture</th><th>Réservations</th></tr></thead><tbody><tr><td>Relance clientes coloration</td><td>Coloration 60 jours</td><td>Email</td><td>48%</td><td>22</td></tr><tr><td>Offre première visite</td><td>Nouveaux clients</td><td>SMS</td><td>—</td><td>13</td></tr></tbody></table></div></section>
+{% endblock %}

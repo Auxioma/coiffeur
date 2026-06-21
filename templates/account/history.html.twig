@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Historique — Belle Maison' %}
+{% set meta_description = 'Consultez vos anciens rendez-vous et prestations réalisées.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Historique</h1><span>Consultez vos anciens rendez-vous et prestations réalisées.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-panel"><h2>Historique des rendez-vous</h2><p>Vos prestations passées et demandes d’avis associées.</p><div class="bm-user-table"><div class="bm-user-table-row is-head"><span>Date</span><span>Salon</span><span>Prestation</span><span>Statut</span></div><div class="bm-user-table-row"><span>12 juin 2026</span><span>Maison Élégance</span><span>Balayage + patine</span><span>Terminé</span></div><div class="bm-user-table-row"><span>22 mai 2026</span><span>L’Atelier du Quai</span><span>Coupe homme</span><span>Terminé</span></div><div class="bm-user-table-row"><span>08 mai 2026</span><span>Studio Color</span><span>Soin profond</span><span>Terminé</span></div></div></section>
+{% endblock %}

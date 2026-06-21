@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Mes avis — Belle Maison' %}
+{% set meta_description = 'Gérez les avis laissés après vos rendez-vous.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Mes avis</h1><span>Gérez les avis laissés après vos rendez-vous.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-panel"><div class="bm-admin-panel-head"><div><h2>Mes avis</h2><p>Vous pouvez modifier ou supprimer vos propres avis.</p></div></div><div class="bm-review-list"><blockquote><strong>Maison Élégance · ★★★★★</strong>“Très belle expérience, résultat naturel et accueil chaleureux.”<cite>Publié le 12 juin 2026 · <a href="#">Modifier</a> · <a href="#">Supprimer</a></cite></blockquote><blockquote><strong>L’Atelier du Quai · ★★★★☆</strong>“Bonne coupe homme et réservation très simple.”<cite>Publié le 22 mai 2026 · <a href="#">Modifier</a> · <a href="#">Supprimer</a></cite></blockquote></div><div class="bm-public-panel mt-4"><h2>Laisser un nouvel avis</h2><div class="row g-3"><div class="col-md-4"><select class="form-select bm-form-control"><option>Maison Élégance</option></select></div><div class="col-md-4"><select class="form-select bm-form-control"><option>5 étoiles</option></select></div><div class="col-12"><textarea class="form-control bm-form-control" placeholder="Votre expérience" rows="4"></textarea></div><div class="col-12"><button class="btn bm-btn bm-btn-primary">Publier l’avis</button></div></div></div></section>
+{% endblock %}

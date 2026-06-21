@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Annuler mon RDV — Belle Maison' %}
+{% set meta_description = 'Annulez votre rendez-vous selon la politique du salon.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Rendez-vous client</p><h1>Annuler mon RDV</h1><span>Annulez votre rendez-vous selon la politique du salon.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel bm-danger-zone"><h2>Annulation du rendez-vous</h2><p>Annulation possible jusqu’à 24h avant. Le salon sera notifié immédiatement.</p><select class="form-select bm-form-control"><option>Je ne suis plus disponible</option><option>J’ai trouvé un autre créneau</option><option>Autre motif</option></select><textarea class="form-control bm-form-control mt-3" placeholder="Message optionnel" rows="4"></textarea><label class="bm-check mt-3"><input checked="" type="checkbox"/> Je confirme vouloir annuler ce rendez-vous.</label><div class="bm-booking-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_user_appointment_detail') }}">Retour</a><button class="btn bm-btn bm-btn-danger">Annuler le RDV</button></div></section>
+{% endblock %}

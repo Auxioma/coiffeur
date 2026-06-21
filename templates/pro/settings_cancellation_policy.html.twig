@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Politique d’annulation — Belle Maison Pro' %}
+{% set meta_description = 'Délai standard, pénalités éventuelles et messages clients.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Paramètres avancés</p><h1>Politique d’annulation</h1><span>Délai standard, pénalités éventuelles et messages clients.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><h2>Politique d’annulation</h2><p>Délai standard, pénalités éventuelles et messages clients.</p><div class="row g-3"><div class="col-md-6"><label>Paramètre principal</label><input class="form-control bm-form-control" value="Activé"/></div><div class="col-md-6"><label>Valeur</label><input class="form-control bm-form-control" value="Standard"/></div><div class="col-12"><label>Message client</label><textarea class="form-control bm-form-control" rows="4">Votre rendez-vous est réservé sans paiement en ligne. Merci de prévenir en cas d’empêchement.</textarea></div><div class="bm-booking-actions"><button class="btn bm-btn bm-btn-outline">Annuler</button><button class="btn bm-btn bm-btn-primary">Enregistrer</button></div></div></section>
+{% endblock %}

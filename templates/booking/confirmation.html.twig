@@ -1,0 +1,23 @@
+{% extends 'layouts/booking.html.twig' %}
+{% set page_title = 'Rendez-vous confirmé — Belle Maison' %}
+{% set meta_description = 'Tunnel de réservation sans paiement en ligne' %}
+{% set main_class = 'bm-booking-main' %}
+
+{% block body %}
+<section class="bm-booking-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Réservation sans paiement en ligne</p>
+<h1>Rendez-vous confirmé</h1>
+<p>Choisissez une prestation, un collaborateur et un créneau. La création de compte est demandée uniquement avant la validation finale.</p>
+<div class="bm-booking-stepper"><a class="bm-booking-step is-done" href="{{ path('app_booking_service') }}"><span>1</span><em>Prestations</em></a><a class="bm-booking-step is-done" href="{{ path('app_booking_staff') }}"><span>2</span><em>Collaborateur</em></a><a class="bm-booking-step is-done" href="{{ path('app_booking_slot') }}"><span>3</span><em>Créneau</em></a><a class="bm-booking-step is-done" href="{{ path('app_booking_auth') }}"><span>4</span><em>Compte</em></a><a class="bm-booking-step is-active" href="{{ path('app_booking_summary') }}"><span>5</span><em>Validation</em></a></div>
+</div>
+</section>
+<section class="bm-booking-section">
+<div class="container bm-container">
+<div class="bm-booking-grid">
+<div>
+<div class="bm-booking-panel bm-confirm-panel"><div class="bm-confirm-icon"><i class="bi bi-check2"></i></div><h2>Votre rendez-vous est confirmé</h2><p>Vous recevrez une confirmation par email et un rappel avant votre rendez-vous. Aucun paiement n’a été effectué en ligne.</p><div class="bm-recap-box"><div><span>Rendez-vous</span><strong>Jeudi 25 juin · 14:30</strong></div><div><span>Salon</span><strong>Maison Élégance · Le Havre</strong></div><div><span>À régler sur place</span><strong>58 € estimés</strong></div></div><div class="bm-booking-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_user_appointment_detail') }}">Voir mon rendez-vous</a><a class="btn bm-btn bm-btn-outline" href="{{ path('app_account_user') }}">Mon espace client</a></div></div></div>
+</div>
+</div>
+</section>
+{% endblock %}

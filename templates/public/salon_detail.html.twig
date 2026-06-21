@@ -1,0 +1,22 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Maison Élégance — Fiche salon' %}
+{% set meta_description = 'Fiche établissement publique' %}
+
+{% block body %}
+<section class="bm-salon-hero">
+<div class="container bm-container">
+<div class="bm-salon-gallery"><img alt="Salon" src="{{ asset('assets/images/salon-1.jpg') }}"/><img alt="Espace coiffure" src="{{ asset('assets/images/pro-salon.jpg') }}"/><img alt="Prestation" src="{{ asset('assets/images/salon-3.jpg') }}"/><img alt="Accueil" src="{{ asset('assets/images/salon-4.jpg') }}"/></div>
+<div class="bm-salon-head"><div><p class="bm-eyebrow">Salon de coiffure · Le Havre</p><h1>Maison Élégance</h1><p>12 rue de Paris, 76600 Le Havre · Ouvert aujourd’hui jusqu’à 19:00</p><div class="bm-salon-proof"><span>4,9 ★★★★★ · 512 avis</span><span>Confirmation immédiate</span><span>Paiement sur place</span></div></div><a class="btn bm-btn bm-btn-primary bm-btn-lg" href="{{ path('app_booking_service') }}">Prendre rendez-vous</a></div>
+</div>
+</section>
+<section class="bm-salon-content">
+<div class="container bm-container"><div class="bm-salon-layout">
+<div>
+<article class="bm-public-panel"><h2>Prestations populaires</h2><p class="bm-muted-copy">Sélectionnez une prestation pour entrer dans le tunnel de réservation.</p><div class="bm-service-list-public"><a href="{{ path('app_booking_service') }}"><strong>Coupe femme + brushing</strong><span>1h15 · 58 €</span><em>Choisir</em></a><a href="{{ path('app_booking_service') }}"><strong>Coupe homme</strong><span>30 min · 35 €</span><em>Choisir</em></a><a href="{{ path('app_booking_service') }}"><strong>Balayage + patine</strong><span>2h30 · à partir de 92 €</span><em>Choisir</em></a><a href="{{ path('app_booking_service') }}"><strong>Soin profond kératine</strong><span>45 min · 49 €</span><em>Choisir</em></a></div></article>
+<article class="bm-public-panel"><h2>Équipe</h2><div class="bm-staff-row"><a href="{{ path('app_staff_detail') }}"><img alt="Clara" src="{{ asset('assets/images/article-1.jpg') }}"/><strong>Clara Martin</strong><span>Coloriste senior · 4,9/5</span></a><a href="{{ path('app_staff_detail') }}"><img alt="Alex" src="{{ asset('assets/images/article-2.jpg') }}"/><strong>Alex Moreau</strong><span>Barbier · Coupe homme</span></a><a href="{{ path('app_staff_detail') }}"><img alt="Emma" src="{{ asset('assets/images/article-3.jpg') }}"/><strong>Emma Lenoir</strong><span>Soins &amp; brushing</span></a></div></article>
+<article class="bm-public-panel"><h2>Avis clients</h2><div class="bm-review-list"><blockquote>“Accueil impeccable, diagnostic précis et résultat naturel. Je recommande Clara.”<cite>Marine L. · il y a 6 jours</cite></blockquote><blockquote>“Très bon salon, ponctuel et professionnel. Réservation facile.”<cite>Julien M. · il y a 2 semaines</cite></blockquote></div></article>
+</div>
+<aside class="bm-salon-sticky"><div class="bm-public-panel"><h2>Réserver chez Maison Élégance</h2><ul class="bm-check-list"><li>Compte obligatoire avant validation</li><li>Aucun paiement en ligne</li><li>Confirmation immédiate ou en attente selon le salon</li><li>Annulation possible jusqu’à 24h avant</li></ul><a class="btn bm-btn bm-btn-primary w-100" href="{{ path('app_booking_service') }}">Choisir une prestation</a></div><div class="bm-public-panel"><h2>Horaires</h2><div class="bm-hours"><span>Lundi</span><strong>09:00 - 19:00</strong><span>Mardi</span><strong>09:00 - 19:00</strong><span>Samedi</span><strong>09:00 - 18:00</strong></div></div></aside>
+</div></div>
+</section>
+{% endblock %}

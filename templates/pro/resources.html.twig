@@ -1,0 +1,12 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Ressources physiques — Belle Maison Pro' %}
+{% set meta_description = 'Gérez cabines, fauteuils, lampes UV et tables de massage nécessaires aux prestations.' %}
+
+{% block body %}
+<header class="bm-admin-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Ressources</p><h1>Ressources physiques</h1><span>Gérez cabines, fauteuils, lampes UV et tables de massage nécessaires aux prestations.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-primary" href="{{ path('app_agenda_pro') }}"><i class="bi bi-plus-lg me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-admin-panel"><div class="bm-admin-panel-head"><div><h2>Ressources</h2><p>Disponibilités matérielles synchronisées avec l’agenda.</p></div><a class="btn bm-btn bm-btn-primary" href="{{ path('app_resource_create_pro') }}">Ajouter</a></div><div class="bm-action-list"><a href="{{ path('app_resource_edit_pro') }}"><strong>Fauteuil coiffure 1</strong><span>Disponible · Coiffure</span></a><a href="{{ path('app_resource_edit_pro') }}"><strong>Cabine soin visage</strong><span>Disponible · Esthétique</span></a><a href="{{ path('app_resource_edit_pro') }}"><strong>Lampe UV</strong><span>Réservée · Ongles</span></a></div></section>
+{% endblock %}

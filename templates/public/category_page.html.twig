@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Catégories beauté — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Découverte</p>
+<h1>Catégories beauté</h1>
+<p>Explorez les prestations coiffure, barbe, soins, ongles, massage et beauté.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Coiffure</h2><p>Coupes, brushing, coloration, balayage et soins capillaires.</p><a class="bm-link" href="{{ path('app_category_city_page') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Barbier</h2><p>Taille de barbe, rasage traditionnel et coupe homme.</p><a class="bm-link" href="{{ path('app_service_city_page') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Ongles</h2><p>Manucure, gel, semi-permanent et nail art.</p><a class="bm-link" href="{{ path('app_search_results') }}">Découvrir</a></article></div></div></section>
+{% endblock %}

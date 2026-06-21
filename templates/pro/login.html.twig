@@ -1,0 +1,79 @@
+{% extends 'layouts/admin.html.twig' %}
+{% set page_title = 'Connexion professionnelle — Belle Maison' %}
+{% set meta_description = 'Connectez-vous à votre espace professionnel Belle Maison pour gérer votre fiche, vos prestations, vos demandes de rendez-vous et votre visibilité locale.' %}
+
+{% block body %}
+<section aria-labelledby="loginTitle" class="container bm-container">
+<div class="bm-auth-shell">
+<div class="row g-0 align-items-stretch">
+<div class="col-xl-6">
+<div class="bm-auth-visual">
+<div class="bm-auth-visual-inner">
+<span class="bm-auth-brand-mark"><i class="bi bi-gem"></i> Espace professionnel</span>
+<div class="bm-auth-visual-copy">
+<h1 id="loginTitle">Votre salon, toujours accessible.</h1>
+<p>Retrouvez votre espace professionnel pour préparer votre fiche, suivre vos demandes et garder une présentation claire auprès de vos futurs clients.</p>
+<div aria-label="Avantages espace professionnel" class="bm-auth-proof-row">
+<div class="bm-auth-proof"><strong>Agenda lisible</strong><span>Centralisez les demandes importantes et préparez vos créneaux.</span></div>
+<div class="bm-auth-proof"><strong>Fiche premium</strong><span>Prestations, photos, horaires et avis dans une vitrine cohérente.</span></div>
+<div class="bm-auth-proof"><strong>Accès sécurisé</strong><span>Un espace dédié aux professionnels beauté et bien-être.</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-6">
+<div class="bm-auth-panel">
+<div class="bm-auth-card">
+<div class="bm-auth-card-head">
+<span class="bm-auth-badge"><i class="bi bi-shield-check"></i> Connexion sécurisée</span>
+<h2>Connectez-vous à votre espace pro</h2>
+<p>Accédez à votre compte pour gérer votre établissement, vos informations professionnelles et vos demandes.</p>
+</div>
+<form action="#" class="bm-auth-form" method="post" novalidate="">
+<div class="mb-3">
+<label class="form-label bm-label" for="loginEmail">Email professionnel</label>
+<div class="bm-auth-field">
+<i class="bi bi-envelope"></i>
+<input autocomplete="email" class="form-control bm-auth-input" id="loginEmail" name="email" placeholder="contact@votresalon.fr" required="" type="email"/>
+</div>
+</div>
+<div class="mb-2">
+<label class="form-label bm-label" for="loginPassword">Mot de passe</label>
+<div class="bm-auth-field">
+<i class="bi bi-lock"></i>
+<input autocomplete="current-password" class="form-control bm-auth-input" id="loginPassword" name="password" placeholder="Votre mot de passe" required="" type="password"/>
+</div>
+</div>
+<div class="bm-auth-options">
+<label class="bm-auth-check" for="rememberMe">
+<input class="form-check-input" id="rememberMe" name="remember_me" type="checkbox"/>
+<span>Rester connecté</span>
+</label>
+<a class="bm-auth-link" href="{{ path('app_forgot_password') }}">Mot de passe oublié ?</a>
+</div>
+<button class="btn bm-btn bm-btn-primary bm-auth-submit" type="submit">Se connecter</button>
+</form>
+<div class="bm-auth-divider">ou</div>
+<div class="bm-auth-secondary-action">
+<div>
+<strong>Vous n’avez pas encore d’espace pro ?</strong>
+<span>Demandez une démonstration et préparez votre fiche établissement.</span>
+</div>
+<a class="btn bm-btn bm-btn-outline" href="{{ path('app_register_pro') }}">S’inscrire</a>
+</div>
+<div class="bm-auth-help-grid">
+<div class="bm-auth-help-card"><i class="bi bi-question-circle"></i><div><strong>Besoin d’aide ?</strong><span>Contactez l’accompagnement professionnel si vous avez perdu vos accès.</span></div></div>
+<div class="bm-auth-help-card"><i class="bi bi-stars"></i><div><strong>Nouvelle fiche</strong><span>Créez une vitrine claire pour vos prestations, vos tarifs et vos photos.</span></div></div>
+</div>
+<div class="bm-auth-note">
+<i class="bi bi-info-circle"></i>
+<div><strong>Conseil :</strong> utilisez l’adresse email professionnelle liée à votre établissement pour retrouver plus facilement votre compte.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

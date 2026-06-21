@@ -1,0 +1,400 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Belle Maison — Réservation beauté, coiffure & bien-être' %}
+{% set meta_description = 'Réservez un rendez-vous coiffure, barbier, beauté, ongles, spa ou bien-être près de chez vous. Comparez les avis, les prix et les disponibilités en temps réel.' %}
+{% block structured_data %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Belle Maison",
+    "url": "https://example.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://example.com/recherche?service={service}&ville={ville}",
+      "query-input": ["required name=service", "required name=ville"]
+    }
+  }
+  </script>
+{% endblock %}
+
+{% block body %}
+<section class="bm-hero">
+<div class="container bm-container">
+<div class="bm-hero-panel">
+<div class="row g-0 align-items-stretch">
+<div class="col-lg-6">
+<div class="bm-hero-content">
+<p class="bm-eyebrow">Réservation beauté en ligne</p>
+<h1 class="bm-hero-title">La beauté commence par le bon rendez-vous.</h1>
+<p class="bm-hero-lead">
+                Trouvez un salon de confiance, comparez les avis, choisissez votre prestation et réservez un créneau disponible en quelques secondes.
+              </p>
+<div class="bm-hero-proof row row-cols-2 row-cols-md-4 g-3">
+<div class="col">
+<div class="bm-proof-item"><i class="bi bi-clock"></i><span>Réservation 24h/24</span></div>
+</div>
+<div class="col">
+<div class="bm-proof-item"><i class="bi bi-star"></i><span>Avis clients vérifiés</span></div>
+</div>
+<div class="col">
+<div class="bm-proof-item"><i class="bi bi-calendar-check"></i><span>Confirmation immédiate</span></div>
+</div>
+<div class="col">
+<div class="bm-proof-item"><i class="bi bi-shield-check"></i><span>Paiement sécurisé</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="bm-hero-image">
+<img alt="Femme avec une coiffure élégante après un rendez-vous beauté" src="{{ asset('assets/images/hero-woman.jpg') }}"/>
+</div>
+</div>
+</div>
+<form action="#" aria-label="Rechercher un rendez-vous beauté" class="bm-search-card" method="get">
+<div class="row g-3 align-items-end">
+<div class="col-lg-3">
+<label class="form-label bm-label" for="service">Que recherchez-vous ?</label>
+<div class="bm-input-icon">
+<i class="bi bi-scissors"></i>
+<select class="form-select bm-input" id="service" name="service">
+<option>Coiffure</option>
+<option>Coupe homme</option>
+<option>Balayage</option>
+<option>Barbier</option>
+<option>Ongles</option>
+<option>Spa &amp; massage</option>
+</select>
+</div>
+</div>
+<div class="col-lg-3">
+<label class="form-label bm-label" for="city">Où ?</label>
+<div class="bm-input-icon">
+<i class="bi bi-geo-alt"></i>
+<select class="form-select bm-input" id="city" name="city">
+<option>Le Havre (76600)</option>
+<option>Rouen</option>
+<option>Caen</option>
+<option>Paris</option>
+</select>
+</div>
+</div>
+<div class="col-lg-3">
+<label class="form-label bm-label" for="date">Quand ?</label>
+<div class="bm-input-icon">
+<i class="bi bi-calendar3"></i>
+<input class="form-control bm-input" id="date" name="date" type="text" value="Date et heure"/>
+</div>
+</div>
+<div class="col-lg-3">
+<button class="btn bm-btn bm-btn-primary bm-btn-search w-100" type="submit">Rechercher</button>
+</div>
+</div>
+<div aria-label="Filtres rapides" class="bm-search-chips d-flex flex-wrap gap-2 mt-3">
+<a class="bm-chip" href="#">Aujourd’hui</a>
+<a class="bm-chip" href="#">Demain</a>
+<a class="bm-chip" href="#">Ce week-end</a>
+<a class="bm-chip" href="#">Ouvert maintenant</a>
+<a class="bm-chip" href="#">Note 4,5+</a>
+<a class="bm-chip" href="#">Moins de 30 €</a>
+<a class="bm-chip" href="#">Carte cadeau</a>
+</div>
+</form>
+</div>
+</div>
+</section>
+<section class="bm-section bm-categories" id="categories">
+<div class="container bm-container">
+<div class="row row-cols-3 row-cols-sm-4 row-cols-lg-9 g-3 justify-content-center">
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-scissors"></i><span>Coiffure</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-brush"></i><span>Barbier</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-stars"></i><span>Beauté</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-hand-index-thumb"></i><span>Ongles</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-flower1"></i><span>Bien-être</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-palette"></i><span>Maquillage</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-gem"></i><span>Mariage</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-droplet"></i><span>Épilation</span></a></div>
+<div class="col"><a class="bm-category" href="#"><i class="bi bi-water"></i><span>Spa</span></a></div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-section-tight" id="how-it-works">
+<div class="container bm-container">
+<div class="bm-section-heading text-center">
+<p class="bm-eyebrow">Parcours de réservation</p>
+<h2 class="bm-section-title">Un rendez-vous clair, rapide et sans appel téléphonique.</h2>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-3">
+<article class="bm-step-card">
+<span>01</span>
+<h3>Recherchez</h3>
+<p>Choisissez une prestation, une ville et un moment qui vous convient.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="bm-step-card">
+<span>02</span>
+<h3>Comparez</h3>
+<p>Consultez les avis, les tarifs, les photos et les disponibilités.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="bm-step-card">
+<span>03</span>
+<h3>Réservez</h3>
+<p>Sélectionnez un créneau et recevez une confirmation immédiate.</p>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="bm-step-card">
+<span>04</span>
+<h3>Profitez</h3>
+<p>Votre salon vous attend. Vous pouvez gérer votre rendez-vous en ligne.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section" id="salons">
+<div class="container bm-container">
+<div class="row align-items-end g-3 mb-4">
+<div class="col-lg-6">
+<p class="bm-eyebrow">Sélection locale</p>
+<h2 class="bm-section-title">Les salons les plus appréciés près de chez vous</h2>
+<p class="bm-section-text">Des établissements sélectionnés pour la qualité de leurs prestations, la clarté de leurs tarifs et leurs avis clients.</p>
+</div>
+<div class="col-lg-6 text-lg-end">
+<a class="bm-link" href="#">Voir tous les salons</a>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-3">
+<article class="card bm-salon h-100">
+<div class="bm-salon-media"><img alt="Salon de coiffure premium" src="{{ asset('assets/images/salon-1.jpg') }}"/><span class="bm-badge">Coup de cœur</span></div>
+<div class="card-body">
+<h3>Salon Nexus</h3>
+<p class="bm-rating">4,9 <span>★★★★★</span> <small>(512 avis)</small></p>
+<p class="bm-salon-meta">Coupe &amp; balayage · Le Havre</p>
+<div class="bm-salon-bottom"><strong>À partir de 35 €</strong><a class="btn bm-btn bm-btn-primary" href="#">Prendre RDV</a></div>
+</div>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="card bm-salon h-100">
+<div class="bm-salon-media"><img alt="Salon chaleureux avec miroirs et fauteuils" src="{{ asset('assets/images/salon-2.jpg') }}"/></div>
+<div class="card-body">
+<h3>L’Atelier Coiffure</h3>
+<p class="bm-rating">4,8 <span>★★★★★</span> <small>(387 avis)</small></p>
+<p class="bm-salon-meta">Coloration &amp; soins · Le Havre</p>
+<div class="bm-salon-bottom"><strong>À partir de 29 €</strong><a class="btn bm-btn bm-btn-primary" href="#">Prendre RDV</a></div>
+</div>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="card bm-salon h-100">
+<div class="bm-salon-media"><img alt="Barbier moderne et élégant" src="{{ asset('assets/images/salon-3.jpg') }}"/></div>
+<div class="card-body">
+<h3>Le Shaving Mood</h3>
+<p class="bm-rating">4,9 <span>★★★★★</span> <small>(611 avis)</small></p>
+<p class="bm-salon-meta">Barbier &amp; coupe homme · Le Havre</p>
+<div class="bm-salon-bottom"><strong>À partir de 24 €</strong><a class="btn bm-btn bm-btn-primary" href="#">Prendre RDV</a></div>
+</div>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="card bm-salon h-100">
+<div class="bm-salon-media"><img alt="Institut lumineux et raffiné" src="{{ asset('assets/images/salon-4.jpg') }}"/></div>
+<div class="card-body">
+<h3>Hair &amp; You</h3>
+<p class="bm-rating">4,7 <span>★★★★★</span> <small>(302 avis)</small></p>
+<p class="bm-salon-meta">Coiffure femme · Le Havre</p>
+<div class="bm-salon-bottom"><strong>À partir de 27 €</strong><a class="btn bm-btn bm-btn-primary" href="#">Prendre RDV</a></div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-section-tight">
+<div class="container bm-container">
+<div class="bm-stats row g-0">
+<div class="col-md-6 col-xl-3"><div class="bm-stat"><i class="bi bi-people"></i><strong>Professionnels vérifiés</strong><small>Salons, instituts et experts beauté.</small></div></div>
+<div class="col-md-6 col-xl-3"><div class="bm-stat"><i class="bi bi-calendar2-check"></i><strong>Créneaux en temps réel</strong><small>Des disponibilités lisibles avant de réserver.</small></div></div>
+<div class="col-md-6 col-xl-3"><div class="bm-stat"><i class="bi bi-star"></i><strong>Avis clients utiles</strong><small>Notes, commentaires et expériences récentes.</small></div></div>
+<div class="col-md-6 col-xl-3"><div class="bm-stat"><i class="bi bi-shield-lock"></i><strong>Parcours sécurisé</strong><small>Données protégées et confirmation claire.</small></div></div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-editorial" id="guides">
+<div class="container bm-container">
+<div class="row align-items-end g-3 mb-4">
+<div class="col-lg-7">
+<p class="bm-eyebrow">Magazine beauté</p>
+<h2 class="bm-section-title">Conseils, inspirations et guides pour mieux choisir.</h2>
+</div>
+<div class="col-lg-5 text-lg-end">
+<a class="bm-link" href="#">Voir tous les articles</a>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-3">
+<article class="bm-article-card">
+<img alt="Cheveux ondulés et brillants" src="{{ asset('assets/images/article-1.jpg') }}"/>
+<div class="bm-article-content"><span>Guide coiffure</span><h3>Comment choisir un salon adapté à vos cheveux ?</h3><p>Les critères essentiels : expertise, avis, prestations, prix et qualité du conseil.</p><a href="#">Lire l’article</a></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="bm-article-card">
+<img alt="Balayage et coloration lumineuse" src="{{ asset('assets/images/article-2.jpg') }}"/>
+<div class="bm-article-content"><span>Coloration</span><h3>Balayage, gloss, patine : comprendre les différences</h3><p>Un guide simple pour demander la bonne technique au bon moment.</p><a href="#">Lire l’article</a></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="bm-article-card">
+<img alt="Application de réservation beauté" src="{{ asset('assets/images/article-3.jpg') }}"/>
+<div class="bm-article-content"><span>Réservation</span><h3>Pourquoi réserver en ligne change votre expérience beauté</h3><p>Prix, horaires, avis et confirmation : tout devient plus transparent.</p><a href="#">Lire l’article</a></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-3">
+<article class="bm-article-card">
+<img alt="Coupe homme et barbe entretenue" src="{{ asset('assets/images/article-4.jpg') }}"/>
+<div class="bm-article-content"><span>Barbier</span><h3>Coupe homme : trouver un style élégant et facile à entretenir</h3><p>Dégradé, barbe, entretien : les bons réflexes avant le rendez-vous.</p><a href="#">Lire l’article</a></div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-local">
+<div class="container bm-container">
+<div class="row g-5 align-items-center">
+<div class="col-lg-7">
+<p class="bm-eyebrow">Guide local</p>
+<h2 class="bm-section-title">Réserver un coiffeur au Havre</h2>
+<p>
+            Le Havre propose une offre beauté variée : salons de coiffure, barbiers, instituts, ongleries et espaces bien-être. Pour choisir rapidement, comparez les avis, les photos, les prix de départ et les créneaux disponibles.
+          </p>
+<p>
+            Une recherche efficace doit répondre à trois questions : quelle prestation, dans quelle zone, et à quel moment. C’est cette logique qui rend la réservation plus simple et plus rassurante.
+          </p>
+<div class="bm-local-links">
+<a href="#">Coiffeur femme Le Havre</a>
+<a href="#">Coupe homme Le Havre</a>
+<a href="#">Balayage Le Havre</a>
+<a href="#">Barbier Le Havre</a>
+</div>
+</div>
+<div class="col-lg-5">
+<img alt="Vue du Havre au coucher du soleil" class="bm-local-image" src="{{ asset('assets/images/le-havre.jpg') }}"/>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-trends">
+<div class="container bm-container">
+<div class="row align-items-end g-3 mb-4">
+<div class="col-lg-7">
+<p class="bm-eyebrow">Tendances beauté</p>
+<h2 class="bm-section-title">Les inspirations du moment</h2>
+</div>
+<div class="col-lg-5 text-lg-end">
+<a class="bm-link" href="#">Voir plus d’inspirations</a>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-4">
+<article class="bm-trend-card">
+<img alt="Balayage lumineux" src="{{ asset('assets/images/trend-1.jpg') }}"/>
+<div><span>Coloration</span><h3>Le balayage lumineux</h3><p>Des reflets naturels pour illuminer le visage sans effet artificiel.</p><a href="#">Découvrir</a></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-trend-card">
+<img alt="Coupe femme moderne" src="{{ asset('assets/images/trend-2.jpg') }}"/>
+<div><span>Coiffure</span><h3>Les coupes femme intemporelles</h3><p>Carré, frange, dégradé : des lignes élégantes qui traversent les saisons.</p><a href="#">Découvrir</a></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4">
+<article class="bm-trend-card">
+<img alt="Soin du visage glow" src="{{ asset('assets/images/trend-3.jpg') }}"/>
+<div><span>Soins</span><h3>Peau éclatante et soins nouvelle génération</h3><p>Hydratation, éclat et douceur : des soins pensés pour révéler la peau.</p><a href="#">Découvrir</a></div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-pro" id="pro">
+<div class="container bm-container">
+<div class="bm-pro-banner">
+<div class="row align-items-center g-4">
+<div class="col-lg-7">
+<p class="bm-eyebrow bm-eyebrow-light">Espace professionnels</p>
+<h2>Développez votre visibilité et simplifiez votre agenda.</h2>
+<p>Centralisez vos réservations, présentez vos prestations, réduisez les appels manqués et donnez à vos clients une expérience de réservation plus fluide.</p>
+<div class="d-flex flex-wrap gap-3">
+<a class="btn bm-btn bm-btn-light" href="#">Découvrir l’offre pro</a>
+<a class="btn bm-btn bm-btn-ghost-light" href="#">Demander une démonstration</a>
+</div>
+</div>
+<div class="col-lg-5">
+<img alt="Salon professionnel équipé d’un agenda en ligne" src="{{ asset('assets/images/pro-salon.jpg') }}"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-testimonials">
+<div class="container bm-container">
+<div class="bm-section-heading text-center">
+<p class="bm-eyebrow">Avis clients</p>
+<h2 class="bm-section-title">Ils ont trouvé leur salon plus facilement.</h2>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-xl-4"><blockquote class="bm-testimonial"><div class="bm-stars">★★★★★</div><p>“J’ai comparé les prix, les avis et les disponibilités sans appeler plusieurs salons.”</p><footer>Marine L. <span>Le Havre</span></footer></blockquote></div>
+<div class="col-md-6 col-xl-4"><blockquote class="bm-testimonial"><div class="bm-stars">★★★★★</div><p>“La réservation est claire. Je sais exactement le prix, la durée et le créneau choisi.”</p><footer>Julien M. <span>Montivilliers</span></footer></blockquote></div>
+<div class="col-md-6 col-xl-4"><blockquote class="bm-testimonial"><div class="bm-stars">★★★★★</div><p>“Très pratique pour réserver le soir, quand les salons sont fermés.”</p><footer>Camille B. <span>Sainte-Adresse</span></footer></blockquote></div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-faq" id="faq">
+<div class="container bm-container">
+<div class="row g-4">
+<div class="col-lg-4">
+<p class="bm-eyebrow">Questions fréquentes</p>
+<h2 class="bm-section-title">Avant de réserver</h2>
+</div>
+<div class="col-lg-8">
+<div class="accordion" id="faqAccordion">
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button" data-bs-target="#faq1" data-bs-toggle="collapse" type="button">Comment prendre rendez-vous en ligne ?</button></h3>
+<div class="accordion-collapse collapse show" data-bs-parent="#faqAccordion" id="faq1"><div class="accordion-body">Recherchez une prestation, sélectionnez un salon, comparez les informations utiles puis choisissez un créneau disponible.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#faq2" data-bs-toggle="collapse" type="button">Puis-je comparer les prix avant de réserver ?</button></h3>
+<div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq2"><div class="accordion-body">Oui. Les cartes salon affichent un prix de départ et les fiches détaillent les prestations, les durées et les tarifs.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#faq3" data-bs-toggle="collapse" type="button">Les avis sont-ils utiles pour choisir ?</button></h3>
+<div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq3"><div class="accordion-body">Oui. Les avis récents, le volume d’avis et la note moyenne aident à comparer plusieurs établissements.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#faq4" data-bs-toggle="collapse" type="button">Puis-je réserver en dehors des horaires du salon ?</button></h3>
+<div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq4"><div class="accordion-body">Oui, si le salon propose la réservation en ligne. Vous pouvez consulter les créneaux disponibles à tout moment.</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bm-section bm-app">
+<div class="container bm-container">
+<div class="bm-app-panel">
+<div class="row align-items-center g-4">
+<div class="col-lg-3"><img alt="Application mobile de réservation beauté" src="{{ asset('assets/images/app-mobile.png') }}"/></div>
+<div class="col-lg-6"><p class="bm-eyebrow">Application mobile</p><h2 class="bm-section-title">Gardez vos rendez-vous beauté dans votre poche.</h2><p>Réservez, modifiez et retrouvez vos prochains rendez-vous depuis votre espace personnel.</p><div class="d-flex flex-wrap gap-3"><a class="bm-store-btn" href="#"><i class="bi bi-apple"></i> App Store</a><a class="bm-store-btn" href="#"><i class="bi bi-google-play"></i> Google Play</a></div></div>
+<div class="col-lg-3 text-lg-end"><div class="bm-qr">QR</div><small>Scannez pour télécharger</small></div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

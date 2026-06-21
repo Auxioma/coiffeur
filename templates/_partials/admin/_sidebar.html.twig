@@ -1,0 +1,30 @@
+<aside class="bm-admin-sidebar">
+    <div class="bm-admin-sidebar-head">
+        <a href="{{ path('app_home') }}" class="bm-admin-brand">BELLE MAISON</a>
+        <span class="bm-admin-badge">PRO</span>
+    </div>
+
+    <div class="bm-admin-salon-card">
+        <img src="{{ asset('assets/images/pro-salon.jpg') }}" alt="Salon">
+        <div>
+            <strong>{{ current_establishment.name|default('Maison Élégance') }}</strong>
+            <span>{{ current_establishment.city|default('Le Havre') }} · Salon principal</span>
+        </div>
+    </div>
+
+    <nav class="bm-admin-nav" aria-label="Navigation professionnelle">
+        <a class="bm-admin-nav-link {{ app.request.attributes.get('_route') == 'app_dashboard_pro' ? 'is-active' : '' }}" href="{{ path('app_dashboard_pro') }}"><i class="bi bi-grid-1x2-fill"></i><span>Tableau de bord</span></a>
+        <a class="bm-admin-nav-link {{ app.request.attributes.get('_route') == 'app_agenda_pro' ? 'is-active' : '' }}" href="{{ path('app_agenda_pro') }}"><i class="bi bi-calendar2-week"></i><span>Agenda</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_appointment_detail_pro') }}"><i class="bi bi-clipboard2-check"></i><span>Rendez-vous</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_clients_pro') }}"><i class="bi bi-people"></i><span>Clients</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_services_pro') }}"><i class="bi bi-scissors"></i><span>Prestations</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_team_pro') }}"><i class="bi bi-person-badge"></i><span>Équipe</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_availability_pro') }}"><i class="bi bi-clock-history"></i><span>Disponibilités</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_payments_pro') }}"><i class="bi bi-credit-card"></i><span>Paiements</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_notifications_pro') }}"><i class="bi bi-chat-dots"></i><span>Notifications</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_reviews_pro') }}"><i class="bi bi-star"></i><span>Avis</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_marketing_pro') }}"><i class="bi bi-megaphone"></i><span>Marketing</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_reports_pro') }}"><i class="bi bi-graph-up-arrow"></i><span>Statistiques</span></a>
+        <a class="bm-admin-nav-link" href="{{ path('app_settings_pro') }}"><i class="bi bi-sliders"></i><span>Paramètres</span></a>
+    </nav>
+</aside>

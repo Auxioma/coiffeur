@@ -1,0 +1,14 @@
+{% extends 'layouts/account.html.twig' %}
+{% set page_title = 'Notifications — Belle Maison' %}
+{% set meta_description = 'Réglez vos canaux email et SMS.' %}
+{% set body_class = 'bm-user-body' %}
+{% set main_class = 'bm-user-main' %}
+
+{% block body %}
+<header class="bm-user-topbar">
+<button aria-label="Ouvrir la navigation" class="bm-admin-menu-btn" type="button"><i class="bi bi-list"></i></button>
+<div><p class="bm-admin-kicker">Espace client</p><h1>Notifications</h1><span>Réglez vos canaux email et SMS.</span></div>
+<div class="bm-admin-topbar-actions"><a class="btn bm-btn bm-btn-outline" href="{{ path('app_search_results') }}"><i class="bi bi-search me-2"></i>Rechercher</a><a class="btn bm-btn bm-btn-primary" href="{{ path('app_booking_service') }}"><i class="bi bi-calendar-plus me-2"></i>Nouveau RDV</a></div>
+</header>
+<section class="bm-user-panel"><h2>Préférences de notification</h2><p>Choisissez comment recevoir les confirmations, rappels et demandes d’avis.</p><div class="bm-setting-list"><label><span><strong>Confirmation de rendez-vous</strong><em>Email + SMS après validation</em></span><input checked="" type="checkbox"/></label><label><span><strong>Rappel J-1</strong><em>Rappel la veille du rendez-vous</em></span><input checked="" type="checkbox"/></label><label><span><strong>Rappel H-2</strong><em>Pratique pour limiter les oublis</em></span><input checked="" type="checkbox"/></label><label><span><strong>Confirmation de présence</strong><em>SMS “Répondez OUI” avant rendez-vous</em></span><input checked="" type="checkbox"/></label><label><span><strong>Demandes d’avis</strong><em>Après une prestation terminée</em></span><input checked="" type="checkbox"/></label></div></section>
+{% endblock %}

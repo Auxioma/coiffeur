@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'FAQ Belle Maison — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">Aide</p>
+<h1>FAQ Belle Maison</h1>
+<p>Questions fréquentes sur la réservation, le compte client et le paiement sur place.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container bm-narrow"><div class="accordion bm-faq" id="faqPublic"><div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-target="#f1" data-bs-toggle="collapse">Dois-je payer en ligne ?</button></h2><div class="accordion-collapse collapse show" id="f1"><div class="accordion-body">Non, le règlement se fait sur place le jour du rendez-vous.</div></div></div><div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#f2" data-bs-toggle="collapse">Le compte est-il obligatoire ?</button></h2><div class="accordion-collapse collapse" id="f2"><div class="accordion-body">Oui, le compte est obligatoire avant la validation finale du rendez-vous.</div></div></div></div></div></section>
+{% endblock %}

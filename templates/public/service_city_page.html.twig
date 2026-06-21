@@ -1,0 +1,14 @@
+{% extends 'layouts/public.html.twig' %}
+{% set page_title = 'Balayage au Havre — Belle Maison' %}
+{% set meta_description = 'Belle Maison' %}
+
+{% block body %}
+<section class="bm-page-hero">
+<div class="container bm-container">
+<p class="bm-eyebrow">SEO prestation</p>
+<h1>Balayage au Havre</h1>
+<p>Trouvez un salon pour un balayage naturel, une patine ou une coloration au Havre.</p>
+</div>
+</section>
+<section class="bm-section"><div class="container bm-container"><div class="bm-content-grid"><article class="bm-public-panel"><h2>Balayage naturel</h2><p>Reflets subtils et diagnostic personnalisé.</p><a class="bm-link" href="{{ path('app_booking_service') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Patine</h2><p>Neutralisation des reflets et brillance.</p><a class="bm-link" href="{{ path('app_booking_service') }}">Découvrir</a></article><article class="bm-public-panel"><h2>Soin post-coloration</h2><p>Hydratation et protection de la fibre.</p><a class="bm-link" href="{{ path('app_booking_service') }}">Découvrir</a></article></div></div></section>
+{% endblock %}
