@@ -1,0 +1,83 @@
+/* =========================================================
+   COMPONENTS / FORMS
+   Inputs, selects, chips et search card.
+   ========================================================= */
+.bm-label {
+  margin-bottom: 0.5rem;
+  color: #746d63;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.bm-input-icon {
+  position: relative;
+}
+.bm-input-icon > i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  color: #074f3d;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.bm-input {
+  min-height: 58px;
+  padding-left: 2.85rem;
+  border: 1px solid #e8dccd;
+  border-radius: 0.85rem;
+  background-color: #fff;
+  color: #171511;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: none !important;
+}
+.bm-input:focus {
+  outline: 0;
+  border-color: rgba(7, 79, 61, 0.55);
+  box-shadow: 0 0 0 0.22rem rgba(7, 79, 61, 0.1);
+}
+
+select.bm-input {
+  cursor: pointer;
+}
+
+.bm-search-card {
+  position: absolute;
+  left: 50%;
+  bottom: -62px;
+  z-index: 5;
+  width: calc(100% - 4rem);
+  transform: translateX(-50%);
+  padding: 1.35rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(232, 220, 205, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 44px rgba(23, 21, 17, 0.085);
+  backdrop-filter: blur(18px);
+}
+
+.bm-search-chips {
+  border-top: 1px solid rgba(232, 220, 205, 0.7);
+  padding-top: 1rem;
+}
+
+.bm-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0.56rem 1.1rem;
+  border: 1px solid #e8dccd;
+  border-radius: 999px;
+  background: #fff;
+  color: #171511;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+.bm-chip:hover {
+  color: #074f3d;
+  border-color: rgba(7, 79, 61, 0.38);
+  background: #e8f1ed;
+}

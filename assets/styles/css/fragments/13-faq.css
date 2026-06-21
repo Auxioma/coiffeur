@@ -1,0 +1,33 @@
+/* =========================================================
+   COMPONENTS / FAQ
+   Override Bootstrap accordion pour un rendu premium.
+   ========================================================= */
+.bm-faq .accordion {
+  display: grid;
+  gap: 1rem;
+}
+.bm-faq .accordion-item {
+  overflow: hidden;
+  border: 1px solid #e8dccd;
+  border-radius: 1.1rem !important;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(23, 21, 17, 0.045);
+}
+.bm-faq .accordion-button {
+  padding: 1.25rem 1.35rem;
+  background: #fff;
+  color: #171511;
+  font-weight: 900;
+  box-shadow: none !important;
+}
+.bm-faq .accordion-button:not(.collapsed) {
+  color: #074f3d;
+  background: #e8f1ed;
+}
+.bm-faq .accordion-button:focus {
+  box-shadow: none;
+}
+.bm-faq .accordion-body {
+  color: #746d63;
+  padding: 1.2rem 1.35rem 1.35rem;
+}

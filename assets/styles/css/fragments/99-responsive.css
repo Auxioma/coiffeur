@@ -1,0 +1,111 @@
+/* =========================================================
+   PAGES / RESPONSIVE
+   Ajustements tablettes et mobile.
+   ========================================================= */
+@media (max-width: 1399.98px) {
+  .bm-hero-panel {
+    min-height: auto;
+  }
+  .bm-hero-content {
+    padding-bottom: 4rem;
+  }
+  .bm-hero-image {
+    height: 610px;
+  }
+  .bm-search-card {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: calc(100% - 2rem);
+    margin: -4.5rem auto 0;
+    transform: none;
+  }
+  .bm-categories {
+    padding-top: 3rem;
+  }
+}
+@media (max-width: 1199.98px) {
+  .bm-navbar {
+    min-height: 74px;
+  }
+  .bm-header-actions {
+    padding-top: 1rem;
+  }
+  .bm-nav-list {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .bm-section {
+    padding: 3.2rem 0;
+  }
+  .bm-hero-content {
+    padding: 3rem 1.5rem 2rem;
+  }
+  .bm-hero-image {
+    height: 460px;
+    border-radius: 0 0 2.1rem 2.1rem;
+  }
+  .bm-hero-image::after {
+    background: linear-gradient(180deg, rgba(245, 234, 223, 0.28), transparent 38%);
+  }
+  .bm-search-card {
+    width: calc(100% - 1rem);
+    margin-top: -2rem;
+  }
+  .bm-stat {
+    border-right: 0;
+    border-bottom: 1px solid rgba(232, 220, 205, 0.72);
+  }
+  .bm-trend-card {
+    grid-template-columns: 1fr;
+  }
+  .bm-trend-card img {
+    height: 240px;
+  }
+}
+@media (max-width: 767.98px) {
+  body {
+    font-size: 14px;
+  }
+  .bm-brand {
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+  }
+  .bm-hero {
+    padding-top: 0.75rem;
+  }
+  .bm-hero-panel {
+    border-radius: 1.5rem;
+  }
+  .bm-hero-title {
+    font-size: 3.1rem;
+  }
+  .bm-hero-lead {
+    font-size: 1rem;
+  }
+  .bm-search-card {
+    padding: 1rem;
+    border-radius: 1.1rem;
+  }
+  .bm-category i {
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+  }
+  .bm-salon-bottom {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .bm-salon-bottom .bm-btn {
+    width: 100%;
+  }
+  .bm-pro-banner,
+  .bm-app-panel {
+    padding: 1.35rem;
+  }
+  .bm-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

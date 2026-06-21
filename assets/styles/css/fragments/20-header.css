@@ -1,0 +1,43 @@
+/* =========================================================
+   LAYOUT / HEADER
+   Header sticky, logo, navigation et actions.
+   ========================================================= */
+.bm-header {
+  background: rgba(251, 247, 241, 0.9);
+  border-bottom: 1px solid rgba(232, 220, 205, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.bm-navbar {
+  min-height: 82px;
+}
+
+.bm-brand {
+  color: #171511;
+  font-size: 1.22rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.bm-brand:hover {
+  color: #074f3d;
+}
+
+.bm-nav-list {
+  gap: 0.18rem;
+}
+.bm-nav-list .nav-link {
+  color: #171511;
+  padding-inline: 0.85rem !important;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.bm-nav-list .nav-link:hover, .bm-nav-list .nav-link:focus {
+  color: #074f3d;
+}
+
+.bm-toggler {
+  border: 1px solid #e8dccd;
+  border-radius: 0.85rem;
+  box-shadow: none !important;
+}

@@ -1,0 +1,507 @@
+/* =========================================================
+   PAGES / REGISTER PRO
+   Page d'inscription professionnelle.
+   Objectif : convertir un salon, institut ou indépendant
+   en demande de démonstration qualifiée.
+   ========================================================= */
+.bm-page-pro-register {
+  background: radial-gradient(circle at 8% 0%, rgba(241, 231, 218, 0.72), transparent 34rem), radial-gradient(circle at 100% 20%, rgba(232, 241, 237, 0.6), transparent 28rem), linear-gradient(180deg, #fbf7f1 0%, #fffaf6 46%, #fbf7f1 100%);
+}
+
+.bm-nav-list .nav-link.active {
+  color: #074f3d;
+}
+
+/* HERO PRO
+   Deux colonnes : discours de valeur à gauche, formulaire à droite.
+*/
+.bm-pro-hero {
+  padding: 1.35rem 0 2rem;
+}
+
+.bm-pro-hero-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(232, 220, 205, 0.9);
+  border-radius: 2.1rem;
+  background: radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.82), transparent 25rem), linear-gradient(135deg, #f3e7d9 0%, #fff8f0 47%, #e8d6c4 100%);
+  box-shadow: 0 12px 28px rgba(23, 21, 17, 0.06);
+}
+.bm-pro-hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto -8rem -18rem auto;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 50%;
+  background: rgba(7, 79, 61, 0.08);
+  pointer-events: none;
+}
+
+.bm-pro-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: clamp(3rem, 5vw, 6rem);
+}
+
+.bm-pro-hero-title {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  max-width: 860px;
+  margin: 0;
+  color: #171511;
+  font-size: clamp(3.1rem, 6vw, 7rem);
+  font-weight: 600;
+}
+
+.bm-pro-hero-lead {
+  max-width: 680px;
+  margin: 1.45rem 0 2rem;
+  color: #746d63;
+  font-size: clamp(1rem, 1.2vw, 1.22rem);
+}
+
+.bm-pro-hero-actions {
+  margin-bottom: 2.6rem;
+}
+
+.bm-pro-kpi {
+  max-width: 910px;
+}
+
+.bm-pro-kpi-item {
+  height: 100%;
+  padding: 1.1rem;
+  border: 1px solid rgba(232, 220, 205, 0.86);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.64);
+  backdrop-filter: blur(12px);
+}
+.bm-pro-kpi-item strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #074f3d;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+.bm-pro-kpi-item span {
+  display: block;
+  color: #746d63;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* FORMULAIRE PRO
+   Card sticky sur desktop, puis bloc normal sur mobile.
+*/
+.bm-pro-form-card {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  min-height: 100%;
+  padding: clamp(1.3rem, 2.2vw, 2rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 245, 0.98));
+  border-left: 1px solid rgba(232, 220, 205, 0.9);
+  box-shadow: -20px 0 60px rgba(23, 21, 17, 0.06);
+}
+
+.bm-pro-form-head {
+  margin-bottom: 1.25rem;
+}
+.bm-pro-form-head h2 {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  margin: 0.8rem 0 0.6rem;
+  color: #171511;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 600;
+}
+.bm-pro-form-head p {
+  margin: 0;
+  color: #746d63;
+}
+
+.bm-form-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 36px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(200, 156, 84, 0.32);
+  border-radius: 999px;
+  background: rgba(200, 156, 84, 0.1);
+  color: #7d5f2e;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bm-pro-form .bm-label {
+  color: #746d63;
+}
+
+.bm-input-simple {
+  min-height: 54px;
+  border: 1px solid #e8dccd;
+  border-radius: 0.85rem;
+  background-color: #fff;
+  color: #171511;
+  font-weight: 700;
+  box-shadow: none !important;
+}
+.bm-input-simple:focus {
+  outline: 0;
+  border-color: rgba(7, 79, 61, 0.55);
+  box-shadow: 0 0 0 0.22rem rgba(7, 79, 61, 0.1);
+}
+.bm-input-simple::placeholder {
+  color: rgba(116, 109, 99, 0.68);
+  font-weight: 500;
+}
+
+textarea.bm-input-simple {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.bm-check {
+  padding: 1rem 1rem 1rem 2.8rem;
+  border: 1px solid rgba(232, 220, 205, 0.9);
+  border-radius: 0.85rem;
+  background: rgba(232, 241, 237, 0.5);
+}
+.bm-check .form-check-input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-left: -1.8rem;
+  border-color: rgba(7, 79, 61, 0.35);
+}
+.bm-check .form-check-input:checked {
+  background-color: #074f3d;
+  border-color: #074f3d;
+}
+.bm-check .form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(7, 79, 61, 0.12);
+}
+.bm-check .form-check-label {
+  color: #746d63;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.bm-btn-register {
+  min-height: 58px;
+  font-size: 1rem;
+}
+
+.bm-form-note {
+  margin: 1rem 0 0;
+  color: #938a7f;
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+/* STRIP PROMESSES */
+.bm-pro-strip {
+  padding-top: 1rem;
+}
+
+.bm-pro-strip-item {
+  background: #ffffff;
+  border: 1px solid rgba(232, 220, 205, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(23, 21, 17, 0.045);
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 1rem;
+  height: 100%;
+  padding: 1.35rem;
+}
+.bm-pro-strip-item i {
+  grid-row: span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #074f3d;
+  border: 1px solid rgba(7, 79, 61, 0.2);
+  border-radius: 50%;
+  background: #e8f1ed;
+  font-size: 1.25rem;
+}
+.bm-pro-strip-item strong {
+  color: #171511;
+  font-weight: 900;
+}
+.bm-pro-strip-item span {
+  color: #746d63;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* FEATURES */
+.bm-pro-feature-card {
+  background: #ffffff;
+  border: 1px solid rgba(232, 220, 205, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(23, 21, 17, 0.045);
+  position: relative;
+  height: 100%;
+  padding: 1.65rem;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.bm-pro-feature-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -6rem -6rem auto;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: rgba(7, 79, 61, 0.055);
+}
+.bm-pro-feature-card i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1.4rem;
+  color: #074f3d;
+  border: 1px solid rgba(7, 79, 61, 0.22);
+  border-radius: 50%;
+  background: #e8f1ed;
+  font-size: 1.35rem;
+}
+.bm-pro-feature-card h3 {
+  margin: 0 0 0.55rem;
+  color: #171511;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.bm-pro-feature-card p {
+  margin: 0;
+  color: #746d63;
+}
+.bm-pro-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(23, 21, 17, 0.085);
+}
+
+/* SPLIT IMAGE / ARGUMENTAIRE */
+.bm-pro-split {
+  background: linear-gradient(180deg, transparent 0%, rgba(248, 239, 229, 0.72) 100%);
+}
+
+.bm-pro-split-image {
+  width: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  border-radius: 2.1rem;
+  box-shadow: 0 18px 44px rgba(23, 21, 17, 0.085);
+}
+
+.bm-pro-check-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+.bm-pro-check-list div {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid rgba(232, 220, 205, 0.85);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+.bm-pro-check-list i {
+  color: #074f3d;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+.bm-pro-check-list span {
+  color: #746d63;
+  font-weight: 700;
+}
+
+/* PROCESS */
+.bm-pro-process-card {
+  background: #ffffff;
+  border: 1px solid rgba(232, 220, 205, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(23, 21, 17, 0.045);
+  height: 100%;
+  padding: 1.6rem;
+  background: linear-gradient(180deg, #fff 0%, #fffaf5 100%);
+}
+.bm-pro-process-card span {
+  display: inline-flex;
+  margin-bottom: 2rem;
+  color: #c89c54;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 0.9;
+}
+.bm-pro-process-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+.bm-pro-process-card p {
+  margin: 0;
+  color: #746d63;
+}
+
+/* AUDIENCE */
+.bm-pro-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 1rem;
+}
+.bm-pro-audience-grid a {
+  background: #ffffff;
+  border: 1px solid rgba(232, 220, 205, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(23, 21, 17, 0.045);
+  display: flex;
+  min-height: 136px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem;
+  text-align: center;
+  color: #171511;
+  font-weight: 900;
+}
+.bm-pro-audience-grid a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  color: #074f3d;
+  border: 1px solid rgba(7, 79, 61, 0.22);
+  border-radius: 50%;
+  background: #e8f1ed;
+  font-size: 1.35rem;
+}
+.bm-pro-audience-grid a span {
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+.bm-pro-audience-grid a:hover {
+  color: #074f3d;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(23, 21, 17, 0.06);
+}
+
+/* TESTIMONIALS PRO */
+.bm-pro-quote {
+  background: #ffffff;
+  border: 1px solid rgba(232, 220, 205, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(23, 21, 17, 0.045);
+  height: 100%;
+  margin: 0;
+  padding: 1.5rem;
+}
+.bm-pro-quote p {
+  margin: 0.8rem 0 1.2rem;
+  color: #746d63;
+  font-size: 1rem;
+}
+.bm-pro-quote footer {
+  color: #171511;
+  font-weight: 900;
+}
+.bm-pro-quote footer span {
+  display: block;
+  color: #938a7f;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+/* CTA FINAL */
+.bm-pro-final-cta {
+  padding-top: 1.5rem;
+}
+
+.bm-pro-final-panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 4rem);
+  border-radius: 2.1rem;
+  color: #fff;
+  background: radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.18), transparent 20rem), linear-gradient(135deg, #043729 0%, #074f3d 100%);
+  box-shadow: 0 28px 70px rgba(23, 21, 17, 0.13);
+}
+.bm-pro-final-panel::after {
+  content: "";
+  position: absolute;
+  inset: auto -8rem -16rem auto;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+.bm-pro-final-panel h2 {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  max-width: 860px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.4rem, 4.6vw, 5.4rem);
+  font-weight: 600;
+}
+.bm-pro-final-panel p:not(.bm-eyebrow) {
+  max-width: 720px;
+  margin: 1rem 0 1.6rem;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+/* RESPONSIVE SPECIFIQUE REGISTER PRO */
+@media (max-width: 1399.98px) {
+  .bm-pro-form-card {
+    border-left: 0;
+    border-top: 1px solid rgba(232, 220, 205, 0.9);
+  }
+  .bm-pro-audience-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 991.98px) {
+  .bm-pro-hero-content {
+    padding: 3rem 1.5rem;
+  }
+  .bm-pro-hero-title {
+    font-size: 3.25rem;
+  }
+  .bm-pro-split-image {
+    min-height: 360px;
+  }
+  .bm-pro-audience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575.98px) {
+  .bm-pro-hero-title {
+    font-size: 2.65rem;
+  }
+  .bm-pro-form-card {
+    padding: 1.1rem;
+  }
+  .bm-pro-audience-grid {
+    grid-template-columns: 1fr;
+  }
+  .bm-pro-strip-item {
+    grid-template-columns: 1fr;
+  }
+}

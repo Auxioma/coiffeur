@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* =========================================================
+   APP.CSS - Point d’entrée CSS AssetMapper
+   Ce fichier importe uniquement les fragments CSS du projet.
+   Ne mets pas le CSS complet ici : ajoute/modifie les fragments.
+   ========================================================= */
+
+@import url("./fragments/00-variables.css");
+@import url("./fragments/01-helpers.css");
+@import url("./fragments/02-base.css");
+@import url("./fragments/10-buttons.css");
+@import url("./fragments/11-forms.css");
+@import url("./fragments/12-cards.css");
+@import url("./fragments/13-faq.css");
+@import url("./fragments/20-header.css");
+@import url("./fragments/21-footer.css");
+@import url("./fragments/30-home.css");
+@import url("./fragments/31-register-pro.css");
+@import url("./fragments/32-auth-pro.css");
+@import url("./fragments/33-auth-user.css");
+@import url("./fragments/40-admin-pro.css");
+@import url("./fragments/50-client-booking.css");
+@import url("./fragments/99-responsive.css");

@@ -1,0 +1,9 @@
+/* =========================================================
+   ABSTRACTS / VARIABLES
+   Fichier central du design system.
+   On ajoute ici les couleurs, typographies, espacements,
+   rayons et ombres avant d'écrire les composants.
+   ========================================================= */
+/* Variables Bootstrap à garder si Bootstrap est compilé en local.
+   Dans cette maquette, Bootstrap est chargé en CDN puis overridé par app.css.
+*/
