@@ -43,7 +43,11 @@
         "symfony/web-link": "8.1.*",
         "symfony/yaml": "8.1.*",
         "symfonycasts/reset-password-bundle": "^1.25",
+<<<<<<< HEAD
         "symfonycasts/sass-bundle": "*",
+=======
+        "symfonycasts/sass-bundle": "^0.10.0",
+>>>>>>> 85d8321aada885e4443ad05b5015a0e70f802be0
         "symfonycasts/verify-email-bundle": "^1.18",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"

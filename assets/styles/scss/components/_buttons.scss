@@ -1,0 +1,99 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/* =========================================================
+   COMPONENTS / BUTTONS
+   Boutons du projet + overrides Bootstrap.
+   ========================================================= */
+
+.bm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: .75rem 1.25rem;
+  border-radius: $bm-radius-sm;
+  font-size: .92rem;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid transparent;
+  box-shadow: none;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.bm-btn-primary {
+  color: #fff;
+  background: linear-gradient(180deg, $bm-primary 0%, $bm-primary-dark 100%);
+  border-color: rgba($bm-primary-dark, .35);
+  box-shadow: 0 14px 26px rgba($bm-primary, .18);
+
+  &:hover {
+    color: #fff;
+    background: $bm-primary-dark;
+    border-color: $bm-primary-dark;
+    transform: translateY(-1px);
+    box-shadow: 0 18px 34px rgba($bm-primary, .24);
+  }
+}
+
+.bm-btn-outline {
+  color: $bm-ink;
+  background: rgba(#fff, .7);
+  border-color: rgba($bm-ink, .22);
+
+  &:hover {
+    color: $bm-primary;
+    background: #fff;
+    border-color: rgba($bm-primary, .42);
+  }
+}
+
+.bm-btn-light {
+  color: $bm-primary-dark;
+  background: #fff;
+  border-color: #fff;
+
+  &:hover {
+    color: $bm-primary-dark;
+    background: rgba(#fff, .9);
+  }
+}
+
+.bm-btn-ghost-light {
+  color: #fff;
+  background: rgba(#fff, .08);
+  border-color: rgba(#fff, .28);
+
+  &:hover {
+    color: #fff;
+    background: rgba(#fff, .14);
+    border-color: rgba(#fff, .44);
+  }
+}
+
+.bm-btn-search {
+  min-height: 58px;
+  font-size: 1rem;
+}
+
+.bm-store-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  min-height: 48px;
+  padding: .8rem 1.15rem;
+  border-radius: $bm-radius-sm;
+  color: #fff;
+  background: $bm-ink;
+  font-weight: 800;
+
+  &:hover {
+    color: #fff;
+    background: #000;
+    transform: translateY(-1px);
+  }
+}
